@@ -8,16 +8,4 @@ window.onload = function() {
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw'
     }).addTo(mymap);
-
-    /*var startLoc = new mapboxgl.LngLat(-74.6581347, 40.3440774);
-    mapboxgl.accessToken = 'pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw';
-    
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        minZoom: 15,
-        maxZoom: 20,
-        center: startLoc,
-        zoom: 15
-    });*/
 };
