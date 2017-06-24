@@ -1,5 +1,11 @@
 window.onload = function() {
-    var mymap = L.map("map").setView([40.3440774, -74.6581347], 16);
+    var mymap = L.map("map", {
+        center: [40.3440774, -74.6581347],
+        zoom: 16,
+        zoomSnap: 0.25,
+        zoomDelta: 0.5
+    });
+    //}).setView([40.3440774, -74.6581347], 16);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -9,15 +15,6 @@ window.onload = function() {
         accessToken: 'pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw'
     }).addTo(mymap);
 
-    /*var startLoc = new mapboxgl.LngLat(-74.6581347, 40.3440774);
-    mapboxgl.accessToken = 'pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw';
-    
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        minZoom: 15,
-        maxZoom: 20,
-        center: startLoc,
-        zoom: 15
-    });*/
+    var marker = L.marker([40.3440774, -74.6581347]).addTo(mymap);
+    marker.bindPopup("<b>Princeton University</b><br>Test");
 };
