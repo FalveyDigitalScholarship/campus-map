@@ -1,15 +1,27 @@
-var $sidebar;
-var $main;
-var $toggleSidebar;
+function isSidebarOpen() {
+    if (typeof isSidebarOpen.$sidebar === "undefined") {
+        isSidebarOpen.$sidebar = $("#sidebar");
+    }
+
+    return isSidebarOpen.$sidebar.width() !== 0;
+}
 
 function toggleSidebar(event) {
-    if ($sidebar.width() === 0) {
-        $sidebar.width(250);
-        $toggleSidebar.css("margin-left", "250px");
-    }
-    else {
+    var $sidebar = $("#sidebar");
+    var $toggleSidebar = $("#toggleSidebar");
+    var $toggleSidebarArrow = $("#toggleSidebarArrow");
+
+    if (isSidebarOpen()) {
         $sidebar.width(0);
         $toggleSidebar.css("margin-left", "0");
+        $toggleSidebarArrow.css("margin-left", "9px");
+        $toggleSidebarArrow.css("border-color", "transparent transparent transparent black");
+    }
+    else {
+        $sidebar.width(250);
+        $toggleSidebar.css("margin-left", "250px");
+        $toggleSidebarArrow.css("margin-left", "1px");
+        $toggleSidebarArrow.css("border-color", "transparent black transparent transparent");
     }
 }
 
@@ -39,8 +51,5 @@ window.onload = function() {
     var marker = L.marker([40.3440774, -74.6581347]).addTo(myMap);
     marker.bindPopup("<b>Princeton University</b><br>Test");
 
-    $sidebar = $("#sidebar");
-    $main = $("#main");
-    $toggleSidebar = $("#toggleSidebar");
     $("#toggleSidebarButton").click(toggleSidebar);
 };
