@@ -2,15 +2,13 @@ var $sidebar;
 var $main;
 var $toggleSidebar;
 
-function toggleSidebar() {
+function toggleSidebar(event) {
     if ($sidebar.width() === 0) {
         $sidebar.width(250);
-        $main.css("margin-left", "250px");
         $toggleSidebar.css("margin-left", "250px");
     }
     else {
         $sidebar.width(0);
-        $main.css("margin-left", "0");
         $toggleSidebar.css("margin-left", "0");
     }
 }
@@ -18,7 +16,7 @@ function toggleSidebar() {
 window.onload = function() {
     var myMap = L.map("map", {
         center: [40.3440774, -74.6581347],
-        zoom: 16,
+        zoom: 16.5,
         zoomSnap: 0.25,
         zoomDelta: 0.5,
         maxBounds: [
