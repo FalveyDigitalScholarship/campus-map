@@ -3,25 +3,44 @@ function isSidebarOpen() {
         isSidebarOpen.$sidebar = $("#sidebar");
     }
 
-    return isSidebarOpen.$sidebar.width() !== 0;
+    console.log(isSidebarOpen.$sidebar.css("left"));
+    return isSidebarOpen.$sidebar.css("left") === "0px";
 }
 
-function toggleSidebar(event) {
+function sidebarButtonTooltipVisible(flag) {
+    var $toggleSidebarTooltip = $("#toggleSidebarTooltip");
+
+    if (flag) {
+        $("#toggleSidebarTooltip").css("visibility", "visible");
+    }
+    else {
+        $("#toggleSidebarTooltip").css("visibility", "hidden");
+    }
+}
+
+function toggleSidebar() {
     var $sidebar = $("#sidebar");
     var $toggleSidebar = $("#toggleSidebar");
     var $toggleSidebarArrow = $("#toggleSidebarArrow");
+    var $toggleSidebarTooltip = $("#toggleSidebarTooltip");
+
+    sidebarButtonTooltipVisible(false);
 
     if (isSidebarOpen()) {
-        $sidebar.width(0);
+        console.log("close");
+        $sidebar.css("left", "-400px");
         $toggleSidebar.css("margin-left", "0");
         $toggleSidebarArrow.css("margin-left", "9px");
         $toggleSidebarArrow.css("border-color", "transparent transparent transparent black");
+        $toggleSidebarTooltip.html("Show side panel");
     }
     else {
-        $sidebar.width(250);
-        $toggleSidebar.css("margin-left", "250px");
+        console.log("open");
+        $sidebar.css("left", "0px");
+        $toggleSidebar.css("margin-left", "400px");
         $toggleSidebarArrow.css("margin-left", "1px");
         $toggleSidebarArrow.css("border-color", "transparent black transparent transparent");
+        $toggleSidebarTooltip.html("Hide side panel");
     }
 }
 
@@ -52,4 +71,9 @@ window.onload = function() {
     marker.bindPopup("<b>Princeton University</b><br>Test");
 
     $("#toggleSidebarButton").click(toggleSidebar);
+    $("#toggleSidebarButton").hover(function() {
+        sidebarButtonTooltipVisible(true); // Hover in
+    }, function() {
+        sidebarButtonTooltipVisible(false); // Hover out
+    });
 };
