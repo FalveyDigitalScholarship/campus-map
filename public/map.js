@@ -6,7 +6,6 @@ function isSidebarOpen() {
         isSidebarOpen.$sidebar = $("#sidebar");
     }
 
-    console.log(isSidebarOpen.$sidebar.css("left"));
     return isSidebarOpen.$sidebar.css("left") === "0px";
 }
 
@@ -30,7 +29,6 @@ function toggleSidebar() {
     sidebarButtonTooltipVisible(false);
 
     if (isSidebarOpen()) {
-        console.log("close");
         $sidebar.css("left", "-400px");
         $toggleSidebar.css("margin-left", "0");
         $toggleSidebarArrow.css("margin-left", "9px");
@@ -38,7 +36,6 @@ function toggleSidebar() {
         $toggleSidebarTooltip.html("Show side panel");
     }
     else {
-        console.log("open");
         $sidebar.css("left", "0px");
         $toggleSidebar.css("margin-left", "400px");
         $toggleSidebarArrow.css("margin-left", "1px");
@@ -47,31 +44,42 @@ function toggleSidebar() {
     }
 }
 
-function onMouseClickBldg(event) {
-    var pos = event.latlng;
+function onClickBldg(event) {
     var bldgName = event.target.options.name;
-    console.log(event);
+
+    var randImgs = ["dickinson.jpg", "firestone.jpg", "nassau.jpg"];
+    var imgInd = Math.floor(Math.random() * randImgs.length);
+
+    var randColors = ["#C6ACC7", "#ECB4BF", "#FBD7B7", "#C2E3EC"];
+    var colorInd = Math.floor(Math.random() * randColors.length);
+
+    $("#bldgImg").attr("src", "images/" + randImgs[imgInd]);
+    $("#bldgNameDiv").css("background-color", randColors[colorInd]);
+    $("#bldgName").html(bldgName);
+
+    if (!isSidebarOpen()) {
+        toggleSidebar();
+    }
+}
+function onClickMap(event) {
+    /*console.log("map click");
+
+    if (isSidebarOpen()) {
+        toggleSidebar();
+    }*/
 }
 function onMouseEnterBldg(event) {
-    var pos = event.target.getBounds().getCenter();
     var name = event.target.options.name;
 
-    /*hoverPopup.setLatLng(pos);
-    hoverPopup.setContent(name);
-    hoverPopup.openOn(myMap);*/
-    event.target.bindPopup(name, {
+    /*event.target.bindPopup(name, {
         autoPan: false
-    }).openPopup();
+    }).openPopup();*/
+    $("#bldgNameHover").html("<b>" + name + "</b>");
 }
 function onMouseExitBldg(event) {
-    var pos = event.latlng;
-    var bldgName = event.target.options.name;
-
-    myMap.closePopup();
+    $("#bldgNameHover").html("");
+    //myMap.closePopup();
 }
-/*function onMouseEnterMap(event) {
-    myMap.closePopup();
-}*/
 
 window.onload = function() {
     myMap = L.map("map", {
@@ -96,9 +104,6 @@ window.onload = function() {
 
     L.control.zoom({position: "topright"}).addTo(myMap);
 
-    var marker = L.marker([40.3440774, -74.6581347]).addTo(myMap);
-    marker.bindPopup("<b>Princeton University</b><br>Test");
-
     $("#toggleSidebarButton").click(toggleSidebar);
     $("#toggleSidebarButton").hover(function() {
         sidebarButtonTooltipVisible(true); // Hover in
@@ -111,11 +116,13 @@ window.onload = function() {
             name: locations[i]["name"],
             color: "#FF0000",
             weight: 2,
-            opacity: 1.0
+            opacity: 1.0,
+            bubblingMouseEvents: false
         }).addTo(myMap);
         
         //hoverPopup = L.popup();
-        polygon.on("click", onMouseClickBldg);
+        myMap.on("click", onClickMap);
+        polygon.on("click", onClickBldg);
         polygon.on("mouseover", onMouseEnterBldg);
         polygon.on("mouseout", onMouseExitBldg);
 
