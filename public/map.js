@@ -1,3 +1,6 @@
+var myMap = null;
+//var hoverPopup = null;
+
 function isSidebarOpen() {
     if (typeof isSidebarOpen.$sidebar === "undefined") {
         isSidebarOpen.$sidebar = $("#sidebar");
@@ -44,8 +47,34 @@ function toggleSidebar() {
     }
 }
 
+function onMouseClickBldg(event) {
+    var pos = event.latlng;
+    var bldgName = event.target.options.name;
+    console.log(event);
+}
+function onMouseEnterBldg(event) {
+    var pos = event.target.getBounds().getCenter();
+    var name = event.target.options.name;
+
+    /*hoverPopup.setLatLng(pos);
+    hoverPopup.setContent(name);
+    hoverPopup.openOn(myMap);*/
+    event.target.bindPopup(name, {
+        autoPan: false
+    }).openPopup();
+}
+function onMouseExitBldg(event) {
+    var pos = event.latlng;
+    var bldgName = event.target.options.name;
+
+    myMap.closePopup();
+}
+/*function onMouseEnterMap(event) {
+    myMap.closePopup();
+}*/
+
 window.onload = function() {
-    var myMap = L.map("map", {
+    myMap = L.map("map", {
         center: [40.3440774, -74.6581347],
         zoom: 16.5,
         zoomSnap: 0.25,
@@ -76,4 +105,20 @@ window.onload = function() {
     }, function() {
         sidebarButtonTooltipVisible(false); // Hover out
     });
+
+    for (var i = 0; i < locations.length; i++) {
+        var polygon = L.polygon(locations[i]["coords"], {
+            name: locations[i]["name"],
+            color: "#FF0000",
+            weight: 2,
+            opacity: 1.0
+        }).addTo(myMap);
+        
+        //hoverPopup = L.popup();
+        polygon.on("click", onMouseClickBldg);
+        polygon.on("mouseover", onMouseEnterBldg);
+        polygon.on("mouseout", onMouseExitBldg);
+
+        //myMap.on("mouseover", onMouseEnterMap);
+    }
 };
