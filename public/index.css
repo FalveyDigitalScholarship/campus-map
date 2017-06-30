@@ -7,6 +7,18 @@ Color Palette (Pastel)
     blue: #C2E3EC
 */
 
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Muli', sans-serif;
+    font-size: 32px;
+}
+p {
+    font-size: 14px;
+}
+
 html {
     overflow: hidden;
     height: 100%;
@@ -52,8 +64,8 @@ body {
 }
 
 #sidebarContent {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #toggleSidebar {
