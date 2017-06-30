@@ -53,13 +53,13 @@ body {
     width: 100%;
 }
 
-#buildingName {
+#bldgNameDiv {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
     background-color: #ECB4BF;
 }
-#buildingName h1 {
+#bldgName {
     margin: 0;
 }
 
@@ -90,8 +90,8 @@ body {
 #toggleSidebarArrow {
     width: 0;
     height: 0;
-    margin-left: 9px;
-    border: solid 8px;
+    margin: 0 0 0 10px;
+    border: solid 6px;
     border-color: transparent transparent transparent black;
 }
 #toggleSidebarTooltip {
@@ -105,6 +105,14 @@ body {
     visibility: hidden;
     background-color: #FFF;
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+#bldgNameHover {
+    position: absolute;
+    bottom: 30;
+    right: 20;
+    z-index: 314159;
+    font-size: 18px;
 }
 
 #main {
