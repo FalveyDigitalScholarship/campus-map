@@ -1,13 +1,21 @@
 var myMap = null;
-//var hoverPopup = null;
+var selectedPolygon = null;
 
-function isSidebarOpen() {
-    if (typeof isSidebarOpen.$sidebar === "undefined") {
-        isSidebarOpen.$sidebar = $("#sidebar");
-    }
-
-    return isSidebarOpen.$sidebar.css("left") === "0px";
-}
+var sidebarOpen = false;
+    
+var colors = {
+    "idle": "#444444",
+    "purple": "#C6ACC7",
+    "red": "#ECB4BF",
+    "orange": "#FBD7B7",
+    "blue": "#C2E3EC"
+};
+var categories = {
+    "purple": "Dedicated to slave owner",
+    "red": "Donated by slave owner",
+    "orange": "Dedicated to someone with ties to slavery",
+    "blue": "Donated by someone with ties to slavery"
+};
 
 function sidebarButtonTooltipVisible(flag) {
     var $toggleSidebarTooltip = $("#toggleSidebarTooltip");
@@ -28,36 +36,59 @@ function toggleSidebar() {
 
     sidebarButtonTooltipVisible(false);
 
-    if (isSidebarOpen()) {
+    if (sidebarOpen) {
+        console.log("open");
         $sidebar.css("left", "-400px");
         $toggleSidebar.css("margin-left", "0");
         $toggleSidebarArrow.css("margin-left", "9px");
         $toggleSidebarArrow.css("border-color", "transparent transparent transparent black");
         $toggleSidebarTooltip.html("Show side panel");
+
+        if (selectedPolygon !== null) {
+            selectedPolygon.setStyle({
+                color: colors["idle"]
+            });
+        }
     }
     else {
+        console.log("close");
         $sidebar.css("left", "0px");
         $toggleSidebar.css("margin-left", "400px");
         $toggleSidebarArrow.css("margin-left", "1px");
         $toggleSidebarArrow.css("border-color", "transparent black transparent transparent");
         $toggleSidebarTooltip.html("Hide side panel");
+
+        if (selectedPolygon !== null) {
+            selectedPolygon.setStyle({
+                color: colors[selectedPolygon.options.category]
+            });
+        }
     }
+    sidebarOpen = !sidebarOpen;
 }
 
 function onClickBldg(event) {
-    var bldgName = event.target.options.name;
+    var polygon = event.target;
+    var bldgName = polygon.options.name;
+    var bldgColor = colors[polygon.options.category];
+    var bldgImgPath = "images/" + polygon.options.image;
 
-    var randImgs = ["dickinson.jpg", "firestone.jpg", "nassau.jpg"];
-    var imgInd = Math.floor(Math.random() * randImgs.length);
-
-    var randColors = ["#C6ACC7", "#ECB4BF", "#FBD7B7", "#C2E3EC"];
-    var colorInd = Math.floor(Math.random() * randColors.length);
-
-    $("#bldgImg").attr("src", "images/" + randImgs[imgInd]);
-    $("#bldgNameDiv").css("background-color", randColors[colorInd]);
+    $("#bldgImg").attr("src", bldgImgPath);
+    $("#bldgNameDiv").css("background-color", bldgColor);
     $("#bldgName").html(bldgName);
+    $("#bldgCategory").html(categories[polygon.options.category]);
 
-    if (!isSidebarOpen()) {
+    if (selectedPolygon !== null) {
+        selectedPolygon.setStyle({
+            color: colors["idle"]
+        });
+    }
+    polygon.setStyle({
+        color: bldgColor
+    });
+    selectedPolygon = polygon;
+
+    if (!sidebarOpen) {
         toggleSidebar();
     }
 }
@@ -69,16 +100,24 @@ function onClickMap(event) {
     }*/
 }
 function onMouseEnterBldg(event) {
-    var name = event.target.options.name;
+    var polygon = event.target;
+    var name = polygon.options.name;
 
-    /*event.target.bindPopup(name, {
-        autoPan: false
-    }).openPopup();*/
     $("#bldgNameHover").html("<b>" + name + "</b>");
+    polygon.setStyle({
+        color: colors[polygon.options.category]
+    });
 }
 function onMouseExitBldg(event) {
+    var polygon = event.target;
+
     $("#bldgNameHover").html("");
-    //myMap.closePopup();
+
+    if (polygon !== selectedPolygon || !sidebarOpen) {
+        polygon.setStyle({
+            color: colors["idle"]
+        });
+    }
 }
 
 window.onload = function() {
@@ -112,20 +151,25 @@ window.onload = function() {
     });
 
     for (var i = 0; i < locations.length; i++) {
-        var polygon = L.polygon(locations[i]["coords"], {
-            name: locations[i]["name"],
-            color: "#FF0000",
-            weight: 2,
-            opacity: 1.0,
-            bubblingMouseEvents: false
-        }).addTo(myMap);
-        
-        //hoverPopup = L.popup();
-        myMap.on("click", onClickMap);
-        polygon.on("click", onClickBldg);
-        polygon.on("mouseover", onMouseEnterBldg);
-        polygon.on("mouseout", onMouseExitBldg);
+        var bldgName = locations[i]["name"];
+        for (var j = 0; j < locationData["individual"].length; j++) {
+            if (bldgName === locationData["individual"][j]["name"]) {
+                var polygon = L.polygon(locations[i]["coords"], {
+                    name: bldgName,
+                    category: locationData["individual"][j]["category"],
+                    image: locationData["individual"][j]["image"],
+                    color: colors["idle"],
+                    weight: 2,
+                    fillOpacity: 0.25,
+                    bubblingMouseEvents: false
+                }).addTo(myMap);
+                
+                myMap.on("click", onClickMap);
+                polygon.on("click", onClickBldg);
+                polygon.on("mouseover", onMouseEnterBldg);
+                polygon.on("mouseout", onMouseExitBldg);
+            }
+        }
 
-        //myMap.on("mouseover", onMouseEnterMap);
     }
 };

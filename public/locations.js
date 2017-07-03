@@ -1,14 +1,18 @@
+var locationData =
 {
     "individual": [
         {
             "name": "Nassau Hall",
             "category": "purple",
-            "location": [40.3440774, -74.6581347]
+            "location": [40.3440774, -74.6581347],
+            "image": "nassau.jpg"
         },
         {
             "name": "Burr Hall",
             "category": "purple",
-            "location": [40.3440774, -74.6581347]
+            "location": [40.3440774, -74.6581347],
+            "image": "burr.jpg"
+
         },
         {
             "name": "Palmer House",
@@ -28,7 +32,8 @@
         {
             "name": "Dickinson Hall",
             "category": "purple",
-            "location": [40.3440774, -74.6581347]
+            "location": [40.3440774, -74.6581347],
+            "image": "dickinson.jpg"
         },
         {
             "name": "Portrait & Furnishings (Room 223, Dickinson Hall)",
@@ -43,7 +48,8 @@
         {
             "name": "Edwards Hall",
             "category": "purple",
-            "location": [40.3440774, -74.6581347]
+            "location": [40.3440774, -74.6581347],
+            "image": "edwards.jpg"
         },
         {
             "name": "FitzRandolph Gate",
@@ -78,7 +84,8 @@
         {
             "name": "Madison Hall",
             "category": "purple",
-            "location": [40.3440774, -74.6581347]
+            "location": [40.3440774, -74.6581347],
+            "image": "madison.jpg"
         },
         {
             "name": "Prospect House",
@@ -103,7 +110,8 @@
         {
             "name": "Witherspoon Hall",
             "category": "purple",
-            "location": [40.3440774, -74.6581347]
+            "location": [40.3440774, -74.6581347],
+            "image": "witherspoon.jpg"
         },
         {
             "name": "War Dead Memorial, Nassau Hall",
