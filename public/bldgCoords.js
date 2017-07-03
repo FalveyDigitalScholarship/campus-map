@@ -3607,7 +3607,7 @@ var locations = [
 		]
 },
 {
-	name: "Aaron Burr Hall",
+	name: "Burr Hall",
 	coords: [
 			[40.350251,-74.656822],
 			[40.350388,-74.656513],
