@@ -33,9 +33,10 @@
                     <div id="bldgTitle">
                         <h1 id="bldgName">No building selected</h1>
                         <h3 id="bldgCategory">No building selected</h3>
+                        <h4 id="bldgSites">No building selected</h4>
                     </div>
                 </div>
-                <div class="sidebarContent">
+                <div id="bldgDescription" class="sidebarContent">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem.
                         Quae est igitur causa istarum angustiarum? Pollicetur certe.
@@ -48,12 +49,13 @@
                         Cum autem in quo sapienter dicimus, id a primo rectissime dicitur.
                         Non enim iam stirpis bonum quaeret, sed animalis.</p>
                 </div>
-                <div class="subsite">
+                <!-- map.js will delete this on load and use this as a prototype for subsite info -->
+                <div id="subsitePrototype" class="subsite">
                     <div class="subInfo">
-                        <img class="subImg" src="images/nassau.jpg">
+                        <img style="display:none" class="subImg" src="images/nassau.jpg">
                         <div class="subTitle">
-                            <h2 class="subName">Subsite 1</h2>
-                            <h3 class="subCategory">No building selected</h3>
+                            <h2 class="subName">Subsite Name</h2>
+                            <h3 class="subCategory">Subsite category</h3>
                         </div>
                     </div>
                     <div class="sidebarContent">
@@ -86,7 +88,20 @@
                     </a>
                 </div>
                 <div id="legend">
-                    Legend (under development)
+                    <b>Color of landmarks or sites within them</b>
+                    <hr style="color: #DDD"/>
+                    <div id="legendEntryPrototype" class="legendEntry">
+                        <div class="legendEntryContainer">
+                            <div class="legendEntryText">Category full text</div>
+                            <div class="legendEntryColor"></div>
+                        </div>
+                    </div>
+                    <div id="legendLastEntry" class="legendEntry">
+                        <div class="legendEntryContainer">
+                            <div class="legendEntryText" style="color: #DDD">Not categorized, but contains other sites</div>
+                            <div class="legendEntryColor" style="background-color: #DDD"></div>
+                        </div>
+                    </div>
                 </div>
                 <div id="map">
                 </div>

@@ -13,19 +13,25 @@ Color Palette (Pastel)
 
 h1 {
     font-family: 'Muli', sans-serif;
-    font-size: 24pt;
+    font-size: 22pt;
     margin: 0 0 6px 0;
 }
 h2 {
     font-family: 'Muli', sans-serif;
-    font-size: 20pt;
-    margin: 0 0 6px 0;
+    font-size: 16pt;
+    margin: 0 0 4px 0;
 }
 h3 {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     font-style: italic;
-    font-size: 14pt;
+    font-size: 11pt;
+    margin: 0;
+}
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 11pt;
     margin: 0;
 }
 p {
@@ -138,13 +144,35 @@ body {
     z-index: 314159;
     padding: 10 10 10 10;
 
-    width: 400px;
-    height: 200px;
+    width: 270pt;
     background-color: #444;
     opacity: 0.75;
 
     color: #DDD;
+    text-align: center;
     font-size: 11pt;
+}
+#legend b {
+    text-align: center;
+}
+.legendEntry {
+    height: 22pt;
+}
+.legendEntryContainer {
+    height: 16pt;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.legendEntryText {
+    height: 100%;
+    float: left;
+}
+.legendEntryColor {
+    width: 24pt;
+    height: 100%;
+    margin-left: 10pt;
+    background-color: #fff;
+    float: right;
 }
 
 #main {

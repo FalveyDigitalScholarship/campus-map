@@ -1,5 +1,6 @@
 var myMap = null;
 var locationData = null;
+var subsitePrototype = null;
 
 var polygonSelected = null;
 var popupSelected = null;
@@ -16,18 +17,21 @@ var sidebarOpen = false;
 var startSelection = "Nassau Hall";
     
 var colors = {
-    "purple": "#C6ACC7",
-    "red": "#ECB4BF",
-    "orange": "#FBD7B7",
-    "blue": "#C2E3EC",
-    "none": "#FFFFFF"
+    "dedicatedToOwner": "#C6ACC7", // purple
+    "donatedByOwner": "#ECB4BF", // red
+    "dedicatedToTies": "#FBD7B7", // orange
+    "donatedByTies": "#C2E3EC", // blue
+    "none": "#FFFFFF" // white
 };
 var categories = {
-    "purple": "Dedicated to slave owner",
-    "red": "Donated by slave owner",
-    "orange": "Dedicated to someone with ties to slavery",
-    "blue": "Donated by someone with ties to slavery"
+    "dedicatedToOwner": "Dedicated to slave owner",
+    "donatedByOwner": "Donated by slave owner",
+    "dedicatedToTies": "Dedicated to someone with ties to slavery",
+    "donatedByTies": "Donated by someone with ties to slavery"
 };
+var legendEntries = {};
+
+var legendEntryColorHighlight = "#222";
 
 var popupContent = "<div class='bldgPopup'><b>{0}</b></div>";
 var popupContentSites = "<div class='bldgPopup'><b>{0}</b><br>{1}</div>";
@@ -125,12 +129,18 @@ function GetPopupFromPolygon(polygon) {
 
     var content = popupContent.format(name);
     if (subsites != null) {
+        var siteString = "";
+        if (polygon.options.category !== "none") {
+            siteString += "+";
+        }
+        siteString += subsites.length;
         if (subsites.length == 1) {
-            content = popupContentSites.format(name, "1 site");
+            siteString += " site";
         }
         else {
-            content = popupContentSites.format(name, subsites.length + " sites");
+            siteString += " sites";
         }
+        content = popupContentSites.format(name, siteString);
     }
 
     var popup = L.popup({
@@ -151,19 +161,56 @@ function DisplayBuildingInfo(info) {
     var name = info.name;
     var color = colors[info.category];
 
+    $("#bldgName").html(name);
+    $("#bldgInfo").css("background-color", color);
+    $("#toggleSidebarButton").css("background-color", color);
+
     if (info.category === "none") {
         $("#bldgImg").hide();
         $("#bldgCategory").hide();
+        if (info.subsites.length === 1) {
+            $("#bldgSites").html("1 site");
+        }
+        else {
+            $("#bldgSites").html(info.subsites.length + " sites");
+        }
+        $("#bldgSites").show();
     }
     else {
         $("#bldgCategory").show();
         $("#bldgCategory").html(categories[info.category]);
+        if (info.subsites !== null) {
+            if (info.subsites.length === 1) {
+                $("#bldgSites").html("+ 1 other site");
+            }
+            else {
+                $("#bldgSites").html("+ " + info.subsites.length + " other sites");
+            }
+            $("#bldgSites").show();
+        }
+        else {
+            $("#bldgSites").hide();
+        }
         $("#bldgImg").show();
         $("#bldgImg").attr("src", "images/" + info.image);
     }
-    $("#bldgInfo").css("background-color", color);
-    $("#toggleSidebarButton").css("background-color", color);
-    $("#bldgName").html(name);
+
+    $(".subsite").remove();
+    if (info.subsites !== null) {
+        for (var i = 0; i < info.subsites.length; i++) {
+            var subName = info.subsites[i].name;
+            var subCategory = info.subsites[i].category;
+
+            var $subDiv = $("<div class=\"subsite\"></div>");
+            $subDiv.html(subsitePrototype);
+            $("#sidebar .simplebar-scroll-content .simplebar-content").append($subDiv);
+                
+            $subDiv.find(".subName").html(subName);
+            $subDiv.find(".subInfo").css("background-color", colors[subCategory]);
+            $subDiv.find(".subCategory").html(categories[subCategory]);
+            //$subDiv.find(".subImg").attr("src", "");
+        }
+    }
 }
 
 function SelectPolygon(polygon) {
@@ -186,6 +233,24 @@ function SelectPolygon(polygon) {
     }
     else {
         $("#toggleSidebarButton").hide();
+    }
+}
+
+function UpdateLegendFromPolygon(polygon) {
+    if (polygon !== null) {
+        var category = polygon.options.category;
+
+        /*if (polygon.options.category == "none"
+        && polygon.options.subsites.length == 1) {
+            category = polygon.options.subsites[0]["category"];
+        }*/
+
+        legendEntries[category].css("background-color", legendEntryColorHighlight);
+    }
+    else {
+        for (category in legendEntries) {
+            legendEntries[category].css("background-color", "transparent");
+        }
     }
 }
 
@@ -232,6 +297,7 @@ function OnMouseEnterBldg(event) {
     popupHover = GetPopupFromPolygon(polygon);
 
     polygon.setStyle(styleHover);
+    UpdateLegendFromPolygon(polygon);
 }
 function OnMouseExitBldg(event) {
     var polygon = event.target;
@@ -242,6 +308,7 @@ function OnMouseExitBldg(event) {
     if (polygon !== polygonSelected) {
         polygon.setStyle(styleIdle);
     }
+    UpdateLegendFromPolygon(null);
 }
 
 $(function() {
@@ -249,6 +316,7 @@ $(function() {
         $(".desktop").hide();
     }*/
 
+    // Initialize leaflet.js map controls.
     myMap = L.map("map", {
         center: [40.3440774, -74.6581347],
         zoom: 17,
@@ -260,7 +328,9 @@ $(function() {
         ],
         zoomControl: false // add manually later to top right
     });
+    L.control.zoom({position: "topright"}).addTo(myMap);
 
+    // Initialize MapBox tile layer.
     L.tileLayer("https://api.mapbox.com/{style}/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 20,
@@ -269,8 +339,30 @@ $(function() {
         style: "styles/v1/***REMOVED***",
         accessToken: "***REMOVED***"
     }).addTo(myMap);
-    
-    L.control.zoom({position: "topright"}).addTo(myMap);
+
+    // Save sidebar subsite prototype.
+    var $subsitePrototype = $("#subsitePrototype");
+    subsitePrototype = $subsitePrototype.html();
+    $subsitePrototype.remove();
+
+    // Generate legend entries.
+    var legendEntryPrototype = $("#legendEntryPrototype").html();
+    $("#legendEntryPrototype").remove();
+    for (var category in categories) {
+        var $entry = $("<div class=\"legendEntry\"></div>");
+        $entry.html(legendEntryPrototype);
+        var $entryText = $entry.find(".legendEntryText");
+        $entryText.html(categories[category]);
+        $entryText.css("color", colors[category]);
+        $entry.find(".legendEntryColor").css("background-color", colors[category]);
+
+        $("#legend").append($entry);
+        legendEntries[category] = $entry;
+    }
+    var $legendLastEntry = $("#legendLastEntry");
+    legendEntries["none"] = $legendLastEntry.clone();
+    $("#legend").append(legendEntries["none"]);
+    $legendLastEntry.remove();
 
     $("#toggleSidebarButton").click(ToggleSidebar);
     $("#toggleSidebarButton").hover(function() {
@@ -294,13 +386,13 @@ $(function() {
                         var locName = locationData[i]["name"];
 
                         if (!(locName in coords))
-                            continue;
+                            continue; // temporary. all sites should have coordinates
 
                         var color = colors[locationData[i]["category"]];
-                        if (locationData[i]["category"] == "none"
+                        /*if (locationData[i]["category"] == "none"
                         && locationData[i]["subsites"].length == 1) {
                             color = colors[locationData[i]["subsites"][0]["category"]];
-                        }
+                        }*/
                         var image = locationData[i]["image"];
                         if (image === null || image === undefined) {
                             image = "nassau.jpg";
