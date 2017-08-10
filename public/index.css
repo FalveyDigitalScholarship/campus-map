@@ -157,6 +157,8 @@ body {
 }
 .legendEntry {
     height: 22pt;
+    padding-left: 8px;
+    padding-right: 4px;
 }
 .legendEntryContainer {
     height: 16pt;
