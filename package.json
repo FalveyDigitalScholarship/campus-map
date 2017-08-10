@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js /public",
+    "loc": "node locations.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://psp-map.herokuapp.com",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3"
   }
 }

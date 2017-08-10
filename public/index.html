@@ -17,109 +17,80 @@
         <link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans" rel="stylesheet">
         <!-- - - - -->
 
+        <!-- Custom scrollbar : https://github.com/Grsmto/simplebar -->
+        <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+        <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
         <link rel="stylesheet" href="index.css"/>
-        <script src="bldgCoords.js"></script>
-        <script src="locations.js"></script>
         <script src="map.js"></script>
     </head>
     <body>
         <div id="outer">
-        <div id="sidebar">
-            <img id="bldgImg" src="images/nassau.jpg">
-            <div id="bldgNameDiv">
-                <h1 id="bldgName">No building selected</h1>
-                <h3 id="bldgCategory">Category</h2>
-            </div>
-            <div id="sidebarContent">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem.
-                    Quae est igitur causa istarum angustiarum? Pollicetur certe.
-                    Verba tu fingas et ea dicas, quae non sentias?</p>
-                <p>Dempta enim aeternitate nihilo beatior Iuppiter quam Epicurus;
-                    Illud dico, ea, quae dicat, praeclare inter se cohaerere.
-                    Longum est enim ad omnia respondere, quae a te dicta sunt.
-                    Non autem hoc: igitur ne illud quidem. Videamus igitur sententias eorum, tum ad verba redeamus.
-                    Quae cum dixisset, finem ille. Re mihi non aeque satisfacit, et quidem locis pluribus.
-                    Cum autem in quo sapienter dicimus, id a primo rectissime dicitur.
-                    Non enim iam stirpis bonum quaeret, sed animalis.</p>
-                <p>Quid est, quod ab ea absolvi et perfici debeat?
-                    Cuius quidem, quoniam Stoicus fuit, sententia condemnata mihi videtur esse inanitas ista verborum.
-                    At ille non pertimuit saneque fidenter: Istis quidem ipsis verbis, inquit;
-                    Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit.
-                    Sint modo partes vitae beatae. Ergo ita: non posse honeste vivi, nisi honeste vivatur?
-                    Quae cum ita sint, effectum est nihil esse malum, quod turpe non sit.
-                    Itaque dicunt nec dubitant: mihi sic usus est, tibi ut opus est facto, fac.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem.
-                    Quae est igitur causa istarum angustiarum? Pollicetur certe.
-                    Verba tu fingas et ea dicas, quae non sentias?</p>
-                <p>Dempta enim aeternitate nihilo beatior Iuppiter quam Epicurus;
-                    Illud dico, ea, quae dicat, praeclare inter se cohaerere.
-                    Longum est enim ad omnia respondere, quae a te dicta sunt.
-                    Non autem hoc: igitur ne illud quidem. Videamus igitur sententias eorum, tum ad verba redeamus.
-                    Quae cum dixisset, finem ille. Re mihi non aeque satisfacit, et quidem locis pluribus.
-                    Cum autem in quo sapienter dicimus, id a primo rectissime dicitur.
-                    Non enim iam stirpis bonum quaeret, sed animalis.</p>
-                <p>Quid est, quod ab ea absolvi et perfici debeat?
-                    Cuius quidem, quoniam Stoicus fuit, sententia condemnata mihi videtur esse inanitas ista verborum.
-                    At ille non pertimuit saneque fidenter: Istis quidem ipsis verbis, inquit;
-                    Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit.
-                    Sint modo partes vitae beatae. Ergo ita: non posse honeste vivi, nisi honeste vivatur?
-                    Quae cum ita sint, effectum est nihil esse malum, quod turpe non sit.
-                    Itaque dicunt nec dubitant: mihi sic usus est, tibi ut opus est facto, fac.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem.
-                    Quae est igitur causa istarum angustiarum? Pollicetur certe.
-                    Verba tu fingas et ea dicas, quae non sentias?</p>
-                <p>Dempta enim aeternitate nihilo beatior Iuppiter quam Epicurus;
-                    Illud dico, ea, quae dicat, praeclare inter se cohaerere.
-                    Longum est enim ad omnia respondere, quae a te dicta sunt.
-                    Non autem hoc: igitur ne illud quidem. Videamus igitur sententias eorum, tum ad verba redeamus.
-                    Quae cum dixisset, finem ille. Re mihi non aeque satisfacit, et quidem locis pluribus.
-                    Cum autem in quo sapienter dicimus, id a primo rectissime dicitur.
-                    Non enim iam stirpis bonum quaeret, sed animalis.</p>
-                <p>Quid est, quod ab ea absolvi et perfici debeat?
-                    Cuius quidem, quoniam Stoicus fuit, sententia condemnata mihi videtur esse inanitas ista verborum.
-                    At ille non pertimuit saneque fidenter: Istis quidem ipsis verbis, inquit;
-                    Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit.
-                    Sint modo partes vitae beatae. Ergo ita: non posse honeste vivi, nisi honeste vivatur?
-                    Quae cum ita sint, effectum est nihil esse malum, quod turpe non sit.
-                    Itaque dicunt nec dubitant: mihi sic usus est, tibi ut opus est facto, fac.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem.
-                    Quae est igitur causa istarum angustiarum? Pollicetur certe.
-                    Verba tu fingas et ea dicas, quae non sentias?</p>
-                <p>Dempta enim aeternitate nihilo beatior Iuppiter quam Epicurus;
-                    Illud dico, ea, quae dicat, praeclare inter se cohaerere.
-                    Longum est enim ad omnia respondere, quae a te dicta sunt.
-                    Non autem hoc: igitur ne illud quidem. Videamus igitur sententias eorum, tum ad verba redeamus.
-                    Quae cum dixisset, finem ille. Re mihi non aeque satisfacit, et quidem locis pluribus.
-                    Cum autem in quo sapienter dicimus, id a primo rectissime dicitur.
-                    Non enim iam stirpis bonum quaeret, sed animalis.</p>
-                <p>Quid est, quod ab ea absolvi et perfici debeat?
-                    Cuius quidem, quoniam Stoicus fuit, sententia condemnata mihi videtur esse inanitas ista verborum.
-                    At ille non pertimuit saneque fidenter: Istis quidem ipsis verbis, inquit;
-                    Vide, ne etiam menses! nisi forte eum dicis, qui, simul atque arripuit, interficit.
-                    Sint modo partes vitae beatae. Ergo ita: non posse honeste vivi, nisi honeste vivatur?
-                    Quae cum ita sint, effectum est nihil esse malum, quod turpe non sit.
-                    Itaque dicunt nec dubitant: mihi sic usus est, tibi ut opus est facto, fac.</p>
-            </div>
-        </div>
-        <div id="main">
-            <div id="toggleSidebar">
-                <button id="toggleSidebarButton">
-                    <div id="toggleSidebarArrow"></div>
-                </button>
-                <div id="toggleSidebarTooltip">
-                    Show side panel
+            <div data-simplebar id="sidebar" class="desktop">
+                <div id="bldgInfo">
+                    <img id="bldgImg" src="images/nassau.jpg">
+                    <div id="bldgTitle">
+                        <h1 id="bldgName">No building selected</h1>
+                        <h3 id="bldgCategory">No building selected</h3>
+                    </div>
+                </div>
+                <div class="sidebarContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem.
+                        Quae est igitur causa istarum angustiarum? Pollicetur certe.
+                        Verba tu fingas et ea dicas, quae non sentias?</p>
+                    <p>Dempta enim aeternitate nihilo beatior Iuppiter quam Epicurus;
+                        Illud dico, ea, quae dicat, praeclare inter se cohaerere.
+                        Longum est enim ad omnia respondere, quae a te dicta sunt.
+                        Non autem hoc: igitur ne illud quidem. Videamus igitur sententias eorum, tum ad verba redeamus.
+                        Quae cum dixisset, finem ille. Re mihi non aeque satisfacit, et quidem locis pluribus.
+                        Cum autem in quo sapienter dicimus, id a primo rectissime dicitur.
+                        Non enim iam stirpis bonum quaeret, sed animalis.</p>
+                </div>
+                <div class="subsite">
+                    <div class="subInfo">
+                        <img class="subImg" src="images/nassau.jpg">
+                        <div class="subTitle">
+                            <h2 class="subName">Subsite 1</h2>
+                            <h3 class="subCategory">No building selected</h3>
+                        </div>
+                    </div>
+                    <div class="sidebarContent">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem.
+                            Quae est igitur causa istarum angustiarum? Pollicetur certe.
+                            Verba tu fingas et ea dicas, quae non sentias?</p>
+                        <p>Dempta enim aeternitate nihilo beatior Iuppiter quam Epicurus;
+                            Illud dico, ea, quae dicat, praeclare inter se cohaerere.
+                            Longum est enim ad omnia respondere, quae a te dicta sunt.
+                            Non autem hoc: igitur ne illud quidem. Videamus igitur sententias eorum, tum ad verba redeamus.
+                            Quae cum dixisset, finem ille. Re mihi non aeque satisfacit, et quidem locis pluribus.
+                            Cum autem in quo sapienter dicimus, id a primo rectissime dicitur.
+                            Non enim iam stirpis bonum quaeret, sed animalis.</p>
+                    </div>
                 </div>
             </div>
-            <div id="bldgNameHover">
-                <b>Nassau Hall</b>
+            <div id="main">
+                <div id="toggleSidebar" class="desktop">
+                    <button id="toggleSidebarButton">
+                        <div id="toggleSidebarArrow"></div>
+                    </button>
+                    <div id="toggleSidebarTooltip">
+                        Show side panel
+                    </div>
+                </div>
+                <div id="psLogo">
+                    <a href="https://staging.graftonstudio.com/princeton/visualizations">
+                        <img src="images/princeton-and-slavery-logo-on-dark.png"/>
+                    </a>
+                </div>
+                <div id="legend">
+                    Legend (under development)
+                </div>
+                <div id="map">
+                </div>
             </div>
-            <div id="map">
-            </div>
-        </div>
         </div>
     </body>
 </html>
