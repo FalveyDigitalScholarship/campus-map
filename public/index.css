@@ -13,18 +13,23 @@ Color Palette (Pastel)
 
 h1 {
     font-family: 'Muli', sans-serif;
-    font-size: 32px;
+    font-size: 24pt;
+    margin: 0 0 6px 0;
+}
+h2 {
+    font-family: 'Muli', sans-serif;
+    font-size: 20pt;
     margin: 0 0 6px 0;
 }
 h3 {
     font-family: 'Muli', sans-serif;
     font-weight: normal;
     font-style: italic;
-    font-size: 16px;
+    font-size: 14pt;
     margin: 0;
 }
 p {
-    font-size: 14px;
+    font-size: 11pt;
 }
 
 html {
@@ -52,30 +57,33 @@ body {
     z-index: 314158;
     top: 0;
     left: -400px;
-    background-color: #FFF;
-    box-shadow: 2px 0px 4px #888;
+    background-color: #2C2C2C;
+    box-shadow: 2px 0px 4px #444;
     overflow-x: hidden;
     transition: 0.5s;
 }
 #sidebar img {
     width: 100%;
 }
-
-#bldgNameDiv {
-    padding-top: 20px;
-    padding-bottom: 20px;
+#sidebar #bldgInfo, #sidebar .subInfo {
+    padding: 5 5 0 5;
     text-align: center;
-    background-color: #ECB4BF;
+    color: #2C2C2C;
+    background-color: #DDDDDD;
+    opacity: 0.7;
 }
-
-#sidebarContent {
+#sidebar #bldgTitle, #sidebar .subTitle {
+    padding: 20 0 20 0;
+}
+#sidebar .sidebarContent {
     padding-left: 15px;
     padding-right: 15px;
+    color: #D1D1D1;
 }
 
 #toggleSidebar {
     position: absolute;
-    top: 26;
+    top: 20;
     left: 0;
     z-index: 314159;
     transition: margin-left 0.5s;
@@ -83,11 +91,11 @@ body {
 #toggleSidebarButton {
     width: 26px;
     height: 42px;
-    background-color: #FFF;
-    box-shadow: 2px 1px 4px #888;
+    /*background-color: #F1F1F1;*/
+    opacity: 0.7;
+    box-shadow: 2px 1px 4px #444;
     border: 0;
     padding: 0;
-    color: #FFF;
 }
 #toggleSidebarButton:focus {
     outline: 0;
@@ -102,22 +110,41 @@ body {
 #toggleSidebarTooltip {
     margin: 5px 0px 5px 10px;
     padding: 8px 8px 8px 8px;
-    /*padding-top: 12px;
-    padding-bottom: 12px;*/
-    font-size: 10pt;
+    font-size: 8pt;
     height: 100%;
     float: right;
     visibility: hidden;
-    background-color: #FFF;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #444;
+    opacity: 0.75;
+    color: #DDD;
 }
 
-#bldgNameHover {
+#psLogo {
     position: absolute;
-    bottom: 30;
-    right: 20;
+    top: 10;
+    right: 80;
     z-index: 314159;
-    font-size: 18px;
+
+    height: 62px;
+}
+#psLogo img {
+    height: 100%;
+}
+
+#legend {
+    position: absolute;
+    bottom: 40;
+    right: 10;
+    z-index: 314159;
+    padding: 10 10 10 10;
+
+    width: 400px;
+    height: 200px;
+    background-color: #444;
+    opacity: 0.75;
+
+    color: #DDD;
+    font-size: 11pt;
 }
 
 #main {
@@ -127,4 +154,38 @@ body {
 #map {
     width: 100%;
     height: 100%;
+}
+
+.bldgPopup {
+    font-size: 11pt;
+}
+
+/* Overwrite leaflet styles */
+
+/* Leaflet popups (building names) */
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: #444;
+    opacity: 0.75;
+    text-align: center;
+    color: #DDD;
+}
+
+/* Zoom controls */
+a.leaflet-control-zoom-in, a.leaflet-control-zoom-out {
+    background-color: #444;
+    opacity: 0.75;
+    color: #DDD;
+}
+a.leaflet-control-zoom-in:hover, a.leaflet-control-zoom-out:hover {
+    background-color: #888;
+}
+
+/* Attribution text (bottom right) */
+div.leaflet-control-attribution.leaflet-control {
+    background-color: #444;
+    color: #DDD;
+    opacity: 0.75;
+}
+div.leaflet-control-attribution.leaflet-control a {
+    color: #5ad0ff;
 }

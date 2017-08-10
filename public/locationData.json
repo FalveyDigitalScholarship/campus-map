@@ -1,0 +1,119 @@
+[
+    {
+        "name": "Nassau Hall",
+        "category": "purple",
+        "image": "nassau.jpg",
+        "subsites": [
+            {
+                "name": "Plaque - 1st Floor, West Hallway",
+                "category": "purple"
+            },
+            {
+                "name": "Plaque",
+                "category": "purple"
+            },
+            {
+                "name": "War Dead Memorial",
+                "category": "purple"
+            }
+        ]
+    },
+    {
+        "name": "Burr Hall",
+        "category": "purple",
+        "image": "burr.jpg"
+
+    },
+    {
+        "name": "Palmer House",
+        "category": "red"
+    },
+    {
+        "name": "Walter Lowrie House",
+        "category": "purple"
+    },
+    {
+        "name": "Stone Bench (Stockton Court, Alexander Hall)",
+        "category": "purple"
+    },
+    {
+        "name": "Dickinson Hall",
+        "category": "purple",
+        "image": "dickinson.jpg",
+        "subsites": [
+            {
+                "name": "Portrait & Furnishings - Room 223",
+                "category": "purple"
+            }
+        ]
+    },
+    {
+        "name": "Edwards Hall",
+        "category": "purple",
+        "image": "edwards.jpg"
+    },
+    {
+        "name": "FitzRandolph Gate",
+        "category": "purple"
+    },
+    {
+        "name": "Wall of Holder Hall",
+        "category": "purple"
+    },
+    {
+        "name": "Cuyler Hall",
+        "category": "none",
+        "subsites": [
+            {
+                "name": "Plaque - 3rd Entry",
+                "category": "blue"
+            }
+        ]
+    },
+    {
+        "name": "Engineering Quadrangle",
+        "category": "none",
+        "subsites": [
+            {
+                "name": "Inscription over Main Entrance",
+                "category": "orange"
+            }
+        ]
+    },
+    {
+        "name": "Whig Hall",
+        "category": "none",
+        "subsites": [
+            {
+                "name": "Bust",
+                "category": "orange"
+            },
+            {
+                "name": "Assembly Room - 2nd Floor",
+                "category": "purple"
+            }
+        ]
+    },
+    {
+        "name": "Madison Hall",
+        "category": "purple",
+        "image": "madison.jpg"
+    },
+    {
+        "name": "Prospect House",
+        "category": "red"
+    },
+    {
+        "name": "Bench (near Whig Hall)",
+        "category": "purple"
+    },
+    {
+        "name": "Stanhope Hall",
+        "category": "purple"
+    },
+    {
+        "name": "Witherspoon Hall",
+        "category": "purple",
+        "image": "witherspoon.jpg"
+    }
+]
