@@ -1,5 +1,4 @@
 var myMap = null;
-var locationData = null;
 var subsitePrototype = null;
 
 var polygonSelected = null;
@@ -164,6 +163,12 @@ function DisplayBuildingInfo(info) {
     $("#bldgName").html(name);
     $("#bldgInfo").css("background-color", color);
     $("#toggleSidebarButton").css("background-color", color);
+    if (info.description === null) {
+        $("#bldgDescription").html("");
+    }
+    else {
+        $("#bldgDescription").html("<p>" + info.description + "</p>");
+    }
 
     if (info.category === "none") {
         $("#bldgImg").hide();
@@ -208,6 +213,8 @@ function DisplayBuildingInfo(info) {
             $subDiv.find(".subName").html(subName);
             $subDiv.find(".subInfo").css("background-color", colors[subCategory]);
             $subDiv.find(".subCategory").html(categories[subCategory]);
+            //if ()
+            $subDiv.find(".subDescription").html(info.subsites[i].description);
             //$subDiv.find(".subImg").attr("src", "");
         }
     }
@@ -239,12 +246,6 @@ function SelectPolygon(polygon) {
 function UpdateLegendFromPolygon(polygon) {
     if (polygon !== null) {
         var category = polygon.options.category;
-
-        /*if (polygon.options.category == "none"
-        && polygon.options.subsites.length == 1) {
-            category = polygon.options.subsites[0]["category"];
-        }*/
-
         legendEntries[category].css("background-color", legendEntryColorHighlight);
     }
     else {
@@ -328,15 +329,16 @@ $(function() {
         ],
         zoomControl: false // add manually later to top right
     });
-    L.control.zoom({position: "topright"}).addTo(myMap);
+    L.control.zoom({position: "topright"}).addTo(myMap); // zoom control
+    myMap.on("click", OnClickMapEvent);
 
     // Initialize MapBox tile layer.
     L.tileLayer("https://api.mapbox.com/{style}/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 20,
         minZoom: 16,
-        //style: "styles/v1/mapbox/dark-v9",
-        style: "styles/v1/jmrico01/cj64oe3nq5ibq2rr8tprzvy56",
+        //style: "styles/v1/jmrico01/cj66ydy6a7m3j2snoyxxom7pw", // light
+        style: "styles/v1/jmrico01/cj64oe3nq5ibq2rr8tprzvy56", // dark
         accessToken: "pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw"
     }).addTo(myMap);
 
@@ -372,68 +374,5 @@ $(function() {
     });
     $("#toggleSidebarButton").hide();
 
-    $.ajax({
-        dataType: "json",
-        url: "/locationData.json",
-        success: function(data, textStatus, jqXHR) {
-            locationData = data;
-
-            $.ajax({
-                dataType: "json",
-                url: "/locationCoords.json",
-                success: function(coords, textStatus, jqXHR) {
-                    for (var i = 0; i < locationData.length; i++) {
-                        var locName = locationData[i]["name"];
-
-                        if (!(locName in coords))
-                            continue; // temporary. all sites should have coordinates
-
-                        var color = colors[locationData[i]["category"]];
-                        /*if (locationData[i]["category"] == "none"
-                        && locationData[i]["subsites"].length == 1) {
-                            color = colors[locationData[i]["subsites"][0]["category"]];
-                        }*/
-                        var image = locationData[i]["image"];
-                        if (image === null || image === undefined) {
-                            image = "nassau.jpg";
-                        }
-                        var subsites = null;
-                        if ("subsites" in locationData[i]) {
-                            subsites = locationData[i]["subsites"];
-                        }
-
-                        var polygon = L.polygon(coords[locName], {
-                            name: locName,
-                            category: locationData[i]["category"],
-                            image: image,
-                            color: color,
-                            subsites: subsites,
-                            bubblingMouseEvents: false
-                        }).addTo(myMap);
-                        
-                        polygon.setStyle(styleIdle);
-                        
-                        polygon.on("click", OnClickBldg);
-                        polygon.on("mouseover", OnMouseEnterBldg);
-                        polygon.on("mouseout", OnMouseExitBldg);
-
-                        if (locName === startSelection) {
-                            // TODO fix panning, take into account sidebar width
-                            myMap.panTo(RecenterWithSidebar(polygon.getCenter()), {
-                                animate: false
-                            });
-
-                            SelectPolygon(polygon);
-
-                            if (!sidebarOpen) {
-                                ToggleSidebar();
-                            }
-                        }
-                    }
-
-                    myMap.on("click", OnClickMapEvent);
-                }
-            });
-        }
-    });
+    LoadPolygons();
 });

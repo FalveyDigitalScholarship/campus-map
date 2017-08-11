@@ -2,25 +2,20 @@
     {
         "name": "Nassau Hall",
         "category": "dedicatedToOwner",
+        "description": "nassau.txt",
         "image": "nassau.jpg",
         "subsites": [
             {
-                "name": "Plaque - 1st Floor, West Hallway",
-                "category": "dedicatedToOwner"
-            },
-            {
-                "name": "Plaque",
-                "category": "dedicatedToOwner"
-            },
-            {
-                "name": "War Dead Memorial",
-                "category": "dedicatedToOwner"
+                "name": "Civil War Memorial",
+                "category": "dedicatedToOwner",
+                "description": "civilwar.txt"
             }
         ]
     },
     {
         "name": "Burr Hall",
         "category": "dedicatedToOwner",
+        "description": "burr.txt",
         "image": "burr.jpg"
 
     },
@@ -29,23 +24,17 @@
         "category": "donatedByOwner"
     },
     {
-        "name": "Walter Lowrie House",
-        "category": "dedicatedToOwner"
+        "name": "Prospect House",
+        "category": "donatedByOwner"
     },
     {
-        "name": "Stone Bench (Stockton Court, Alexander Hall)",
+        "name": "Walter Lowrie House",
         "category": "dedicatedToOwner"
     },
     {
         "name": "Dickinson Hall",
         "category": "dedicatedToOwner",
-        "image": "dickinson.jpg",
-        "subsites": [
-            {
-                "name": "Portrait & Furnishings - Room 223",
-                "category": "dedicatedToOwner"
-            }
-        ]
+        "image": "dickinson.jpg"
     },
     {
         "name": "Edwards Hall",
@@ -53,15 +42,83 @@
         "image": "edwards.jpg"
     },
     {
+        "name": "Madison Hall",
+        "category": "dedicatedToOwner",
+        "image": "madison.jpg"
+    },
+    {
+        "name": "Stanhope Hall",
+        "category": "dedicatedToOwner"
+    },
+    {
+        "name": "Witherspoon Hall",
+        "category": "dedicatedToOwner",
+        "image": "witherspoon.jpg"
+    },
+    {
+        "name": "Dod Hall",
+        "category": "dedicatedToOwner"
+    },
+    {
+        "name": "Pyne Hall",
+        "category": "dedicatedToTies"
+    },
+    {
+        "name": "East Pyne",
+        "category": "dedicatedToTies"
+    },
+    {
+        "name": "Maclean House",
+        "category": "donatedByOwner"
+    },
+    {
+        "name": "Joseph Henry House",
+        "category": "dedicatedToOwner"
+    },
+    {
         "name": "FitzRandolph Gate",
         "category": "dedicatedToOwner"
+    },
+    {
+        "name": "Statue of John Witherspoon",
+        "category": "dedicatedToOwner"
+    },
+    {
+        "name": "Frist Campus Center",
+        "category": "none",
+        "subsites": [
+            {
+                "name": "Statue of Joseph Henry",
+                "category": "dedicatedToTies"
+            }
+        ]
+    },
+    {
+        "name": "Firestone Library",
+        "category": "none",
+        "subsites": [
+            {
+                "name": "Placeholder",
+                "category": "donatedByOwner"
+            }
+        ]
+    },
+    {
+        "name": "University Chapel",
+        "category": "none",
+        "subsites": [
+            {
+                "name": "Placeholder",
+                "category": "donatedByOwner"
+            }
+        ]
     },
     {
         "name": "Holder Hall",
         "category": "none",
         "subsites": [
             {
-                "name": "X (North? South?) Wall",
+                "name": "(North? South?) Wall",
                 "category": "dedicatedToOwner"
             }
         ]
@@ -99,27 +156,5 @@
                 "category": "dedicatedToOwner"
             }
         ]
-    },
-    {
-        "name": "Madison Hall",
-        "category": "dedicatedToOwner",
-        "image": "madison.jpg"
-    },
-    {
-        "name": "Prospect House",
-        "category": "donatedByOwner"
-    },
-    {
-        "name": "Bench (near Whig Hall)",
-        "category": "dedicatedToOwner"
-    },
-    {
-        "name": "Stanhope Hall",
-        "category": "dedicatedToOwner"
-    },
-    {
-        "name": "Witherspoon Hall",
-        "category": "dedicatedToOwner",
-        "image": "witherspoon.jpg"
     }
 ]
