@@ -5,12 +5,11 @@ var locationData = null;
 var locationCoords = null;
 
 var colors = {
-    "idle": "#444444",
-    "purple": "#C6ACC7",
-    "red": "#ECB4BF",
-    "orange": "#FBD7B7",
-    "blue": "#C2E3EC",
-    "none": "#FFFFFF"
+    "dedicatedToOwner": "#C6ACC7", // purple
+    "donatedByOwner": "#ECB4BF", // red
+    "dedicatedToTies": "#FBD7B7", // orange
+    "donatedByTies": "#C2E3EC", // blue
+    "none": "#FFFFFF" // white
 };
 
 var styleIdle = {
@@ -80,13 +79,9 @@ function OnMapClick(event) {
 function EditLocation(index) {
     locInd = index;
 
-    var $nameField = $("#leName");
-    var $categoryField = $("#leCategory");
-
     var locName = locationData[locInd]["name"];
 
-    $nameField.html(locName);
-    $categoryField.html(locationData[locInd]["category"]);
+    $("#leName").html(locName);
     
     DrawPolygon(locationCoords[locName], colors[locationData[locInd]["category"]]);
 }
@@ -166,12 +161,11 @@ $(function() {
     });
 
     L.tileLayer("https://api.mapbox.com/{style}/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
-        //'https://api.tiles.mapbox.com/{id}/tiles/256/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 20,
         minZoom: 16,
-        //style: "styles/v1/mapbox/dark-v9",
-        style: "styles/v1/***REMOVED***",
+        //style: "styles/v1/***REMOVED***", // light
+        style: "styles/v1/***REMOVED***", // dark
         accessToken: "***REMOVED***"
     }).addTo(myMap);
 

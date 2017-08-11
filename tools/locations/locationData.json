@@ -1,64 +1,126 @@
 [
     {
         "name": "Nassau Hall",
-        "category": "purple",
+        "category": "dedicatedToOwner",
+        "description": "nassau.txt",
         "image": "nassau.jpg",
         "subsites": [
             {
-                "name": "Plaque - 1st Floor, West Hallway",
-                "category": "purple"
-            },
-            {
-                "name": "Plaque",
-                "category": "purple"
-            },
-            {
-                "name": "War Dead Memorial",
-                "category": "purple"
+                "name": "Civil War Memorial",
+                "category": "dedicatedToOwner",
+                "description": "civilwar.txt"
             }
         ]
     },
     {
         "name": "Burr Hall",
-        "category": "purple",
+        "category": "dedicatedToOwner",
         "image": "burr.jpg"
 
     },
     {
         "name": "Palmer House",
-        "category": "red"
+        "category": "donatedByOwner"
+    },
+    {
+        "name": "Prospect House",
+        "category": "donatedByOwner"
     },
     {
         "name": "Walter Lowrie House",
-        "category": "purple"
-    },
-    {
-        "name": "Stone Bench (Stockton Court, Alexander Hall)",
-        "category": "purple"
+        "category": "dedicatedToOwner"
     },
     {
         "name": "Dickinson Hall",
-        "category": "purple",
-        "image": "dickinson.jpg",
+        "category": "dedicatedToOwner",
+        "image": "dickinson.jpg"
+    },
+    {
+        "name": "Edwards Hall",
+        "category": "dedicatedToOwner",
+        "image": "edwards.jpg"
+    },
+    {
+        "name": "Madison Hall",
+        "category": "dedicatedToOwner",
+        "image": "madison.jpg"
+    },
+    {
+        "name": "Stanhope Hall",
+        "category": "dedicatedToOwner"
+    },
+    {
+        "name": "Witherspoon Hall",
+        "category": "dedicatedToOwner",
+        "image": "witherspoon.jpg"
+    },
+    {
+        "name": "Dod Hall",
+        "category": "dedicatedToOwner"
+    },
+    {
+        "name": "Pyne Hall",
+        "category": "dedicatedToTies"
+    },
+    {
+        "name": "East Pyne",
+        "category": "dedicatedToTies"
+    },
+    {
+        "name": "Maclean House",
+        "category": "donatedByOwner"
+    },
+    {
+        "name": "Joseph Henry House",
+        "category": "dedicatedToOwner"
+    },
+    {
+        "name": "FitzRandolph Gate",
+        "category": "dedicatedToOwner"
+    },
+    {
+        "name": "Statue of John Witherspoon",
+        "category": "dedicatedToOwner"
+    },
+    {
+        "name": "Frist Campus Center",
+        "category": "none",
         "subsites": [
             {
-                "name": "Portrait & Furnishings - Room 223",
-                "category": "purple"
+                "name": "Statue of Joseph Henry",
+                "category": "dedicatedToTies"
             }
         ]
     },
     {
-        "name": "Edwards Hall",
-        "category": "purple",
-        "image": "edwards.jpg"
+        "name": "Firestone Library",
+        "category": "none",
+        "subsites": [
+            {
+                "name": "Placeholder",
+                "category": "donatedByOwner"
+            }
+        ]
     },
     {
-        "name": "FitzRandolph Gate",
-        "category": "purple"
+        "name": "University Chapel",
+        "category": "none",
+        "subsites": [
+            {
+                "name": "Placeholder",
+                "category": "donatedByOwner"
+            }
+        ]
     },
     {
-        "name": "Wall of Holder Hall",
-        "category": "purple"
+        "name": "Holder Hall",
+        "category": "none",
+        "subsites": [
+            {
+                "name": "(North? South?) Wall",
+                "category": "dedicatedToOwner"
+            }
+        ]
     },
     {
         "name": "Cuyler Hall",
@@ -66,7 +128,7 @@
         "subsites": [
             {
                 "name": "Plaque - 3rd Entry",
-                "category": "blue"
+                "category": "donatedByTies"
             }
         ]
     },
@@ -76,7 +138,7 @@
         "subsites": [
             {
                 "name": "Inscription over Main Entrance",
-                "category": "orange"
+                "category": "dedicatedToTies"
             }
         ]
     },
@@ -86,34 +148,12 @@
         "subsites": [
             {
                 "name": "Bust",
-                "category": "orange"
+                "category": "dedicatedToTies"
             },
             {
                 "name": "Assembly Room - 2nd Floor",
-                "category": "purple"
+                "category": "dedicatedToOwner"
             }
         ]
-    },
-    {
-        "name": "Madison Hall",
-        "category": "purple",
-        "image": "madison.jpg"
-    },
-    {
-        "name": "Prospect House",
-        "category": "red"
-    },
-    {
-        "name": "Bench (near Whig Hall)",
-        "category": "purple"
-    },
-    {
-        "name": "Stanhope Hall",
-        "category": "purple"
-    },
-    {
-        "name": "Witherspoon Hall",
-        "category": "purple",
-        "image": "witherspoon.jpg"
     }
 ]

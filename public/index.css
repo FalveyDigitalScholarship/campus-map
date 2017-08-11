@@ -22,14 +22,12 @@ h2 {
     margin: 0 0 4px 0;
 }
 h3 {
-    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     font-style: italic;
     font-size: 11pt;
     margin: 0;
 }
 h4 {
-    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     font-size: 11pt;
     margin: 0;
@@ -81,10 +79,18 @@ body {
 #sidebar #bldgTitle, #sidebar .subTitle {
     padding: 20 0 20 0;
 }
-#sidebar .sidebarContent {
+#sidebar #bldgDescription, #sidebar .subDescription {
     padding-left: 15px;
     padding-right: 15px;
     color: #D1D1D1;
+}
+#sidebar #bldgDescription a, #sidebar .subDescription a {
+    color: #5ad0ff;
+    text-decoration: none;
+}
+#sidebar #bldgDescription a:hover, #sidebar .subDescription a:hover {
+    color: #5ad0ff;
+    text-decoration: underline;
 }
 
 #toggleSidebar {

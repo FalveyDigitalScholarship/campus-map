@@ -22,7 +22,12 @@
         <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 
+        <!-- Markdown parser : https://github.com/showdownjs/showdown -->
+        <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.2/dist/showdown.min.js"></script>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
         <link rel="stylesheet" href="index.css"/>
+        <script src="loadData.js"></script>
         <script src="map.js"></script>
     </head>
     <body>
@@ -36,18 +41,7 @@
                         <h4 id="bldgSites">No building selected</h4>
                     </div>
                 </div>
-                <div id="bldgDescription" class="sidebarContent">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem.
-                        Quae est igitur causa istarum angustiarum? Pollicetur certe.
-                        Verba tu fingas et ea dicas, quae non sentias?</p>
-                    <p>Dempta enim aeternitate nihilo beatior Iuppiter quam Epicurus;
-                        Illud dico, ea, quae dicat, praeclare inter se cohaerere.
-                        Longum est enim ad omnia respondere, quae a te dicta sunt.
-                        Non autem hoc: igitur ne illud quidem. Videamus igitur sententias eorum, tum ad verba redeamus.
-                        Quae cum dixisset, finem ille. Re mihi non aeque satisfacit, et quidem locis pluribus.
-                        Cum autem in quo sapienter dicimus, id a primo rectissime dicitur.
-                        Non enim iam stirpis bonum quaeret, sed animalis.</p>
+                <div id="bldgDescription">
                 </div>
                 <!-- map.js will delete this on load and use this as a prototype for subsite info -->
                 <div id="subsitePrototype" class="subsite">
@@ -58,18 +52,7 @@
                             <h3 class="subCategory">Subsite category</h3>
                         </div>
                     </div>
-                    <div class="sidebarContent">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem.
-                            Quae est igitur causa istarum angustiarum? Pollicetur certe.
-                            Verba tu fingas et ea dicas, quae non sentias?</p>
-                        <p>Dempta enim aeternitate nihilo beatior Iuppiter quam Epicurus;
-                            Illud dico, ea, quae dicat, praeclare inter se cohaerere.
-                            Longum est enim ad omnia respondere, quae a te dicta sunt.
-                            Non autem hoc: igitur ne illud quidem. Videamus igitur sententias eorum, tum ad verba redeamus.
-                            Quae cum dixisset, finem ille. Re mihi non aeque satisfacit, et quidem locis pluribus.
-                            Cum autem in quo sapienter dicimus, id a primo rectissime dicitur.
-                            Non enim iam stirpis bonum quaeret, sed animalis.</p>
+                    <div class="subDescription">
                     </div>
                 </div>
             </div>
@@ -98,7 +81,7 @@
                     </div>
                     <div id="legendLastEntry" class="legendEntry">
                         <div class="legendEntryContainer">
-                            <div class="legendEntryText" style="color: #DDD">Not categorized, but contains other sites</div>
+                            <div class="legendEntryText" style="color: #DDD">Not categorized, contains other sites</div>
                             <div class="legendEntryColor" style="background-color: #DDD"></div>
                         </div>
                     </div>
