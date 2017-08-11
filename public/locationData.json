@@ -2,86 +2,101 @@
     {
         "name": "Nassau Hall",
         "category": "dedicatedToOwner",
-        "description": "nassau.txt",
+        "description": "test.txt",
         "image": "nassau.jpg",
         "subsites": [
             {
                 "name": "Civil War Memorial",
                 "category": "dedicatedToOwner",
-                "description": "civilwar.txt"
+                "description": "test.txt"
             }
         ]
     },
     {
         "name": "Burr Hall",
         "category": "dedicatedToOwner",
-        "description": "burr.txt",
+        "description": "test.txt",
         "image": "burr.jpg"
 
     },
     {
         "name": "Palmer House",
-        "category": "donatedByOwner"
+        "category": "donatedByOwner",
+        "description": "test.txt"
     },
     {
         "name": "Prospect House",
-        "category": "donatedByOwner"
+        "category": "donatedByOwner",
+        "description": "test.txt"
     },
     {
         "name": "Walter Lowrie House",
-        "category": "dedicatedToOwner"
+        "category": "dedicatedToOwner",
+        "description": "test.txt"
     },
     {
         "name": "Dickinson Hall",
         "category": "dedicatedToOwner",
+        "description": "test.txt",
         "image": "dickinson.jpg"
     },
     {
         "name": "Edwards Hall",
         "category": "dedicatedToOwner",
+        "description": "test.txt",
         "image": "edwards.jpg"
     },
     {
         "name": "Madison Hall",
         "category": "dedicatedToOwner",
+        "description": "test.txt",
         "image": "madison.jpg"
     },
     {
         "name": "Stanhope Hall",
-        "category": "dedicatedToOwner"
+        "category": "dedicatedToOwner",
+        "description": "test.txt"
     },
     {
         "name": "Witherspoon Hall",
         "category": "dedicatedToOwner",
+        "description": "test.txt",
         "image": "witherspoon.jpg"
     },
     {
         "name": "Dod Hall",
-        "category": "dedicatedToOwner"
+        "category": "dedicatedToOwner",
+        "description": "test.txt"
     },
     {
         "name": "Pyne Hall",
-        "category": "dedicatedToTies"
+        "category": "dedicatedToTies",
+        "description": "test.txt"
     },
     {
         "name": "East Pyne",
-        "category": "dedicatedToTies"
+        "category": "dedicatedToTies",
+        "description": "test.txt"
     },
     {
         "name": "Maclean House",
-        "category": "donatedByOwner"
+        "category": "donatedByOwner",
+        "description": "test.txt"
     },
     {
         "name": "Joseph Henry House",
-        "category": "dedicatedToOwner"
+        "category": "dedicatedToOwner",
+        "description": "test.txt"
     },
     {
         "name": "FitzRandolph Gate",
-        "category": "dedicatedToOwner"
+        "category": "dedicatedToOwner",
+        "description": "test.txt"
     },
     {
         "name": "Statue of John Witherspoon",
-        "category": "dedicatedToOwner"
+        "category": "dedicatedToOwner",
+        "description": "test.txt"
     },
     {
         "name": "Frist Campus Center",
@@ -89,7 +104,8 @@
         "subsites": [
             {
                 "name": "Statue of Joseph Henry",
-                "category": "dedicatedToTies"
+                "category": "dedicatedToTies",
+                "description": "test.txt"
             }
         ]
     },
@@ -99,7 +115,8 @@
         "subsites": [
             {
                 "name": "Placeholder",
-                "category": "donatedByOwner"
+                "category": "donatedByOwner",
+                "description": "test.txt"
             }
         ]
     },
@@ -109,7 +126,8 @@
         "subsites": [
             {
                 "name": "Placeholder",
-                "category": "donatedByOwner"
+                "category": "donatedByOwner",
+                "description": "test.txt"
             }
         ]
     },
