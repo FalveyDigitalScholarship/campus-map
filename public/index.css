@@ -14,19 +14,19 @@ Color Palette (Pastel)
 h1 {
     font-family: 'Muli', sans-serif;
     font-size: 22pt;
-    margin: 0 0 6px 0;
+    margin: 0;
 }
 h2 {
     font-family: 'Muli', sans-serif;
     font-size: 16pt;
-    margin: 0 0 4px 0;
+    margin: 0;
 }
 h3 {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     font-style: italic;
     font-size: 11pt;
-    margin: 0;
+    margin: 8 0 0 0;
 }
 h4 {
     font-family: 'Open Sans', sans-serif;
