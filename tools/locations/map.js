@@ -4,14 +4,6 @@ var locInd = null;
 var locationData = null;
 var locationCoords = null;
 
-var colors = {
-    "dedicatedToOwner": "#C6ACC7", // purple
-    "donatedByOwner": "#ECB4BF", // red
-    "dedicatedToTies": "#FBD7B7", // orange
-    "donatedByTies": "#C2E3EC", // blue
-    "none": "#FFFFFF" // white
-};
-
 var styleIdle = {
     weight: 2,
     opacity: 0.75,
@@ -83,7 +75,7 @@ function EditLocation(index) {
 
     $("#leName").html(locName);
     
-    DrawPolygon(locationCoords[locName], colors[locationData[locInd]["category"]]);
+    DrawPolygon(locationCoords[locName], "#FFF");
 }
 
 function EditCoordsClick() {
@@ -122,7 +114,7 @@ function EditCoordsDone(save) {
         locationCoords[locName] = coords;
 
     DrawLine([]); // clear line
-    DrawPolygon(locationCoords[locName], colors[locationData[locInd]["category"]]);
+    DrawPolygon(locationCoords[locName], "#FFF");
 }
 
 function NextClick() {

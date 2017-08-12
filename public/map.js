@@ -15,7 +15,7 @@ var sidebarOpen = false;
 
 var startSelection = "Nassau Hall";
     
-var colors = {
+/*var colors = {
     "dedicatedToOwner": "#C6ACC7", // purple
     "donatedByOwner": "#ECB4BF", // red
     "dedicatedToTies": "#FBD7B7", // orange
@@ -27,7 +27,7 @@ var categories = {
     "donatedByOwner": "Donated by slave owner",
     "dedicatedToTies": "Dedicated to someone with ties to slavery",
     "donatedByTies": "Donated by someone with ties to slavery"
-};
+};*/
 var legendEntries = {};
 
 var legendEntryColorHighlight = "#222";
@@ -120,7 +120,7 @@ function ToggleSidebar() {
     sidebarOpen = !sidebarOpen;
 }
 
-function GetPopupFromPolygon(polygon) {
+function MakePopupFromPolygon(polygon) {
     var name = polygon.options.name;
     var subsites = polygon.options.subsites;
 
@@ -129,7 +129,7 @@ function GetPopupFromPolygon(polygon) {
     var content = popupContent.format(name);
     if (subsites != null) {
         var siteString = "";
-        if (polygon.options.category !== "none") {
+        if (polygon.options.description !== null) {
             siteString += "+";
         }
         siteString += subsites.length;
@@ -158,21 +158,21 @@ function GetPopupFromPolygon(polygon) {
 
 function DisplayBuildingInfo(info) {
     var name = info.name;
-    var color = colors[info.category];
+    //var color = colors[info.category];
 
     $("#bldgName").html(name);
-    $("#bldgInfo").css("background-color", color);
-    $("#toggleSidebarButton").css("background-color", color);
-    if (info.description === null) {
-        $("#bldgDescription").html("");
+    //$("#bldgInfo").css("background-color", color);
+    //$("#toggleSidebarButton").css("background-color", color);
+    if (info.image === null) {
+        $("#bldgImg").hide();
     }
     else {
-        $("#bldgDescription").html("<p>" + info.description + "</p>");
+        $("#bldgImg").show();
+        $("#bldgImg").attr("src", "images/" + info.image);
     }
+    if (info.description === null) {
+        $("#bldgDescription").html("");
 
-    if (info.category === "none") {
-        $("#bldgImg").hide();
-        $("#bldgCategory").hide();
         if (info.subsites.length === 1) {
             $("#bldgSites").html("1 site");
         }
@@ -182,8 +182,8 @@ function DisplayBuildingInfo(info) {
         $("#bldgSites").show();
     }
     else {
-        $("#bldgCategory").show();
-        $("#bldgCategory").html(categories[info.category]);
+        $("#bldgDescription").html("<p>" + info.description + "</p>");
+
         if (info.subsites !== null) {
             if (info.subsites.length === 1) {
                 $("#bldgSites").html("+ 1 other site");
@@ -196,23 +196,29 @@ function DisplayBuildingInfo(info) {
         else {
             $("#bldgSites").hide();
         }
-        $("#bldgImg").show();
-        $("#bldgImg").attr("src", "images/" + info.image);
     }
+
+    /*if (info.category === "none") {
+        $("#bldgCategory").hide();
+    }
+    else {
+        $("#bldgCategory").show();
+        $("#bldgCategory").html(categories[info.category]);
+    }*/
 
     $(".subsite").remove();
     if (info.subsites !== null) {
         for (var i = 0; i < info.subsites.length; i++) {
             var subName = info.subsites[i].name;
-            var subCategory = info.subsites[i].category;
+            //var subCategory = info.subsites[i].category;
 
             var $subDiv = $("<div class=\"subsite\"></div>");
             $subDiv.html(subsitePrototype);
             $("#sidebar .simplebar-scroll-content .simplebar-content").append($subDiv);
                 
             $subDiv.find(".subName").html(subName);
-            $subDiv.find(".subInfo").css("background-color", colors[subCategory]);
-            $subDiv.find(".subCategory").html(categories[subCategory]);
+            //$subDiv.find(".subInfo").css("background-color", colors[subCategory]);
+            //$subDiv.find(".subCategory").html(categories[subCategory]);
             //if ()
             $subDiv.find(".subDescription").html(info.subsites[i].description);
             //$subDiv.find(".subImg").attr("src", "");
@@ -236,7 +242,7 @@ function SelectPolygon(polygon) {
         DisplayBuildingInfo(polygon.options);
 
         polygon.setStyle(styleSelected);
-        popupSelected = GetPopupFromPolygon(polygon);
+        popupSelected = MakePopupFromPolygon(polygon);
     }
     else {
         $("#toggleSidebarButton").hide();
@@ -244,7 +250,7 @@ function SelectPolygon(polygon) {
 }
 
 function UpdateLegendFromPolygon(polygon) {
-    if (polygon !== null) {
+    /*if (polygon !== null) {
         var category = polygon.options.category;
         legendEntries[category].css("background-color", legendEntryColorHighlight);
     }
@@ -252,7 +258,7 @@ function UpdateLegendFromPolygon(polygon) {
         for (category in legendEntries) {
             legendEntries[category].css("background-color", "transparent");
         }
-    }
+    }*/
 }
 
 function OnClickBldg(event) {
@@ -295,7 +301,7 @@ function OnMouseEnterBldg(event) {
     if (popupHover !== null) {
         popupHover.remove();
     }
-    popupHover = GetPopupFromPolygon(polygon);
+    popupHover = MakePopupFromPolygon(polygon);
 
     polygon.setStyle(styleHover);
     UpdateLegendFromPolygon(polygon);
@@ -337,18 +343,19 @@ $(function() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 20,
         minZoom: 16,
+        style: "styles/v1/jmrico01/cj68serkh1ncm2slt39g55r19", // color
         //style: "styles/v1/jmrico01/cj66ydy6a7m3j2snoyxxom7pw", // light
-        style: "styles/v1/jmrico01/cj64oe3nq5ibq2rr8tprzvy56", // dark
+        //style: "styles/v1/jmrico01/cj64oe3nq5ibq2rr8tprzvy56", // dark
         accessToken: "pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw"
     }).addTo(myMap);
-
+https://api.mapbox.com/styles/v1/jmrico01/cj68serkh1ncm2slt39g55r19/tiles/256/{level}/{col}/{row}@2x?access_token=pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw
     // Save sidebar subsite prototype.
     var $subsitePrototype = $("#subsitePrototype");
     subsitePrototype = $subsitePrototype.html();
     $subsitePrototype.remove();
 
     // Generate legend entries.
-    var legendEntryPrototype = $("#legendEntryPrototype").html();
+    /*var legendEntryPrototype = $("#legendEntryPrototype").html();
     $("#legendEntryPrototype").remove();
     for (var category in categories) {
         var $entry = $("<div class=\"legendEntry\"></div>");
@@ -364,7 +371,7 @@ $(function() {
     var $legendLastEntry = $("#legendLastEntry");
     legendEntries["none"] = $legendLastEntry.clone();
     $("#legend").append(legendEntries["none"]);
-    $legendLastEntry.remove();
+    $legendLastEntry.remove();*/
 
     $("#toggleSidebarButton").click(ToggleSidebar);
     $("#toggleSidebarButton").hover(function() {

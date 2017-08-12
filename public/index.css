@@ -7,10 +7,6 @@ Color Palette (Pastel)
     blue: #C2E3EC
 */
 
-/** {
-    font-family: 'Open Sans', sans-serif;
-}*/
-
 h1 {
     font-family: 'Muli', sans-serif;
     font-size: 22pt;
@@ -62,8 +58,9 @@ body {
     z-index: 314158;
     top: 0;
     left: -400px;
-    background-color: #2C2C2C;
-    box-shadow: 2px 0px 4px #444;
+    /*background-color: #2C2C2C;*/
+    background-color: #FFF;
+    box-shadow: 2px 0px 4px #666;
     overflow-x: hidden;
     transition: 0.5s;
 }
@@ -86,10 +83,10 @@ body {
 
     font-family: 'Open Sans', sans-serif;
     font-size: 11pt;
-    color: #DDD;
+    color: #444;
 }
 #sidebar #bldgDescription a, #sidebar .subDescription a {
-    color: #5ad0ff;
+    color: #0390c6;
     text-decoration: none;
 }
 #sidebar #bldgDescription a:hover, #sidebar .subDescription a:hover {
@@ -106,8 +103,8 @@ body {
 #toggleSidebarButton {
     width: 26px;
     height: 42px;
-    opacity: 0.7;
-    box-shadow: 2px 1px 4px #444;
+    /*opacity: 0.7;*/
+    box-shadow: 2px 1px 4px #666;
     border: 0;
     padding: 0;
 }
