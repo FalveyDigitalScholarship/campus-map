@@ -1,177 +1,144 @@
 [
     {
         "name": "Nassau Hall",
-        "category": "dedicatedToOwner",
         "description": "test.txt",
         "image": "nassau.jpg",
         "subsites": [
             {
                 "name": "Civil War Memorial",
-                "category": "dedicatedToOwner",
                 "description": "test.txt"
             }
         ]
     },
     {
         "name": "Burr Hall",
-        "category": "dedicatedToOwner",
         "description": "test.txt",
         "image": "burr.jpg"
 
     },
     {
         "name": "Palmer House",
-        "category": "donatedByOwner",
         "description": "test.txt"
     },
     {
         "name": "Prospect House",
-        "category": "donatedByOwner",
         "description": "test.txt"
     },
     {
         "name": "Walter Lowrie House",
-        "category": "dedicatedToOwner",
         "description": "test.txt"
     },
     {
         "name": "Dickinson Hall",
-        "category": "dedicatedToOwner",
         "description": "test.txt",
         "image": "dickinson.jpg"
     },
     {
         "name": "Edwards Hall",
-        "category": "dedicatedToOwner",
         "description": "test.txt",
         "image": "edwards.jpg"
     },
     {
         "name": "Madison Hall",
-        "category": "dedicatedToOwner",
         "description": "test.txt",
         "image": "madison.jpg"
     },
     {
         "name": "Stanhope Hall",
-        "category": "dedicatedToOwner",
         "description": "test.txt"
     },
     {
         "name": "Witherspoon Hall",
-        "category": "dedicatedToOwner",
         "description": "test.txt",
         "image": "witherspoon.jpg"
     },
     {
         "name": "Dod Hall",
-        "category": "dedicatedToOwner",
         "description": "test.txt"
     },
     {
         "name": "Pyne Hall",
-        "category": "dedicatedToTies",
         "description": "test.txt"
     },
     {
         "name": "East Pyne",
-        "category": "dedicatedToTies",
         "description": "test.txt"
     },
     {
         "name": "Maclean House",
-        "category": "donatedByOwner",
         "description": "test.txt"
     },
     {
         "name": "Joseph Henry House",
-        "category": "dedicatedToOwner",
         "description": "test.txt"
     },
     {
         "name": "FitzRandolph Gate",
-        "category": "dedicatedToOwner",
         "description": "test.txt"
     },
     {
         "name": "Statue of John Witherspoon",
-        "category": "dedicatedToOwner",
         "description": "test.txt"
     },
     {
         "name": "Frist Campus Center",
-        "category": "none",
         "subsites": [
             {
                 "name": "Statue of Joseph Henry",
-                "category": "dedicatedToTies",
                 "description": "test.txt"
             }
         ]
     },
     {
         "name": "Firestone Library",
-        "category": "none",
         "subsites": [
             {
                 "name": "Placeholder",
-                "category": "donatedByOwner",
                 "description": "test.txt"
             }
         ]
     },
     {
         "name": "University Chapel",
-        "category": "none",
         "subsites": [
             {
                 "name": "Placeholder",
-                "category": "donatedByOwner",
                 "description": "test.txt"
             }
         ]
     },
     {
         "name": "Holder Hall",
-        "category": "none",
         "subsites": [
             {
-                "name": "(North? South?) Wall",
-                "category": "dedicatedToOwner"
+                "name": "(North? South?) Wall"
             }
         ]
     },
     {
         "name": "Cuyler Hall",
-        "category": "none",
         "subsites": [
             {
-                "name": "Plaque - 3rd Entry",
-                "category": "donatedByTies"
+                "name": "Plaque - 3rd Entry"
             }
         ]
     },
     {
         "name": "Engineering Quadrangle",
-        "category": "none",
         "subsites": [
             {
-                "name": "Inscription over Main Entrance",
-                "category": "dedicatedToTies"
+                "name": "Inscription over Main Entrance"
             }
         ]
     },
     {
         "name": "Whig Hall",
-        "category": "none",
         "subsites": [
             {
-                "name": "Bust",
-                "category": "dedicatedToTies"
+                "name": "Bust"
             },
             {
-                "name": "Assembly Room - 2nd Floor",
-                "category": "dedicatedToOwner"
+                "name": "Assembly Room - 2nd Floor"
             }
         ]
     }

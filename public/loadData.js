@@ -111,11 +111,11 @@ function CreatePolygons(locationData, coords) {
 
         var polygon = L.polygon(coords[locName], {
             name: locName,
-            category: locationData[i].category,
+            //category: locationData[i].category,
             // File name is written into description, then used to fetch it.
             description: description,
             image: image,
-            color: colors[locationData[i].category],
+            //color: colors[locationData[i].category],
             subsites: subsites,
             bubblingMouseEvents: false
         }).addTo(myMap);
