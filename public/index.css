@@ -30,7 +30,13 @@ h4 {
     font-size: 11pt;
     margin: 0;
 }
-p {
+
+a {
+    color: #0181b2;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 
 html {
@@ -60,7 +66,7 @@ body {
     left: -400px;
     /*background-color: #2C2C2C;*/
     background-color: #FFF;
-    box-shadow: 2px 0px 4px #666;
+    box-shadow: 2px 0px 4px 0px #666;
     overflow-x: hidden;
     transition: 0.5s;
 }
@@ -71,8 +77,10 @@ body {
     padding: 5 5 0 5;
     text-align: center;
     color: #2C2C2C;
-    background-color: #DDD;
-    opacity: 0.7;
+    background-color: #82c2f2;
+}
+#sidebar .subInfo {
+    background-color: #fbc288;
 }
 #sidebar #bldgTitle, #sidebar .subTitle {
     padding: 20 0 20 0;
@@ -83,14 +91,7 @@ body {
 
     font-family: 'Open Sans', sans-serif;
     font-size: 11pt;
-    color: #444;
-}
-#sidebar #bldgDescription a, #sidebar .subDescription a {
-    color: #0390c6;
-    text-decoration: none;
-}
-#sidebar #bldgDescription a:hover, #sidebar .subDescription a:hover {
-    text-decoration: underline;
+    color: #222;
 }
 
 #toggleSidebar {
@@ -104,7 +105,8 @@ body {
     width: 26px;
     height: 42px;
     /*opacity: 0.7;*/
-    box-shadow: 2px 1px 4px #666;
+    background-color: #82c2f2;
+    box-shadow: 2px 1px 4px 0px #666;
     border: 0;
     padding: 0;
 }
@@ -144,46 +146,26 @@ body {
     height: 100%;
 }
 
-#legend {
+#relatedSites {
     position: absolute;
     bottom: 40;
     right: 10;
     z-index: 314159;
-    padding: 10 10 10 10;
+    padding: 10 20 10 20;
 
-    width: 270pt;
-    background-color: #444;
-    opacity: 0.75;
-    border-radius: 10pt;
+    background-color: #FFF;
+    opacity: 0.85;
+    border-radius: 5pt;
 
     font-family: 'Open Sans', sans-serif;
     font-size: 11pt;
-    color: #DDD;
-    text-align: center;
+    color: #111;
+    text-decoration: none;
 }
-#legend b {
-    text-align: center;
-}
-.legendEntry {
-    height: 22pt;
-    padding-left: 8px;
-    padding-right: 4px;
-}
-.legendEntryContainer {
-    height: 16pt;
-    padding-top: 4px;
-    padding-bottom: 4px;
-}
-.legendEntryText {
-    height: 100%;
-    float: left;
-}
-.legendEntryColor {
-    width: 24pt;
-    height: 100%;
-    margin-left: 10pt;
-    background-color: #fff;
-    float: right;
+#relatedSites:hover {
+    opacity: 1.0;
+    color: #0181b2;
+    text-decoration: underline;
 }
 
 #main {
@@ -203,34 +185,43 @@ body {
 
 /* Leaflet popups (building names) */
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
-    background-color: #444;
-    opacity: 0.75;
+    background-color: #FFF;
+    opacity: 0.85;
 
     font-family: 'Open Sans', sans-serif;
     font-size: 11pt;
     text-align: center;
-    color: #DDD;
+    color: #111;
+}
+div.leaflet-popup-tip {
+    background-color: #FFF;
+    opacity: 0.95; /* hacky, but doesn't look good otherwise */
 }
 
 /* Zoom controls */
+div.leaflet-control-zoom.leaflet-bar.leaflet-control {
+    border: 0;
+}
 a.leaflet-control-zoom-in, a.leaflet-control-zoom-out {
-    background-color: #444;
-    opacity: 0.75;
-    color: #DDD;
+    background-color: #FFF;
+    opacity: 0.85;
+    color: #111;
 }
 a.leaflet-control-zoom-in:hover, a.leaflet-control-zoom-out:hover {
-    background-color: #888;
+    background-color: #FFF;
+    opacity: 1.0;
+    color: #000;
 }
 
 /* Attribution text (bottom right) */
 div.leaflet-control-attribution.leaflet-control {
-    background-color: #444;
-    opacity: 0.75;
+    background-color: #FFF;
+    opacity: 1.0;
 
     font-family: 'Open Sans', sans-serif;
     font-size: 8pt;
-    color: #DDD;
+    color: #111;
 }
 div.leaflet-control-attribution.leaflet-control a {
-    color: #5ad0ff;
+    color: #0181b2;
 }
