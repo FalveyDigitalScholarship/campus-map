@@ -95,10 +95,9 @@ function CreatePolygons(locationData, coords) {
             console.error(locName + " has no coordinates");
         }
 
-        var image = locationData[i].image;
-        if (image === null || image === undefined) {
-            // TODO temporary
-            image = "nassau.jpg";
+        var image = null;
+        if ("image" in locationData[i]) {
+            image = locationData[i].image;
         }
         var description = null;
         if ("description" in locationData[i]) {
@@ -111,11 +110,10 @@ function CreatePolygons(locationData, coords) {
 
         var polygon = L.polygon(coords[locName], {
             name: locName,
-            //category: locationData[i].category,
             // File name is written into description, then used to fetch it.
             description: description,
             image: image,
-            //color: colors[locationData[i].category],
+            color: "#078aed",
             subsites: subsites,
             bubblingMouseEvents: false
         }).addTo(myMap);
