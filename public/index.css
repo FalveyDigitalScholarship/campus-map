@@ -51,9 +51,6 @@ body {
     position: absolute;
     z-index: 314150;
 }
-#psLogo img {
-    height: 100%;
-}
 #instruction {
     background-color: #FFF;
     opacity: 0.85;
