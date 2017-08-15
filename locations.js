@@ -15,7 +15,7 @@ app.listen(port, function() {
 
 app.post("/locationCoords", function(request, response) {
     console.log("POST: saved location coordinate data");
-    fs.writeFile("tools/locations/locationCoords.json",
+    fs.writeFile("tools/locations/location_coords.json",
         JSON.stringify(request.body, null, "\t"), "utf8");
     
     response.writeHead(200, {'Content-Type': 'text/html'});
