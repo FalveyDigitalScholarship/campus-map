@@ -50,7 +50,7 @@ if (!String.prototype.format) {
 }
 
 function IsMobile() {
-    return true; // TODO debug only
+    //return true; // TODO debug only
     if (navigator.userAgent.match(/Android/i)
         || navigator.userAgent.match(/webOS/i)
         || navigator.userAgent.match(/iPhone/i)
@@ -210,14 +210,14 @@ function ToggleSidebar() {
     sidebarOpen = !sidebarOpen;
 }
 
-function MakePopupFromPolygon(polygon) {
+function MakePopupFromPolygon(polygon, small = false) {
     var name = polygon.options.name;
     var subsites = polygon.options.subsites;
 
     var latLng = [polygon.getBounds().getNorth(), polygon.getCenter().lng];
 
     var content = popupContent.format(name);
-    if (subsites != null) {
+    if (!small && subsites != null) {
         var siteString = "";
         if (polygon.options.description !== null) {
             siteString += "+";
@@ -230,6 +230,10 @@ function MakePopupFromPolygon(polygon) {
             siteString += " sites";
         }
         content = popupContentSites.format(name, siteString);
+    }
+
+    if (small) {
+        content = "<div style=\"font-size: 10px\">" + content + "</div>";
     }
 
     var popup = L.popup({
@@ -339,6 +343,9 @@ function SelectPolygon(polygon) {
 }
 
 function OnClickBldg(event) {
+    if (paneOpen || paneAnimating)
+        return; // catastrophic failure if this isn't done (mobile)
+    
     polygonRecentClick = true;
 
     var polygon = event.target;
@@ -351,6 +358,7 @@ function OnClickBldg(event) {
         if (!paneHasOpened) {
             $("#bottomPaneTip").show();
         }
+        ClearPolygonHover();
     }
     else {
         if (!sidebarOpen) {
@@ -363,6 +371,9 @@ function OnClickBldg(event) {
     }, polygonRecentClickDuration);
 }
 function OnClickMap() {
+    if (paneOpen || paneAnimating)
+        return; // catastrophic failure if this isn't done (mobile)
+
     // "True" map click.
     if (IsMobile()) {
         $("#bottomPane").hide();
@@ -418,6 +429,18 @@ function ApproxLatLngDistance(latLng1, latLng2) {
         + (latLng1.lng - latLng2.lng) * (latLng1.lng - latLng2.lng));
 }
 
+// mobile only
+function ClearPolygonHover() {
+    if (polygonHovered !== null) {
+        //polygonHovered.setStyle(styleIdle);
+        polygonHovered = null;
+    }
+    if (popupHover !== null) {
+        popupHover.remove();
+        popupHover = null;
+    }
+}
+
 // Mobile only, called every 0.X seconds
 function UpdatePopup() {
     if (paneOpen)
@@ -437,18 +460,20 @@ function UpdatePopup() {
     }
 
     var polygon = polygons[minInd];
-
-    if (minDist < 1.0 && polygon !== polygonSelected && polygonHovered !== polygon) {
-        if (polygonHovered !== null) {
-            polygonHovered.setStyle(styleIdle);
+    if (minDist < 0.0015) {
+        if (polygon === polygonSelected && polygon !== polygonHovered) {
+            ClearPolygonHover();
         }
-        if (popupHover !== null) {
-            popupHover.remove();
-        }
-        popupHover = MakePopupFromPolygon(polygon);
-        polygon.setStyle(styleHover);
+        if (polygon !== polygonSelected && polygonHovered !== polygon) {
+            ClearPolygonHover();
 
-        polygonHovered = polygon;
+            popupHover = MakePopupFromPolygon(polygon, true);
+            //polygon.setStyle(styleHover);
+            polygonHovered = polygon;
+        }
+    }
+    else {
+        ClearPolygonHover();
     }
 }
 
