@@ -69,7 +69,7 @@ function FetchSiteDescription(siteInfo, polygon) {
 
                 SelectPolygon(polygon);
 
-                if (!sidebarOpen) {
+                if (!IsMobile() && !sidebarOpen) {
                     ToggleSidebar();
                 }
             }
@@ -123,19 +123,22 @@ function CreatePolygons(locationData, coords) {
         FetchPolygonDescriptions(polygon); // Fetches from file name.
         
         polygon.on("click", OnClickBldg);
-        polygon.on("mouseover", OnMouseEnterBldg);
-        polygon.on("mouseout", OnMouseExitBldg);
+        if (!IsMobile()) {
+            polygon.on("mouseover", OnMouseEnterBldg);
+            polygon.on("mouseout", OnMouseExitBldg);
+        }
+        polygons.push(polygon);
     }
 }
 
-function LoadPolygons() {
+function LoadData() {
     $.ajax({
         dataType: "json",
-        url: "/locationData.json",
+        url: "/location_data.json",
         success: function(locationData, textStatus, jqXHR) {
             $.ajax({
                 dataType: "json",
-                url: "/locationCoords.json",
+                url: "/location_coords.json",
                 success: function(coords, textStatus, jqXHR) {
                     CreatePolygons(locationData, coords);
                 }

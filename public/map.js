@@ -1,7 +1,10 @@
 var myMap = null;
 var subsitePrototype = null;
 
+var polygons = [];
+
 var polygonSelected = null;
+var polygonHovered = null; // mobile only
 var popupSelected = null;
 var popupHover = null;
 
@@ -12,11 +15,14 @@ var polygonRecentClickDuration = 150;
 var polygonRecentClickTime = 50;
 
 var sidebarOpen = false;
+var paneOpen = false;
+var paneAnimating = false;
+var paneHasOpened = false;
 
 var startSelection = "Nassau Hall";
 
-var popupContent = "<div class='bldgPopup'><b>{0}</b></div>";
-var popupContentSites = "<div class='bldgPopup'><b>{0}</b><br>{1}</div>";
+var popupContent = "<b>{0}</b>";
+var popupContentSites = "<b>{0}</b><br>{1}";
 
 var styleIdle = {
     weight: 2,
@@ -44,6 +50,7 @@ if (!String.prototype.format) {
 }
 
 function IsMobile() {
+    return true; // TODO debug only
     if (navigator.userAgent.match(/Android/i)
         || navigator.userAgent.match(/webOS/i)
         || navigator.userAgent.match(/iPhone/i)
@@ -51,11 +58,108 @@ function IsMobile() {
         || navigator.userAgent.match(/iPod/i)
         || navigator.userAgent.match(/BlackBerry/i)
         || navigator.userAgent.match(/Windows Phone/i)) {
-        return false;
-    }
-    else {
         return true;
     }
+    else {
+        return false;
+    }
+}
+
+function AddCSS(fileURL) {
+    var cssId = fileURL;
+    if (!document.getElementById(cssId)) {
+        var head = document.getElementsByTagName("head")[0];
+        var link = document.createElement("link");
+        link.id = cssId;
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = fileURL;
+        link.media = "all";
+        head.appendChild(link);
+    }
+}
+
+function OnSwipePane(ev) {
+    if (!paneOpen && ev.velocityY < -1.0) {
+        TogglePane();
+    }
+    var scrollTop = document.getElementById("outer").scrollTop;
+    if (paneOpen && scrollTop == 0 && ev.velocityY > 1.0) {
+        TogglePane();
+    }
+}
+
+function TogglePane() {
+    if (paneAnimating) 
+        return;
+
+    if (!paneHasOpened) {
+        $("#bottomPaneTip").hide();
+        paneHasOpened = true;
+    }
+
+    var $arrow = $("#paneUpArrow");
+
+    paneAnimating = true;
+    if (paneOpen) {
+        $arrow.css("border-color", "transparent transparent #222 transparent");
+        $arrow.css("margin-top", "8px");
+
+        document.getElementById("outer").scrollTop = 0;
+
+        var windowHeight = $(window).height();
+        var bldgImgHeight = $("#bldgImg").height();
+        var bttmPaneHeight = $("#bottomPane").height();
+
+        $("#bldgImg").css("position", "absolute");
+        $("#bldgImg").css("top", "0");
+        $("#bottomPane").css("position", "absolute");
+        $("#bottomPane").css("bottom", windowHeight - bldgImgHeight - bttmPaneHeight);
+        $("#infoOverlay").height(windowHeight);
+        $("#infoOverlay").css("position", "absolute");
+        $("#infoOverlay").css("top", bldgImgHeight + bttmPaneHeight);
+
+        $("#outer").css("overflow-y", "hidden");
+        $("#main").show();
+
+        $("#bldgImg").css("top", "100%");
+        $("#bottomPane").css("bottom", "0");
+        $("#infoOverlay").css("top", "100%");
+        
+        setTimeout(function() {
+            $("#infoOverlay").css("height", "auto");
+            paneAnimating = false;
+        }, 600);
+    }
+    else {
+        $arrow.css("border-color", "#222 transparent transparent transparent");
+        $arrow.css("margin-top", "28px");
+
+        $("#bldgImg").css("top", "0");
+        var windowHeight = $(window).height();
+        var bldgImgHeight = $("#bldgImg").height();
+        var bttmPaneHeight = $("#bottomPane").height();
+        $("#bottomPane").css("bottom", windowHeight - bldgImgHeight - bttmPaneHeight);
+        $("#infoOverlay").height(windowHeight);
+        $("#infoOverlay").css("top", bldgImgHeight + bttmPaneHeight);
+
+        setTimeout(function() {
+            $("#outer").css("overflow-y", "visible");
+            $("#main").hide();
+
+            $("#bottomPane").css("position", "relative");
+            $("#bottomPane").css("top", "auto");
+            $("#bottomPane").css("bottom", "auto");
+            $("#bldgImg").css("position", "relative");
+            $("#bldgImg").css("top", "auto");
+            $("#infoOverlay").css("position", "relative");
+            $("#infoOverlay").css("top", "auto");
+            $("#infoOverlay").css("height", "auto");
+            paneAnimating = false;
+        }, 600);
+    }
+
+    paneOpen = !paneOpen;
 }
 
 function SidebarWidth() {
@@ -63,7 +167,10 @@ function SidebarWidth() {
 }
 
 function RecenterWithSidebar(latLng) {
-    var targetPoint = myMap.project(latLng, myMap.zoom).subtract([SidebarWidth() / 2, 0]);
+    var targetPoint = myMap.project(latLng, myMap.zoom)
+    if (!IsMobile()) {
+        targetPoint = targetPoint.subtract([SidebarWidth() / 2, 0]);
+    }
     return myMap.unproject(targetPoint, myMap.zoom);
 }
 
@@ -144,10 +251,12 @@ function DisplayBuildingInfo(info) {
 
     $("#bldgName").html(name);
     if (info.image === null) {
+        $("#bldgImg").css("height", "0px");
         $("#bldgImg").hide();
     }
     else {
         $("#bldgImg").show();
+        $("#bldgImg").css("height", "auto");
         $("#bldgImg").attr("src", "images/" + info.image);
     }
     if (info.description === null) {
@@ -185,11 +294,23 @@ function DisplayBuildingInfo(info) {
 
             var $subDiv = $("<div class=\"subsite\"></div>");
             $subDiv.html(subsitePrototype);
-            $("#sidebar .simplebar-scroll-content .simplebar-content").append($subDiv);
+            if (IsMobile()) {
+                $("#infoOverlay").append($subDiv);
+            }
+            else {
+                $("#sidebar .simplebar-scroll-content .simplebar-content").append($subDiv);
+            }
                 
             $subDiv.find(".subName").html(subName);
             $subDiv.find(".subDescription").html(info.subsites[i].description);
-            //$subDiv.find(".subImg").attr("src", "");
+            var $subImg = $subDiv.find(".subImg");
+            if ("image" in info.subsites[i]) {
+                $subImg.show();
+                $subImg.attr("src", "images/" + info.subsites[i].image);
+            }
+            else {
+                $subImg.hide();
+            }
         }
     }
 }
@@ -225,8 +346,16 @@ function OnClickBldg(event) {
 
     SelectPolygon(polygon);
 
-    if (!sidebarOpen) {
-        ToggleSidebar();
+    if (IsMobile()) {
+        $("#bottomPane").show();
+        if (!paneHasOpened) {
+            $("#bottomPaneTip").show();
+        }
+    }
+    else {
+        if (!sidebarOpen) {
+            ToggleSidebar();
+        }
     }
 
     setTimeout(function() {
@@ -235,8 +364,16 @@ function OnClickBldg(event) {
 }
 function OnClickMap() {
     // "True" map click.
-    if (sidebarOpen) {
-        ToggleSidebar();
+    if (IsMobile()) {
+        $("#bottomPane").hide();
+        if (!paneHasOpened) {
+            $("#bottomPaneTip").hide();
+        }
+    }
+    else {
+        if (sidebarOpen) {
+            ToggleSidebar();
+        }
     }
 
     // Remove polygon selection.
@@ -251,6 +388,8 @@ function OnClickMapEvent(event) {
         }
     }, polygonRecentClickTime);
 }
+
+// Desktop only
 function OnMouseEnterBldg(event) {
     var polygon = event.target;
 
@@ -261,6 +400,7 @@ function OnMouseEnterBldg(event) {
 
     polygon.setStyle(styleHover);
 }
+// Desktop only
 function OnMouseExitBldg(event) {
     var polygon = event.target;
 
@@ -272,10 +412,59 @@ function OnMouseExitBldg(event) {
     }
 }
 
+function ApproxLatLngDistance(latLng1, latLng2) {
+    return Math.sqrt(
+        (latLng1.lat - latLng2.lat) * (latLng1.lat - latLng2.lat)
+        + (latLng1.lng - latLng2.lng) * (latLng1.lng - latLng2.lng));
+}
+
+// Mobile only, called every 0.X seconds
+function UpdatePopup() {
+    if (paneOpen)
+        return;
+
+    var mapCenter = myMap.getCenter();
+
+    var minInd = -1;
+    var minDist = 100000000.0; // large number
+    for (var i = 0; i < polygons.length; i++) {
+        var polygonCenter = polygons[i].getCenter();
+        var dist = ApproxLatLngDistance(mapCenter, polygonCenter);
+        if (dist < minDist) {
+            minDist = dist;
+            minInd = i;
+        }
+    }
+
+    var polygon = polygons[minInd];
+
+    if (minDist < 1.0 && polygon !== polygonSelected && polygonHovered !== polygon) {
+        if (polygonHovered !== null) {
+            polygonHovered.setStyle(styleIdle);
+        }
+        if (popupHover !== null) {
+            popupHover.remove();
+        }
+        popupHover = MakePopupFromPolygon(polygon);
+        polygon.setStyle(styleHover);
+
+        polygonHovered = polygon;
+    }
+}
+
 $(function() {
-    /*if (isMobile()) {
-        $(".desktop").hide();
-    }*/
+    var zoomPos = "bottomright";
+
+    if (IsMobile()) {
+        AddCSS("index-mobile.css");
+        $(".desktop").remove();
+        zoomPos = "topleft";
+        $("#instruction").html("Tap on a highlighted location to explore<br> sites related to Princeton & Slavery");
+    }
+    else {
+        AddCSS("index-desktop.css");
+        $(".mobile").remove();
+    }
 
     // Initialize leaflet.js map controls.
     myMap = L.map("map", {
@@ -289,7 +478,7 @@ $(function() {
         ],
         zoomControl: false // add manually later to top right
     });
-    L.control.zoom({position: "topright"}).addTo(myMap); // zoom control
+    L.control.zoom({position: zoomPos}).addTo(myMap); // zoom control
     myMap.on("click", OnClickMapEvent);
 
     // Initialize MapBox tile layer.
@@ -297,24 +486,37 @@ $(function() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 20,
         minZoom: 16,
-        style: "styles/v1/***REMOVED***", // color
+        style: "styles/v1/***REMOVED***", // color (classic)
         //style: "styles/v1/***REMOVED***", // light
         //style: "styles/v1/***REMOVED***", // dark
         accessToken: "***REMOVED***"
     }).addTo(myMap);
-https://api.mapbox.com/styles/v1/***REMOVED***/tiles/256/{level}/{col}/{row}@2x?access_token=***REMOVED***
+    //myMap.attributionControl.setPosition("topleft");
+
     // Save sidebar subsite prototype.
     var $subsitePrototype = $("#subsitePrototype");
     subsitePrototype = $subsitePrototype.html();
     $subsitePrototype.remove();
 
-    $("#toggleSidebarButton").click(ToggleSidebar);
-    $("#toggleSidebarButton").hover(function() {
-        SidebarButtonTooltipVisible(true); // Hover in
-    }, function() {
-        SidebarButtonTooltipVisible(false); // Hover out
-    });
-    $("#toggleSidebarButton").hide();
+    if (IsMobile()) {
+        $("#paneUpButton").click(TogglePane);
+        var bttmPaneHammer = new Hammer($("#bottomPane")[0]);
+        bttmPaneHammer.get("swipe").set({
+            direction: Hammer.DIRECTION_VERTICAL
+        });
+        bttmPaneHammer.on("swipe", OnSwipePane);
 
-    LoadPolygons();
+        setInterval(UpdatePopup, 500);
+    }
+    else {
+        $("#toggleSidebarButton").click(ToggleSidebar);
+        $("#toggleSidebarButton").hover(function() {
+            SidebarButtonTooltipVisible(true); // Hover in
+        }, function() {
+            SidebarButtonTooltipVisible(false); // Hover out
+        });
+        $("#toggleSidebarButton").hide();
+    }
+
+    LoadData();
 });

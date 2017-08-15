@@ -9,25 +9,15 @@ Color Palette (Pastel)
 
 h1 {
     font-family: 'Muli', sans-serif;
-    font-size: 22pt;
     margin: 0;
 }
 h2 {
     font-family: 'Muli', sans-serif;
-    font-size: 16pt;
     margin: 0;
-}
-h3 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: normal;
-    font-style: italic;
-    font-size: 11pt;
-    margin: 8 0 0 0;
 }
 h4 {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
-    font-size: 11pt;
     margin: 0;
 }
 
@@ -57,128 +47,29 @@ body {
     position: relative;
 }
 
-#sidebar {
-    height: 100%;
-    width: 400px;
+#topleft {
     position: absolute;
-    z-index: 314158;
-    top: 0;
-    left: -400px;
-    /*background-color: #2C2C2C;*/
-    background-color: #FFF;
-    box-shadow: 2px 0px 4px 0px #666;
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-#sidebar img {
-    width: 100%;
-}
-#sidebar #bldgInfo, #sidebar .subInfo {
-    padding: 5 5 0 5;
-    text-align: center;
-    color: #2C2C2C;
-    background-color: #82c2f2;
-}
-#sidebar .subInfo {
-    background-color: #fbc288;
-}
-#sidebar #bldgTitle, #sidebar .subTitle {
-    padding: 20 0 20 0;
-}
-#sidebar #bldgDescription, #sidebar .subDescription {
-    padding-left: 15px;
-    padding-right: 15px;
-
-    font-family: 'Open Sans', sans-serif;
-    font-size: 11pt;
-    color: #222;
-}
-
-#toggleSidebar {
-    position: absolute;
-    top: 20;
-    left: 0;
-    z-index: 314159;
-    transition: margin-left 0.5s;
-}
-#toggleSidebarButton {
-    width: 26px;
-    height: 42px;
-    /*opacity: 0.7;*/
-    background-color: #82c2f2;
-    box-shadow: 2px 1px 4px 0px #666;
-    border: 0;
-    padding: 0;
-}
-#toggleSidebarButton:focus {
-    outline: 0;
-}
-#toggleSidebarArrow {
-    width: 0;
-    height: 0;
-    margin: 0 0 0 10px;
-    border: solid 6px;
-    border-color: transparent transparent transparent black;
-}
-#toggleSidebarTooltip {
-    margin: 5px 0px 5px 10px;
-    padding: 8px 8px 8px 8px;
-    height: 100%;
-    float: right;
-    visibility: hidden;
-    background-color: #444;
-    opacity: 0.75;
-    
-    font-family: 'Open Sans', sans-serif;
-    font-size: 8pt;
-    color: #DDD;
-}
-
-#psLogo {
-    position: absolute;
-    top: 10;
-    right: 80;
-    z-index: 314159;
-
-    height: 62px;
+    z-index: 314150;
 }
 #psLogo img {
     height: 100%;
 }
-
-#relatedSites {
-    position: absolute;
-    bottom: 40;
-    right: 10;
-    z-index: 314159;
-    padding: 10 20 10 20;
-
+#instruction {
     background-color: #FFF;
     opacity: 0.85;
-    border-radius: 5pt;
 
+    text-align: center;
     font-family: 'Open Sans', sans-serif;
-    font-size: 11pt;
     color: #111;
-    text-decoration: none;
-}
-#relatedSites:hover {
-    opacity: 1.0;
-    color: #0181b2;
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 #main {
     height: 100%;
-    transition: margin-left 0.5s;
 }
 #map {
     width: 100%;
     height: 100%;
-}
-
-.bldgPopup {
-    font-size: 11pt;
 }
 
 /* Overwrite leaflet styles */
@@ -189,7 +80,6 @@ body {
     opacity: 0.85;
 
     font-family: 'Open Sans', sans-serif;
-    font-size: 11pt;
     text-align: center;
     color: #111;
 }
@@ -219,7 +109,6 @@ div.leaflet-control-attribution.leaflet-control {
     opacity: 1.0;
 
     font-family: 'Open Sans', sans-serif;
-    font-size: 8pt;
     color: #111;
 }
 div.leaflet-control-attribution.leaflet-control a {

@@ -75,7 +75,7 @@ function EditLocation(index) {
 
     $("#leName").html(locName);
     
-    DrawPolygon(locationCoords[locName], "#FFF");
+    DrawPolygon(locationCoords[locName], "#078aed");
 }
 
 function EditCoordsClick() {
@@ -114,7 +114,7 @@ function EditCoordsDone(save) {
         locationCoords[locName] = coords;
 
     DrawLine([]); // clear line
-    DrawPolygon(locationCoords[locName], "#FFF");
+    DrawPolygon(locationCoords[locName], "#078aed");
 }
 
 function NextClick() {
@@ -156,8 +156,9 @@ $(function() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 20,
         minZoom: 16,
+        style: "styles/v1/***REMOVED***", // color (classic)
         //style: "styles/v1/***REMOVED***", // light
-        style: "styles/v1/***REMOVED***", // dark
+        //style: "styles/v1/***REMOVED***", // dark
         accessToken: "***REMOVED***"
     }).addTo(myMap);
 
@@ -175,14 +176,14 @@ $(function() {
 
     $.ajax({
         dataType: "json",
-        url: "/locationData.json",
+        url: "/location_data.json",
         success: function(data, textStatus, jqXHR) {
             // Load all location data except for coordinates.
             locationData = data;
 
             $.ajax({
                 dataType: "json",
-                url: "/locationCoords.json",
+                url: "/location_coords.json",
                 success: function(coords, textStatus, jqXHR) {
                     // Load location polygon coordinates.
                     locationCoords = coords;

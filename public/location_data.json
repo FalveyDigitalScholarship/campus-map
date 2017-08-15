@@ -108,6 +108,18 @@
         ]
     },
     {
+        "name": "Clio Hall",
+        "description": "test.txt"
+    },
+    {
+        "name": "Nassau Presbyterian Church",
+        "description": "test.txt"
+    },
+    {
+        "name": "Miller Chapel",
+        "description": "test.txt"
+    },
+    {
         "name": "Holder Hall",
         "subsites": [
             {

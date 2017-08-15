@@ -25,37 +25,57 @@
         <!-- Markdown parser : https://github.com/showdownjs/showdown -->
         <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.2/dist/showdown.min.js"></script>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+        
+        <!-- Hammer.js mobile touch events : http://hammerjs.github.io/ -->
+        <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        
         <link rel="stylesheet" href="index.css"/>
-        <script src="loadData.js"></script>
+        <script src="load_data.js"></script>
         <script src="map.js"></script>
     </head>
     <body>
         <div id="outer">
+            <!-- Desktop version: sidebar -->
             <div data-simplebar id="sidebar" class="desktop">
                 <div id="bldgInfo">
                     <img id="bldgImg" src="images/nassau.jpg">
                     <div id="bldgTitle">
                         <h1 id="bldgName">No building selected</h1>
                         <h4 id="bldgSites">No building selected</h4>
-                        <!-- <h3 id="bldgCategory">No building selected</h3> -->
                     </div>
                 </div>
-                <div id="bldgDescription">
+                <div id="bldgDescription"></div>
+                <!-- Subsites get added here -->
+            </div>
+
+            <!-- Mobile version: bottom pane -->
+            <img id="bldgImg" src="images/nassau.jpg" class="mobile">
+            <div id="bottomPane" class="mobile">
+                <div id="paneUpButton">
+                    <div id="paneUpArrow"></div>
                 </div>
-                <!-- map.js will delete this on load and use this as a prototype for subsite info -->
-                <div id="subsitePrototype" class="subsite">
-                    <div class="subInfo">
-                        <img style="display:none" class="subImg" src="images/nassau.jpg">
-                        <div class="subTitle">
-                            <h2 class="subName">Subsite Name</h2>
-                            <!-- <h3 class="subCategory">Subsite category</h3> -->
-                        </div>
-                    </div>
-                    <div class="subDescription">
+                <div id="bldgInfo">
+                    <div id="bldgTitle">
+                        <h1 id="bldgName">No building selected</h1>
+                        <h4 id="bldgSites">No building selected</h4>
                     </div>
                 </div>
             </div>
+            <div id="infoOverlay" class="mobile">
+                <div id="bldgDescription"></div>
+                <!-- Subsites get added here -->
+            </div>
+            <div id="bottomPaneTip" class="mobile">
+                <div id="bottomPaneTipText">
+                    Tap arrow or swipe up for site details
+                </div>
+                <div id="bottomPaneTipArrow"></div>
+            </div>
+
+            <!-- Map, controls, and overlays -->
             <div id="main">
                 <div id="toggleSidebar" class="desktop">
                     <button id="toggleSidebarButton">
@@ -65,17 +85,30 @@
                         Show side panel
                     </div>
                 </div>
-                <div id="psLogo">
-                    <a href="https://staging.graftonstudio.com/princeton/visualizations">
-                        <img src="images/princeton-and-slavery-logo-on-light.png"/>
-                    </a>
-                </div>
-                <a href="https://www.google.com/">
-                    <div id="relatedSites">
-                            <b>Explore sites related to Princeton & Slavery</b>
+                <div id="topleft">
+                    <div id="psLogo">
+                        <a href="https://staging.graftonstudio.com/princeton/visualizations">
+                            <img src="images/princeton-and-slavery-logo-on-light.png"/>
+                        </a>
                     </div>
-                </a>
+                    <div id="instruction">
+                        Click on a highlighted location to explore<br> sites related to Princeton & Slavery
+                    </div>
+                </div>
                 <div id="map">
+                </div>
+            </div>
+
+            <!-- Subsite info prototype -->
+            <!-- map.js will delete this and use it as a prototype for subsite info -->
+            <div id="subsitePrototype" class="subsite">
+                <div class="subInfo">
+                    <img style="display:none" class="subImg" src="images/nassau.jpg">
+                    <div class="subTitle">
+                        <h2 class="subName">Subsite Name</h2>
+                    </div>
+                </div>
+                <div class="subDescription">
                 </div>
             </div>
         </div>
