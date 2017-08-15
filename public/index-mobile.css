@@ -15,38 +15,23 @@ h4 {
 }
 
 #topleft {
-    top: 10;
-    right: 10;
+    top: 10px;
+    right: 10px;
 }
 #psLogo {
-    height: 40px;
+    width: 200px;
+    margin: 0 auto;
 }
 #psLogo img {
-    height: 100%;
+    width: 100%;
 }
 #instruction {
-    margin-top: 10;
-    padding: 8 14 8 14;
+    margin-top: 10px;
+    padding: 6px 8px 6px 8px;
 
     border-radius: 4px;
 
     font-size: 80%;
-}
-
-.leaflet-touch .leaflet-bar a {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 32px;
-}
-.leaflet-bar a:first-child {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    margin-bottom: 1px;
-}
-.leaflet-bar a:last-child {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
@@ -64,6 +49,16 @@ div.leaflet-control-attribution.leaflet-control {
     overflow-y: hidden;
 }
 
+#bldgImg {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    z-index: 314157;
+    vertical-align: top; /* The obscurities of web dev */
+
+    transition: top 0.5s;
+}
+
 /* Requires CSS3 flexbox support (note: only on mobile devices) */
 #bottomPane {
     display: flex;
@@ -71,6 +66,7 @@ div.leaflet-control-attribution.leaflet-control {
     position: absolute;
     bottom: 0;
     z-index: 314159;
+    vertical-align: top; /* The obscurities of web dev */
 
     background-color: #82c2f2;
 
@@ -84,18 +80,9 @@ div.leaflet-control-attribution.leaflet-control {
     width: 0;
     height: 0;
     margin-left: 20px;
-    margin-top: 8px;
-    border: solid 20px;
+    margin-top: 15px;
+    border: solid 15px;
     border-color: transparent transparent #222 transparent;
-}
-
-#bldgImg {
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    z-index: 314157;
-
-    transition: top 0.5s;
 }
 
 #infoOverlay {
@@ -103,14 +90,16 @@ div.leaflet-control-attribution.leaflet-control {
     top: 100%;
     width: 100%;
     z-index: 314158;
+    vertical-align: top; /* The obscurities of web dev */
 
     background-color: #FFF;
 
     transition: top 0.5s;
 }
+
 #bottomPane #bldgInfo, #infoOverlay .subInfo {
     width: 100%;
-    padding: 5 5 0 5;
+    padding: 5px 5px 0px 5px;
     text-align: center;
     color: #222;
     background-color: #82c2f2;
@@ -119,7 +108,7 @@ div.leaflet-control-attribution.leaflet-control {
     background-color: #fbc288;
 }
 #bottomPane #bldgTitle, #infoOverlay .subTitle {
-    padding: 15 0 15 0;
+    padding: 15px 0px 15px 0px;
 }
 #infoOverlay #bldgDescription, #infoOverlay .subDescription {
     padding-left: 15px;
@@ -132,24 +121,24 @@ div.leaflet-control-attribution.leaflet-control {
 
 #bottomPaneTip {
     position: absolute;
-    bottom: 90;
-    left: 10;
+    bottom: 85px;
+    left: 10px;
     z-index: 314159;
 }
 #bottomPaneTipText {
-    padding: 6 8 6 8;
+    padding: 6px 8px 6px 8px;
     background-color: #FFF;
     opacity: 0.85;
     border-radius: 6px;
 
     font-family: 'Open Sans', sans-serif;
-    font-size: 100%;
-    color: #222;
+    font-size: 80%;
+    color: #111;
 }
 #bottomPaneTipArrow {
     width: 0;
     height: 0;
-    margin-left: 20px;
+    margin-left: 16px;
     border: solid 12px;
     border-color: #FFF transparent transparent transparent;
     opacity: 0.85;

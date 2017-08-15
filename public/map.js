@@ -103,7 +103,7 @@ function TogglePane() {
     paneAnimating = true;
     if (paneOpen) {
         $arrow.css("border-color", "transparent transparent #222 transparent");
-        $arrow.css("margin-top", "8px");
+        $arrow.css("margin-top", "15px");
 
         document.getElementById("outer").scrollTop = 0;
 
@@ -133,7 +133,7 @@ function TogglePane() {
     }
     else {
         $arrow.css("border-color", "#222 transparent transparent transparent");
-        $arrow.css("margin-top", "28px");
+        $arrow.css("margin-top", "30px");
 
         $("#bldgImg").css("top", "0");
         var windowHeight = $(window).height();

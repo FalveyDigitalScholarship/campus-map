@@ -15,39 +15,23 @@ h4 {
 }
 
 #topleft {
-    top: 20;
-    right: 20;
+    top: 20px;
+    right: 20px;
 }
 #psLogo {
-    width: 352px; /* fixed based on logo img size */
-    height: 60px;
+    width: 350px;
+    margin: 0 auto;
 }
 #psLogo img {
-    height: 100%;
+    width: 100%;
 }
 #instruction {
-    margin-top: 20;
-    padding: 10 20 10 20;
+    margin-top: 20px;
+    padding: 10px 20px 10px 20px;
 
     border-radius: 8px;
 
     font-size: 100%;
-}
-
-.leaflet-touch .leaflet-bar a {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 22px;
-}
-.leaflet-bar a:first-child {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    margin-bottom: 0px;
-}
-.leaflet-bar a:last-child {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
 }
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
@@ -79,7 +63,7 @@ div.leaflet-control-attribution.leaflet-control {
     width: 100%;
 }
 #sidebar #bldgInfo, #sidebar .subInfo {
-    padding: 5 5 0 5;
+    padding: 5px 5px 0px 5px;
     text-align: center;
     color: #222;
     background-color: #82c2f2;
@@ -88,7 +72,7 @@ div.leaflet-control-attribution.leaflet-control {
     background-color: #fbc288;
 }
 #sidebar #bldgTitle, #sidebar .subTitle {
-    padding: 15 0 15 0;
+    padding: 15px 0px 15px 0px;
 }
 #sidebar #bldgDescription, #sidebar .subDescription {
     padding-left: 15px;
@@ -101,7 +85,7 @@ div.leaflet-control-attribution.leaflet-control {
 
 #toggleSidebar {
     position: absolute;
-    top: 20;
+    top: 20px;
     left: 0;
     z-index: 314159;
     transition: margin-left 0.5s;
@@ -121,7 +105,7 @@ div.leaflet-control-attribution.leaflet-control {
 #toggleSidebarArrow {
     width: 0;
     height: 0;
-    margin: 0 0 0 10px;
+    margin: 0px 0px 0px 10px;
     border: solid 6px;
     border-color: transparent transparent transparent black;
 }
