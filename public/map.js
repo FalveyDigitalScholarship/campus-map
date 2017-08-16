@@ -59,7 +59,32 @@ function OnSwipePane(ev) {
     }
 }
 
-function TogglePane() {
+if (IsMobile()) {
+    window.onpopstate = function(event) {
+        if (event.state === null) {
+            if (paneOpen) {
+                TogglePane(false);
+            }
+        }
+        else {
+            var polygon = polygons[event.state.polygonIndex];
+    
+            // TODO duplicate code ish
+            myMap.panTo(RecenterWithSidebar(polygon.getCenter()));
+            SelectPolygon(polygon);
+
+            $("#bottomPane").show();
+            if (!paneHasOpened) {
+                $("#bottomPaneTip").show();
+            }
+            ClearPolygonHover();
+
+            TogglePane(false);
+        }
+    }
+}
+
+function TogglePane(writeHistory = true) {
     if (paneAnimating) 
         return;
 
@@ -99,6 +124,10 @@ function TogglePane() {
         setTimeout(function() {
             $("#infoOverlay").css("height", "auto");
             paneAnimating = false;
+
+            if (writeHistory) {
+                history.back();
+            }
         }, 600);
     }
     else {
@@ -126,6 +155,17 @@ function TogglePane() {
             $("#infoOverlay").css("top", "auto");
             $("#infoOverlay").css("height", "auto");
             paneAnimating = false;
+
+            if (writeHistory) {
+                var polygonInd = -1;
+                for (var i = 0; i < polygons.length; i++) {
+                    if (polygons[i] === polygonSelected) {
+                        polygonInd = i;
+                        break;
+                    }
+                }
+                history.pushState({ polygonIndex: polygonInd }, "InfoPane");
+            }
         }, 600);
     }
 
