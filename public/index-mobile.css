@@ -34,6 +34,9 @@ h4 {
     font-size: 80%;
 }
 
+div.leaflet-popup-content {
+    margin: 6px 12px 6px 12px;
+}
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
     font-size: 14px; /* Needs to be absolute */
 }

@@ -49,36 +49,6 @@ if (!String.prototype.format) {
     };
 }
 
-function IsMobile() {
-    //return true; // TODO debug only
-    if (navigator.userAgent.match(/Android/i)
-        || navigator.userAgent.match(/webOS/i)
-        || navigator.userAgent.match(/iPhone/i)
-        || navigator.userAgent.match(/iPad/i)
-        || navigator.userAgent.match(/iPod/i)
-        || navigator.userAgent.match(/BlackBerry/i)
-        || navigator.userAgent.match(/Windows Phone/i)) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-function AddCSS(fileURL) {
-    var cssId = fileURL;
-    if (!document.getElementById(cssId)) {
-        var head = document.getElementsByTagName("head")[0];
-        var link = document.createElement("link");
-        link.id = cssId;
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        link.href = fileURL;
-        link.media = "all";
-        head.appendChild(link);
-    }
-}
-
 function OnSwipePane(ev) {
     if (!paneOpen && ev.velocityY < -1.0) {
         TogglePane();
@@ -481,13 +451,13 @@ $(function() {
     var zoomPos = "bottomright";
 
     if (IsMobile()) {
-        AddCSS("index-mobile.css");
+        //AddCSS("index-mobile.css");
         $(".desktop").remove();
         zoomPos = "topleft";
         $("#instruction").html("Tap on a highlighted location to explore<br> sites related to Princeton & Slavery");
     }
     else {
-        AddCSS("index-desktop.css");
+        //AddCSS("index-desktop.css");
         $(".mobile").remove();
     }
 
