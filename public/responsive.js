@@ -14,12 +14,15 @@ function IsMobile() {
     }
 }
 
-function AddCSS(fileURL) {
-    var cssId = fileURL;
-    if (!document.getElementById(cssId)) {
+function AddCSS(fileURL, id = null) {
+    var cssID = id;
+    if (id === null) {
+        cssID = fileURL;
+    }
+    if (!document.getElementById(cssID)) {
         var head = document.getElementsByTagName("head")[0];
         var link = document.createElement("link");
-        link.id = cssId;
+        link.id = cssID;
         link.rel = "stylesheet";
         link.type = "text/css";
         link.href = fileURL;
@@ -28,12 +31,15 @@ function AddCSS(fileURL) {
     }
 }
 
-function AddScript(fileURL) {
-    var scriptId = fileURL;
-    if (!document.getElementById(scriptId)) {
+function AddScript(fileURL, id = null) {
+    var scriptID = id;
+    if (id === null) {
+        scriptID = fileURL;
+    }
+    if (!document.getElementById(scriptID)) {
         var head = document.getElementsByTagName("head")[0];
         var script = document.createElement("script");
-        script.id = scriptId;
+        script.id = scriptID;
         script.src = fileURL;
         head.appendChild(script);
     }
@@ -41,7 +47,14 @@ function AddScript(fileURL) {
 
 if (IsMobile()) {
     AddCSS("index-mobile.css");
+
+    // Hammer.js mobile touch events : http://hammerjs.github.io/
+    AddScript("https://hammerjs.github.io/dist/hammer.min.js", "hammer-js");
 }
 else {
     AddCSS("index-desktop.css");
+    
+    // Custom scrollbar : https://github.com/Grsmto/simplebar
+    AddCSS("https://unpkg.com/simplebar@latest/dist/simplebar.css", "simplebar-css");
+    AddScript("https://unpkg.com/simplebar@latest/dist/simplebar.js", "simplebar-js");
 }
