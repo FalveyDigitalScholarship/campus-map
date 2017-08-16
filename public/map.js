@@ -451,13 +451,12 @@ $(function() {
     var zoomPos = "bottomright";
 
     if (IsMobile()) {
-        //AddCSS("index-mobile.css");
         $(".desktop").remove();
         zoomPos = "topleft";
-        $("#instruction").html("Tap on a highlighted location to explore<br> sites related to Princeton & Slavery");
+        $("#instruction").html("Tap on a highlighted location to explore<br>"
+            + "sites related to Princeton & Slavery");
     }
     else {
-        //AddCSS("index-desktop.css");
         $(".mobile").remove();
     }
 
@@ -492,7 +491,9 @@ $(function() {
     var $subsitePrototype = $("#subsitePrototype");
     subsitePrototype = $subsitePrototype.html();
     $subsitePrototype.remove();
+});
 
+$(window).on("load", function() {
     if (IsMobile()) {
         $("#paneUpButton").click(TogglePane);
         var bttmPaneHammer = new Hammer($("#bottomPane")[0]);
