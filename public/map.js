@@ -4,7 +4,7 @@ var subsitePrototype = null;
 var polygons = [];
 
 var polygonSelected = null;
-var polygonHovered = null; // mobile only
+var polygonFocused = null; // mobile only
 var popupSelected = null;
 var popupHover = null;
 
@@ -15,9 +15,6 @@ var polygonRecentClickDuration = 150;
 var polygonRecentClickTime = 50;
 
 var sidebarOpen = false;
-var paneOpen = false;
-var paneAnimating = false;
-var paneHasOpened = false;
 
 var startSelection = "Nassau Hall";
 
@@ -49,7 +46,7 @@ if (!String.prototype.format) {
     };
 }
 
-function OnSwipePane(ev) {
+/*function OnSwipePane(ev) {
     if (!paneOpen && ev.velocityY < -1.0) {
         TogglePane();
     }
@@ -57,120 +54,7 @@ function OnSwipePane(ev) {
     if (paneOpen && scrollTop == 0 && ev.velocityY > 1.0) {
         TogglePane();
     }
-}
-
-if (IsMobile()) {
-    window.onpopstate = function(event) {
-        if (event.state === null) {
-            if (paneOpen) {
-                TogglePane(false);
-            }
-        }
-        else {
-            var polygon = polygons[event.state.polygonIndex];
-    
-            // TODO duplicate code ish
-            myMap.panTo(RecenterWithSidebar(polygon.getCenter()));
-            SelectPolygon(polygon);
-
-            $("#bottomPane").show();
-            if (!paneHasOpened) {
-                $("#bottomPaneTip").show();
-            }
-            ClearPolygonHover();
-
-            TogglePane(false);
-        }
-    }
-}
-
-function TogglePane(writeHistory = true) {
-    if (paneAnimating) 
-        return;
-
-    if (!paneHasOpened) {
-        $("#bottomPaneTip").hide();
-        paneHasOpened = true;
-    }
-
-    var $arrow = $("#paneUpArrow");
-
-    paneAnimating = true;
-    if (paneOpen) {
-        $arrow.css("border-color", "transparent transparent #222 transparent");
-        $arrow.css("margin-top", "15px");
-
-        document.getElementById("outer").scrollTop = 0;
-
-        var windowHeight = $(window).height();
-        var bldgImgHeight = $("#bldgImg").height();
-        var bttmPaneHeight = $("#bottomPane").height();
-
-        $("#bldgImg").css("position", "absolute");
-        $("#bldgImg").css("top", "0");
-        $("#bottomPane").css("position", "absolute");
-        $("#bottomPane").css("bottom", windowHeight - bldgImgHeight - bttmPaneHeight);
-        $("#infoOverlay").height(windowHeight);
-        $("#infoOverlay").css("position", "absolute");
-        $("#infoOverlay").css("top", bldgImgHeight + bttmPaneHeight);
-
-        $("#outer").css("overflow-y", "hidden");
-        $("#main").show();
-
-        $("#bldgImg").css("top", "100%");
-        $("#bottomPane").css("bottom", "0");
-        $("#infoOverlay").css("top", "100%");
-        
-        setTimeout(function() {
-            $("#infoOverlay").css("height", "auto");
-            paneAnimating = false;
-
-            if (writeHistory) {
-                history.back();
-            }
-        }, 600);
-    }
-    else {
-        $arrow.css("border-color", "#222 transparent transparent transparent");
-        $arrow.css("margin-top", "30px");
-
-        $("#bldgImg").css("top", "0");
-        var windowHeight = $(window).height();
-        var bldgImgHeight = $("#bldgImg").height();
-        var bttmPaneHeight = $("#bottomPane").height();
-        $("#bottomPane").css("bottom", windowHeight - bldgImgHeight - bttmPaneHeight);
-        $("#infoOverlay").height(windowHeight);
-        $("#infoOverlay").css("top", bldgImgHeight + bttmPaneHeight);
-
-        setTimeout(function() {
-            $("#outer").css("overflow-y", "visible");
-            $("#main").hide();
-
-            $("#bottomPane").css("position", "relative");
-            $("#bottomPane").css("top", "auto");
-            $("#bottomPane").css("bottom", "auto");
-            $("#bldgImg").css("position", "relative");
-            $("#bldgImg").css("top", "auto");
-            $("#infoOverlay").css("position", "relative");
-            $("#infoOverlay").css("top", "auto");
-            $("#infoOverlay").css("height", "auto");
-            paneAnimating = false;
-
-            if (writeHistory) {
-                var polygonInd = -1;
-                for (var i = 0; i < polygons.length; i++) {
-                    if (polygons[i] === polygonSelected) {
-                        polygonInd = i;
-                        break;
-                    }
-                }
-                history.pushState({ polygonIndex: polygonInd }, "InfoPane");
-            }
-        }, 600);
-    }
-
-    paneOpen = !paneOpen;
-}
+}*/
 
 function SidebarWidth() {
     return $("#sidebar").width();
@@ -439,54 +323,6 @@ function ApproxLatLngDistance(latLng1, latLng2) {
         + (latLng1.lng - latLng2.lng) * (latLng1.lng - latLng2.lng));
 }
 
-// mobile only
-function ClearPolygonHover() {
-    if (polygonHovered !== null) {
-        //polygonHovered.setStyle(styleIdle);
-        polygonHovered = null;
-    }
-    if (popupHover !== null) {
-        popupHover.remove();
-        popupHover = null;
-    }
-}
-
-// Mobile only, called every 0.X seconds
-function UpdatePopup() {
-    if (paneOpen)
-        return;
-
-    var mapCenter = myMap.getCenter();
-
-    var minInd = -1;
-    var minDist = 100000000.0; // large number
-    for (var i = 0; i < polygons.length; i++) {
-        var polygonCenter = polygons[i].getCenter();
-        var dist = ApproxLatLngDistance(mapCenter, polygonCenter);
-        if (dist < minDist) {
-            minDist = dist;
-            minInd = i;
-        }
-    }
-
-    var polygon = polygons[minInd];
-    if (minDist < 0.0015) {
-        if (polygon === polygonSelected && polygon !== polygonHovered) {
-            ClearPolygonHover();
-        }
-        if (polygon !== polygonSelected && polygonHovered !== polygon) {
-            ClearPolygonHover();
-
-            popupHover = MakePopupFromPolygon(polygon, true);
-            //polygon.setStyle(styleHover);
-            polygonHovered = polygon;
-        }
-    }
-    else {
-        ClearPolygonHover();
-    }
-}
-
 $(function() {
     var zoomPos = "bottomright";
 
@@ -510,7 +346,7 @@ $(function() {
             [40.3062834,-74.6837298],
             [40.3615089,-74.6441935]
         ],
-        zoomControl: false // add manually later to top right
+        zoomControl: false // add manually to top right
     });
     L.control.zoom({position: zoomPos}).addTo(myMap); // zoom control
     myMap.on("click", OnClickMapEvent);
@@ -525,7 +361,6 @@ $(function() {
         //style: "styles/v1/jmrico01/cj64oe3nq5ibq2rr8tprzvy56", // dark
         accessToken: "pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw"
     }).addTo(myMap);
-    //myMap.attributionControl.setPosition("topleft");
 
     // Save sidebar subsite prototype.
     var $subsitePrototype = $("#subsitePrototype");
@@ -535,12 +370,14 @@ $(function() {
 
 $(window).on("load", function() {
     if (IsMobile()) {
-        $("#paneUpButton").click(TogglePane);
-        var bttmPaneHammer = new Hammer($("#bottomPane")[0]);
-        bttmPaneHammer.get("swipe").set({
-            direction: Hammer.DIRECTION_VERTICAL
-        });
-        bttmPaneHammer.on("swipe", OnSwipePane);
+        var $bottomPane = $("#bottomPane");
+        $bottomPane.on("touchstart", OnPaneTouchStart);
+        $bottomPane.on("touchend", OnPaneTouchEnd);
+        $bottomPane.on("touchmove", OnPaneTouchMove);
+        $("#paneUpButton").on("touchstart", OnPaneArrowTouchStart);
+        $("#paneUpButton").on("touchend", OnPaneArrowTouchEnd);
+
+        window.onpopstate = OnPopState;
 
         setInterval(UpdatePopup, 500);
     }

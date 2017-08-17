@@ -48,8 +48,7 @@ function AddScript(fileURL, id = null) {
 if (IsMobile()) {
     AddCSS("index-mobile.css");
 
-    // Hammer.js mobile touch events : http://hammerjs.github.io/
-    AddScript("https://hammerjs.github.io/dist/hammer.min.js", "hammer-js");
+    AddScript("map-mobile.js");
 }
 else {
     AddCSS("index-desktop.css");
