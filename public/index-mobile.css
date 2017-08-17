@@ -59,7 +59,7 @@ div.leaflet-control-attribution.leaflet-control {
     z-index: 314157;
     vertical-align: top; /* The obscurities of web dev */
 
-    transition: top 0.5s;
+    /*transition: top 0.5s;*/
 }
 
 /* Requires CSS3 flexbox support (note: only on mobile devices) */
@@ -73,7 +73,7 @@ div.leaflet-control-attribution.leaflet-control {
 
     background-color: #82c2f2;
 
-    transition: bottom 0.5s;
+    /*transition: bottom 0.5s;*/
 }
 #bottomPane #paneUpButton {
     width: 90px; /* correspond to bottomPane height ish */
@@ -97,7 +97,7 @@ div.leaflet-control-attribution.leaflet-control {
 
     background-color: #FFF;
 
-    transition: top 0.5s;
+    /*transition: top 0.5s;*/
 }
 
 #bottomPane #bldgInfo, #infoOverlay .subInfo {
