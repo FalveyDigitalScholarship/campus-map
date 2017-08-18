@@ -1,0 +1,24 @@
+08-18 11:13 - log (789):   new visitor - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+08-18 11:13 - log (789):   console functions overwritten
+08-18 11:13 - log (789):   running jquery $()
+08-18 11:13 - log (789):   running window onload
+08-18 11:13 - log (517):   new visitor - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+08-18 11:13 - log (517):   console functions overwritten
+08-18 11:13 - log (517):   running jquery $()
+08-18 11:13 - log (517):   running window onload
+08-18 11:13 - log (212):   new visitor - Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
+08-18 11:13 - log (212):   console functions overwritten
+08-18 11:13 - log (212):   running jquery $()
+08-18 11:13 - log (212):   running window onload
+08-18 11:13 - log (733):   new visitor - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+08-18 11:13 - log (733):   console functions overwritten
+08-18 11:13 - log (733):   running jquery $()
+08-18 11:13 - log (733):   running window onload
+08-18 11:14 - log (661):   new visitor - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+08-18 11:14 - log (661):   console functions overwritten
+08-18 11:14 - log (661):   running jquery $()
+08-18 11:14 - log (661):   running window onload
+08-18 11:14 - log (77):   new visitor - Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
+08-18 11:14 - log (77):   console functions overwritten
+08-18 11:14 - log (77):   running jquery $()
+08-18 11:14 - log (77):   running window onload

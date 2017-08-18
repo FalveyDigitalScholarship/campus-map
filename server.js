@@ -24,7 +24,8 @@ app.post("/log", function(request, response) {
 
     var message = request.body;
     var timestamp = moment().format("MM-DD HH:mm");
-    var fullMsg = timestamp + " - " + message + "\n";
+    var fullMsg = timestamp + " - " + message;
+    
     console.log(fullMsg);
-    fs.appendFile(debugLogFile, timestamp + " - " + message + "\n", "utf8");
+    fs.appendFile(debugLogFile, fullMsg + "\n", "utf8");
 });
