@@ -322,6 +322,8 @@ function ApproxLatLngDistance(latLng1, latLng2) {
 }
 
 $(function() {
+    console.log("running jquery $()");
+
     var zoomPos = "bottomright";
 
     if (IsMobile()) {
@@ -367,6 +369,8 @@ $(function() {
 });
 
 $(window).on("load", function() {
+    console.log("running window onload");
+
     if (IsMobile()) {
         var $bottomPane = $("#bottomPane");
         $bottomPane.on("touchstart", OnPaneTouchStart);

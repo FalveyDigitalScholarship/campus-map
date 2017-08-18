@@ -20,19 +20,21 @@
             }
 
             function OverwriteConsoleFunctions() {
+                var sessionID = Math.floor(Math.random() * 1000);
+
                 var oldLog = console.log;
                 console.log = function(msg) {
-                    SendMsgToServer("console.log: " + msg);
+                    SendMsgToServer("log (" + sessionID + "):   " + msg);
                     oldLog(msg);
                 };
                 var oldWarn = console.warn;
                 console.warn = function(msg) {
-                    SendMsgToServer("console.warn: " + msg);
+                    SendMsgToServer("warn (" + sessionID + "):  " + msg);
                     oldWarn(msg);
                 };
                 var oldError = console.error;
                 console.error = function(msg) {
-                    SendMsgToServer("console.error: " + msg);
+                    SendMsgToServer("error (" + sessionID + "): " + msg);
                     oldError(msg);
                 };
 
@@ -43,6 +45,7 @@
                     console.error("    line:   " + line);
                 }
 
+                console.log("new visitor - " + navigator.userAgent);
                 console.log("console functions overwritten");
             }
 
