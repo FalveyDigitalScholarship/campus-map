@@ -23,19 +23,25 @@
             function OverwriteConsoleFunctions() {
                 var sessionID = Math.floor(Math.random() * 1000);
 
+                // Save old functions
                 var oldLog = console.log;
+                console.log(oldLog);
+                var oldWarn = console.warn;
+                console.log(oldWarn);
+                var oldError = console.error;
+                console.log(oldError);
+
+                // Replace functions
                 console.log = function(msg) {
                     SendMsgToServer("log   (" + sessionID + "): [" + msgCount + "] " + msg);
                     //oldLog(msg);
                     msgCount += 1;
                 };
-                var oldWarn = console.warn;
                 console.warn = function(msg) {
                     SendMsgToServer("warn  (" + sessionID + "): [" + msgCount + "] " + msg);
                     //oldWarn(msg);
                     msgCount += 1;
                 };
-                var oldError = console.error;
                 console.error = function(msg) {
                     SendMsgToServer("error (" + sessionID + "): [" + msgCount + "] " + msg);
                     //oldError(msg);
