@@ -1,0 +1,392 @@
+08-18 11:59 - log (346):   [0] new visitor - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+08-18 11:59 - log (346):   [1] console functions overwritten
+08-18 11:59 - log (346):   [2] is mobile?
+08-18 11:59 - log (346):   [3] is mobile? false
+08-18 11:59 - log (346):   [4] running jquery $()
+08-18 11:59 - log (346):   [5] is mobile?
+08-18 11:59 - log (346):   [6] is mobile? false
+08-18 11:59 - log (346):   [7] creating map
+08-18 11:59 - log (346):   [8] creating tile layer
+08-18 11:59 - log (346):   [9] saving subsite prototype
+08-18 11:59 - log (346):   [10] jquery $() DONE
+08-18 11:59 - log (346):   [11] running window onload
+08-18 11:59 - log (346):   [12] is mobile?
+08-18 11:59 - log (346):   [13] is mobile? false
+08-18 11:59 - log (346):   [14] desktop setup
+08-18 11:59 - log (346):   [15] loading data
+08-18 11:59 - log (346):   [16] window onload DONE
+08-18 11:59 - log (346):   [17] location data received
+08-18 11:59 - log (346):   [18] location coords received
+08-18 11:59 - log (346):   [19] creating polygons
+08-18 11:59 - log (346):   [20] construct polygon object
+08-18 11:59 - log (346):   [21] fetch descriptions
+08-18 11:59 - log (346):   [22] descriptions DONE
+08-18 11:59 - log (346):   [23] polgon event registers
+08-18 11:59 - log (346):   [24] is mobile?
+08-18 11:59 - log (346):   [25] is mobile? false
+08-18 11:59 - log (346):   [27] fetch descriptions
+08-18 11:59 - log (346):   [30] is mobile?
+08-18 11:59 - log (346):   [29] polgon event registers
+08-18 11:59 - log (346):   [32] construct polygon object
+08-18 11:59 - log (346):   [34] descriptions DONE
+08-18 11:59 - log (346):   [26] construct polygon object
+08-18 11:59 - log (346):   [36] is mobile?
+08-18 11:59 - log (346):   [33] fetch descriptions
+08-18 11:59 - log (346):   [35] polgon event registers
+08-18 11:59 - log (346):   [28] descriptions DONE
+08-18 11:59 - log (346):   [31] is mobile? false
+08-18 11:59 - log (346):   [38] construct polygon object
+08-18 11:59 - log (346):   [37] is mobile? false
+08-18 11:59 - log (346):   [39] fetch descriptions
+08-18 11:59 - log (346):   [40] descriptions DONE
+08-18 11:59 - log (346):   [41] polgon event registers
+08-18 11:59 - log (346):   [42] is mobile?
+08-18 11:59 - log (346):   [44] construct polygon object
+08-18 11:59 - log (346):   [45] fetch descriptions
+08-18 11:59 - log (346):   [46] descriptions DONE
+08-18 11:59 - log (346):   [43] is mobile? false
+08-18 11:59 - log (346):   [47] polgon event registers
+08-18 11:59 - log (346):   [49] is mobile? false
+08-18 11:59 - log (346):   [51] fetch descriptions
+08-18 11:59 - log (346):   [52] descriptions DONE
+08-18 11:59 - log (346):   [48] is mobile?
+08-18 11:59 - log (346):   [50] construct polygon object
+08-18 11:59 - log (346):   [54] is mobile?
+08-18 11:59 - log (346):   [55] is mobile? false
+08-18 11:59 - log (346):   [57] fetch descriptions
+08-18 11:59 - log (346):   [56] construct polygon object
+08-18 11:59 - log (346):   [53] polgon event registers
+08-18 11:59 - log (346):   [60] is mobile?
+08-18 11:59 - log (346):   [59] polgon event registers
+08-18 11:59 - log (346):   [61] is mobile? false
+08-18 11:59 - log (346):   [62] construct polygon object
+08-18 11:59 - log (346):   [58] descriptions DONE
+08-18 11:59 - log (346):   [64] descriptions DONE
+08-18 11:59 - log (346):   [66] is mobile?
+08-18 11:59 - log (346):   [65] polgon event registers
+08-18 11:59 - log (346):   [63] fetch descriptions
+08-18 11:59 - log (346):   [67] is mobile? false
+08-18 11:59 - log (346):   [71] polgon event registers
+08-18 11:59 - log (346):   [68] construct polygon object
+08-18 11:59 - log (346):   [69] fetch descriptions
+08-18 11:59 - log (346):   [70] descriptions DONE
+08-18 11:59 - log (346):   [72] is mobile?
+08-18 11:59 - log (346):   [73] is mobile? false
+08-18 11:59 - log (346):   [74] construct polygon object
+08-18 11:59 - log (346):   [75] fetch descriptions
+08-18 11:59 - log (346):   [76] descriptions DONE
+08-18 11:59 - log (346):   [77] polgon event registers
+08-18 11:59 - log (346):   [78] is mobile?
+08-18 11:59 - log (346):   [79] is mobile? false
+08-18 11:59 - log (346):   [80] construct polygon object
+08-18 11:59 - log (346):   [81] fetch descriptions
+08-18 11:59 - log (346):   [82] descriptions DONE
+08-18 11:59 - log (346):   [83] polgon event registers
+08-18 11:59 - log (346):   [84] is mobile?
+08-18 11:59 - log (346):   [85] is mobile? false
+08-18 11:59 - log (346):   [86] construct polygon object
+08-18 11:59 - log (346):   [87] fetch descriptions
+08-18 11:59 - log (346):   [89] polgon event registers
+08-18 11:59 - log (346):   [90] is mobile?
+08-18 11:59 - log (346):   [91] is mobile? false
+08-18 11:59 - log (346):   [92] construct polygon object
+08-18 11:59 - log (346):   [93] fetch descriptions
+08-18 11:59 - log (346):   [88] descriptions DONE
+08-18 11:59 - log (346):   [94] descriptions DONE
+08-18 11:59 - log (346):   [95] polgon event registers
+08-18 11:59 - log (346):   [96] is mobile?
+08-18 11:59 - log (346):   [97] is mobile? false
+08-18 11:59 - log (346):   [98] construct polygon object
+08-18 11:59 - log (346):   [99] fetch descriptions
+08-18 11:59 - log (346):   [100] descriptions DONE
+08-18 11:59 - log (346):   [101] polgon event registers
+08-18 11:59 - log (346):   [102] is mobile?
+08-18 11:59 - log (346):   [103] is mobile? false
+08-18 11:59 - log (346):   [104] construct polygon object
+08-18 11:59 - log (346):   [105] fetch descriptions
+08-18 11:59 - log (346):   [106] descriptions DONE
+08-18 11:59 - log (346):   [107] polgon event registers
+08-18 11:59 - log (346):   [108] is mobile?
+08-18 11:59 - log (346):   [109] is mobile? false
+08-18 11:59 - log (346):   [110] construct polygon object
+08-18 11:59 - log (346):   [111] fetch descriptions
+08-18 11:59 - log (346):   [112] descriptions DONE
+08-18 11:59 - log (346):   [113] polgon event registers
+08-18 11:59 - log (346):   [114] is mobile?
+08-18 11:59 - log (346):   [115] is mobile? false
+08-18 11:59 - log (346):   [116] construct polygon object
+08-18 11:59 - log (346):   [117] fetch descriptions
+08-18 11:59 - log (346):   [118] descriptions DONE
+08-18 11:59 - log (346):   [120] is mobile?
+08-18 11:59 - log (346):   [119] polgon event registers
+08-18 11:59 - log (346):   [121] is mobile? false
+08-18 11:59 - log (346):   [122] construct polygon object
+08-18 11:59 - log (346):   [123] fetch descriptions
+08-18 11:59 - log (346):   [124] descriptions DONE
+08-18 11:59 - log (346):   [125] polgon event registers
+08-18 11:59 - log (346):   [126] is mobile?
+08-18 11:59 - log (346):   [127] is mobile? false
+08-18 11:59 - log (346):   [128] construct polygon object
+08-18 11:59 - log (346):   [129] fetch descriptions
+08-18 11:59 - log (346):   [130] descriptions DONE
+08-18 11:59 - log (346):   [131] polgon event registers
+08-18 11:59 - log (346):   [132] is mobile?
+08-18 11:59 - log (346):   [133] is mobile? false
+08-18 11:59 - log (346):   [134] construct polygon object
+08-18 11:59 - log (346):   [135] fetch descriptions
+08-18 11:59 - log (346):   [136] descriptions DONE
+08-18 11:59 - log (346):   [137] polgon event registers
+08-18 11:59 - log (346):   [138] is mobile?
+08-18 11:59 - log (346):   [139] is mobile? false
+08-18 11:59 - log (346):   [140] construct polygon object
+08-18 11:59 - log (346):   [141] fetch descriptions
+08-18 11:59 - log (346):   [142] descriptions DONE
+08-18 11:59 - log (346):   [143] polgon event registers
+08-18 11:59 - log (346):   [144] is mobile?
+08-18 11:59 - log (346):   [145] is mobile? false
+08-18 11:59 - log (346):   [146] construct polygon object
+08-18 11:59 - log (346):   [147] fetch descriptions
+08-18 11:59 - log (346):   [148] descriptions DONE
+08-18 11:59 - log (346):   [149] polgon event registers
+08-18 11:59 - log (346):   [150] is mobile?
+08-18 11:59 - log (346):   [151] is mobile? false
+08-18 11:59 - log (346):   [152] construct polygon object
+08-18 11:59 - log (346):   [153] fetch descriptions
+08-18 11:59 - log (346):   [154] descriptions DONE
+08-18 11:59 - log (346):   [155] polgon event registers
+08-18 11:59 - log (346):   [156] is mobile?
+08-18 11:59 - log (346):   [157] is mobile? false
+08-18 11:59 - log (346):   [158] construct polygon object
+08-18 11:59 - log (346):   [159] fetch descriptions
+08-18 11:59 - log (346):   [160] descriptions DONE
+08-18 11:59 - log (346):   [161] polgon event registers
+08-18 11:59 - log (346):   [164] construct polygon object
+08-18 11:59 - log (346):   [162] is mobile?
+08-18 11:59 - log (346):   [163] is mobile? false
+08-18 11:59 - log (346):   [165] fetch descriptions
+08-18 11:59 - log (346):   [166] descriptions DONE
+08-18 11:59 - log (346):   [167] polgon event registers
+08-18 11:59 - log (346):   [168] is mobile?
+08-18 11:59 - log (346):   [169] is mobile? false
+08-18 11:59 - log (346):   [170] construct polygon object
+08-18 11:59 - log (346):   [171] fetch descriptions
+08-18 11:59 - log (346):   [172] descriptions DONE
+08-18 11:59 - log (346):   [173] polgon event registers
+08-18 11:59 - log (346):   [174] is mobile?
+08-18 11:59 - log (346):   [175] is mobile? false
+08-18 11:59 - log (346):   [176] construct polygon object
+08-18 11:59 - log (346):   [177] fetch descriptions
+08-18 11:59 - log (346):   [181] is mobile? false
+08-18 11:59 - log (346):   [179] polgon event registers
+08-18 11:59 - log (346):   [178] descriptions DONE
+08-18 11:59 - log (346):   [180] is mobile?
+08-18 11:59 - log (346):   [182] polygons DONE
+08-18 11:59 - log (346):   [183] is mobile?
+08-18 11:59 - log (346):   [185] is mobile?
+08-18 11:59 - log (346):   [186] is mobile? false
+08-18 11:59 - log (346):   [187] is mobile?
+08-18 11:59 - log (346):   [184] is mobile? false
+08-18 11:59 - log (346):   [188] is mobile? false
+08-18 11:59 - log (346):   [189] is mobile?
+08-18 11:59 - log (346):   [193] is mobile?
+08-18 11:59 - log (346):   [194] is mobile? false
+08-18 11:59 - log (346):   [190] is mobile? false
+08-18 11:59 - log (346):   [192] is mobile? false
+08-18 11:59 - log (346):   [191] is mobile?
+08-18 11:59 - log (346):   [195] is mobile?
+08-18 11:59 - log (346):   [196] is mobile? false
+08-18 11:59 - log (782):   [0] new visitor - Mozilla/5.0 (Linux; Android 7.0; SM-G950U1 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mobile Safari/537.36
+08-18 11:59 - log (782):   [1] console functions overwritten
+08-18 11:59 - log (782):   [2] is mobile?
+08-18 11:59 - log (782):   [3] is mobile? true
+08-18 11:59 - log (782):   [4] running jquery $()
+08-18 11:59 - log (782):   [5] is mobile?
+08-18 11:59 - log (782):   [6] is mobile? true
+08-18 11:59 - log (782):   [7] creating map
+08-18 11:59 - log (782):   [8] creating tile layer
+08-18 11:59 - log (782):   [9] saving subsite prototype
+08-18 11:59 - log (782):   [10] jquery $() DONE
+08-18 11:59 - log (782):   [11] running window onload
+08-18 11:59 - log (782):   [12] is mobile?
+08-18 11:59 - log (782):   [13] is mobile? true
+08-18 11:59 - log (782):   [14] mobile setup
+08-18 11:59 - log (782):   [15] loading data
+08-18 11:59 - log (782):   [16] window onload DONE
+08-18 11:59 - log (782):   [17] location data received
+08-18 11:59 - log (782):   [18] location coords received
+08-18 11:59 - log (782):   [19] creating polygons
+08-18 11:59 - log (782):   [20] construct polygon object
+08-18 11:59 - log (782):   [21] fetch descriptions
+08-18 11:59 - log (782):   [22] descriptions DONE
+08-18 11:59 - log (782):   [23] polgon event registers
+08-18 11:59 - log (782):   [24] is mobile?
+08-18 11:59 - log (782):   [25] is mobile? true
+08-18 11:59 - log (782):   [26] construct polygon object
+08-18 11:59 - log (782):   [27] fetch descriptions
+08-18 11:59 - log (782):   [28] descriptions DONE
+08-18 11:59 - log (782):   [29] polgon event registers
+08-18 11:59 - log (782):   [30] is mobile?
+08-18 11:59 - log (782):   [31] is mobile? true
+08-18 11:59 - log (782):   [32] construct polygon object
+08-18 11:59 - log (782):   [33] fetch descriptions
+08-18 11:59 - log (782):   [34] descriptions DONE
+08-18 11:59 - log (782):   [35] polgon event registers
+08-18 11:59 - log (782):   [36] is mobile?
+08-18 11:59 - log (782):   [37] is mobile? true
+08-18 11:59 - log (782):   [38] construct polygon object
+08-18 11:59 - log (782):   [39] fetch descriptions
+08-18 11:59 - log (782):   [40] descriptions DONE
+08-18 11:59 - log (782):   [41] polgon event registers
+08-18 11:59 - log (782):   [42] is mobile?
+08-18 11:59 - log (782):   [44] construct polygon object
+08-18 11:59 - log (782):   [43] is mobile? true
+08-18 11:59 - log (782):   [45] fetch descriptions
+08-18 11:59 - log (782):   [46] descriptions DONE
+08-18 11:59 - log (782):   [47] polgon event registers
+08-18 11:59 - log (782):   [48] is mobile?
+08-18 11:59 - log (782):   [50] construct polygon object
+08-18 11:59 - log (782):   [49] is mobile? true
+08-18 11:59 - log (782):   [51] fetch descriptions
+08-18 11:59 - log (782):   [52] descriptions DONE
+08-18 11:59 - log (782):   [53] polgon event registers
+08-18 11:59 - log (782):   [54] is mobile?
+08-18 11:59 - log (782):   [55] is mobile? true
+08-18 11:59 - log (782):   [56] construct polygon object
+08-18 11:59 - log (782):   [57] fetch descriptions
+08-18 11:59 - log (782):   [58] descriptions DONE
+08-18 11:59 - log (782):   [59] polgon event registers
+08-18 11:59 - log (782):   [61] is mobile? true
+08-18 11:59 - log (782):   [60] is mobile?
+08-18 11:59 - log (782):   [62] construct polygon object
+08-18 11:59 - log (782):   [63] fetch descriptions
+08-18 11:59 - log (782):   [64] descriptions DONE
+08-18 11:59 - log (782):   [65] polgon event registers
+08-18 11:59 - log (782):   [66] is mobile?
+08-18 11:59 - log (782):   [67] is mobile? true
+08-18 11:59 - log (782):   [68] construct polygon object
+08-18 11:59 - log (782):   [69] fetch descriptions
+08-18 11:59 - log (782):   [70] descriptions DONE
+08-18 11:59 - log (782):   [71] polgon event registers
+08-18 11:59 - log (782):   [72] is mobile?
+08-18 11:59 - log (782):   [73] is mobile? true
+08-18 11:59 - log (782):   [74] construct polygon object
+08-18 11:59 - log (782):   [75] fetch descriptions
+08-18 11:59 - log (782):   [76] descriptions DONE
+08-18 11:59 - log (782):   [77] polgon event registers
+08-18 11:59 - log (782):   [78] is mobile?
+08-18 11:59 - log (782):   [79] is mobile? true
+08-18 11:59 - log (782):   [80] construct polygon object
+08-18 11:59 - log (782):   [81] fetch descriptions
+08-18 11:59 - log (782):   [83] polgon event registers
+08-18 11:59 - log (782):   [85] is mobile? true
+08-18 11:59 - log (782):   [82] descriptions DONE
+08-18 11:59 - log (782):   [84] is mobile?
+08-18 11:59 - log (782):   [86] construct polygon object
+08-18 11:59 - log (782):   [87] fetch descriptions
+08-18 11:59 - log (782):   [88] descriptions DONE
+08-18 11:59 - log (782):   [89] polgon event registers
+08-18 11:59 - log (782):   [90] is mobile?
+08-18 11:59 - log (782):   [91] is mobile? true
+08-18 11:59 - log (782):   [92] construct polygon object
+08-18 11:59 - log (782):   [93] fetch descriptions
+08-18 11:59 - log (782):   [94] descriptions DONE
+08-18 11:59 - log (782):   [95] polgon event registers
+08-18 11:59 - log (782):   [96] is mobile?
+08-18 11:59 - log (782):   [97] is mobile? true
+08-18 11:59 - log (782):   [98] construct polygon object
+08-18 11:59 - log (782):   [99] fetch descriptions
+08-18 11:59 - log (782):   [100] descriptions DONE
+08-18 11:59 - log (782):   [101] polgon event registers
+08-18 11:59 - log (782):   [102] is mobile?
+08-18 11:59 - log (782):   [103] is mobile? true
+08-18 11:59 - log (782):   [104] construct polygon object
+08-18 11:59 - log (782):   [105] fetch descriptions
+08-18 11:59 - log (782):   [106] descriptions DONE
+08-18 11:59 - log (782):   [107] polgon event registers
+08-18 11:59 - log (782):   [108] is mobile?
+08-18 11:59 - log (782):   [109] is mobile? true
+08-18 11:59 - log (782):   [110] construct polygon object
+08-18 11:59 - log (782):   [111] fetch descriptions
+08-18 11:59 - log (782):   [112] descriptions DONE
+08-18 11:59 - log (782):   [113] polgon event registers
+08-18 11:59 - log (782):   [114] is mobile?
+08-18 11:59 - log (782):   [115] is mobile? true
+08-18 11:59 - log (782):   [116] construct polygon object
+08-18 11:59 - log (782):   [117] fetch descriptions
+08-18 11:59 - log (782):   [118] descriptions DONE
+08-18 11:59 - log (782):   [119] polgon event registers
+08-18 11:59 - log (782):   [122] construct polygon object
+08-18 11:59 - log (782):   [120] is mobile?
+08-18 11:59 - log (782):   [121] is mobile? true
+08-18 11:59 - log (782):   [123] fetch descriptions
+08-18 11:59 - log (782):   [124] descriptions DONE
+08-18 11:59 - log (782):   [125] polgon event registers
+08-18 11:59 - log (782):   [126] is mobile?
+08-18 11:59 - log (782):   [127] is mobile? true
+08-18 11:59 - log (782):   [128] construct polygon object
+08-18 11:59 - log (782):   [129] fetch descriptions
+08-18 11:59 - log (782):   [130] descriptions DONE
+08-18 11:59 - log (782):   [131] polgon event registers
+08-18 11:59 - log (782):   [132] is mobile?
+08-18 11:59 - log (782):   [133] is mobile? true
+08-18 11:59 - log (782):   [134] construct polygon object
+08-18 11:59 - log (782):   [135] fetch descriptions
+08-18 11:59 - log (782):   [136] descriptions DONE
+08-18 11:59 - log (782):   [137] polgon event registers
+08-18 11:59 - log (782):   [138] is mobile?
+08-18 11:59 - log (782):   [139] is mobile? true
+08-18 11:59 - log (782):   [140] construct polygon object
+08-18 11:59 - log (782):   [141] fetch descriptions
+08-18 11:59 - log (782):   [142] descriptions DONE
+08-18 11:59 - log (782):   [143] polgon event registers
+08-18 11:59 - log (782):   [144] is mobile?
+08-18 11:59 - log (782):   [145] is mobile? true
+08-18 11:59 - log (782):   [147] fetch descriptions
+08-18 11:59 - log (782):   [146] construct polygon object
+08-18 11:59 - log (782):   [148] descriptions DONE
+08-18 11:59 - log (782):   [149] polgon event registers
+08-18 11:59 - log (782):   [150] is mobile?
+08-18 11:59 - log (782):   [151] is mobile? true
+08-18 11:59 - log (782):   [152] construct polygon object
+08-18 11:59 - log (782):   [153] fetch descriptions
+08-18 11:59 - log (782):   [154] descriptions DONE
+08-18 11:59 - log (782):   [155] polgon event registers
+08-18 11:59 - log (782):   [156] is mobile?
+08-18 11:59 - log (782):   [157] is mobile? true
+08-18 11:59 - log (782):   [158] construct polygon object
+08-18 11:59 - log (782):   [159] fetch descriptions
+08-18 11:59 - log (782):   [160] descriptions DONE
+08-18 11:59 - log (782):   [161] polgon event registers
+08-18 11:59 - log (782):   [162] is mobile?
+08-18 11:59 - log (782):   [163] is mobile? true
+08-18 11:59 - log (782):   [164] construct polygon object
+08-18 11:59 - log (782):   [165] fetch descriptions
+08-18 11:59 - log (782):   [166] descriptions DONE
+08-18 11:59 - log (782):   [167] polgon event registers
+08-18 11:59 - log (782):   [168] is mobile?
+08-18 11:59 - log (782):   [169] is mobile? true
+08-18 11:59 - log (782):   [170] construct polygon object
+08-18 11:59 - log (782):   [171] fetch descriptions
+08-18 11:59 - log (782):   [172] descriptions DONE
+08-18 11:59 - log (782):   [173] polgon event registers
+08-18 11:59 - log (782):   [174] is mobile?
+08-18 11:59 - log (782):   [175] is mobile? true
+08-18 11:59 - log (782):   [176] construct polygon object
+08-18 11:59 - log (782):   [179] polgon event registers
+08-18 11:59 - log (782):   [177] fetch descriptions
+08-18 11:59 - log (782):   [178] descriptions DONE
+08-18 11:59 - log (782):   [180] is mobile?
+08-18 11:59 - log (782):   [181] is mobile? true
+08-18 11:59 - log (782):   [182] polygons DONE
+08-18 11:59 - log (782):   [183] is mobile?
+08-18 11:59 - log (782):   [184] is mobile? true
+08-18 11:59 - log (782):   [185] is mobile?
+08-18 11:59 - log (782):   [186] is mobile? true
+08-18 11:59 - log (782):   [187] is mobile?
+08-18 11:59 - log (782):   [188] is mobile? true
+08-18 11:59 - log (782):   [189] is mobile?
+08-18 11:59 - log (782):   [190] is mobile? true
+08-18 11:59 - log (782):   [191] is mobile?
+08-18 11:59 - log (782):   [192] is mobile? true
+08-18 11:59 - log (782):   [193] is mobile?
+08-18 11:59 - log (782):   [194] is mobile? true
