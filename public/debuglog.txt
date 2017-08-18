@@ -22,3 +22,249 @@
 08-18 11:14 - log (77):   console functions overwritten
 08-18 11:14 - log (77):   running jquery $()
 08-18 11:14 - log (77):   running window onload
+08-18 11:36 - log (827):   new visitor - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+08-18 11:36 - log (827):   console functions overwritten
+08-18 11:36 - log (827):   running jquery $()
+08-18 11:36 - log (827):   creating map
+08-18 11:36 - log (827):   creating tile layer
+08-18 11:36 - log (827):   saving subsite prototype
+08-18 11:36 - log (827):   jquery $() DONE
+08-18 11:36 - log (827):   running window onload
+08-18 11:36 - log (827):   loading data
+08-18 11:36 - log (827):   desktop setup
+08-18 11:36 - log (827):   window onload DONE
+08-18 11:36 - log (827):   location data received
+08-18 11:36 - log (827):   location coords received
+08-18 11:36 - log (827):   creating polygons
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   fetch descriptions
+08-18 11:36 - log (827):   construct polygon object
+08-18 11:36 - log (827):   descriptions DONE
+08-18 11:36 - log (827):   polgon event registers
+08-18 11:36 - log (827):   polygons DONE
+08-18 11:36 - log (928):   new visitor - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36
+08-18 11:36 - log (928):   console functions overwritten
+08-18 11:36 - log (928):   running jquery $()
+08-18 11:36 - log (928):   creating map
+08-18 11:36 - log (928):   creating tile layer
+08-18 11:36 - log (928):   saving subsite prototype
+08-18 11:36 - log (928):   jquery $() DONE
+08-18 11:36 - log (928):   running window onload
+08-18 11:36 - log (928):   loading data
+08-18 11:36 - log (928):   desktop setup
+08-18 11:36 - log (928):   window onload DONE
+08-18 11:36 - log (928):   location data received
+08-18 11:36 - log (928):   location coords received
+08-18 11:36 - log (928):   creating polygons
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   construct polygon object
+08-18 11:36 - log (928):   fetch descriptions
+08-18 11:36 - log (928):   descriptions DONE
+08-18 11:36 - log (928):   polgon event registers
+08-18 11:36 - log (928):   polygons DONE
