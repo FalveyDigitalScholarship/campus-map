@@ -101,7 +101,10 @@ function ToggleSidebar() {
     sidebarOpen = !sidebarOpen;
 }
 
-function MakePopupFromPolygon(polygon, small = false) {
+function MakePopupFromPolygon(polygon, small) {
+    if (small === undefined)
+        small = false;
+    
     var name = polygon.options.name;
     var subsites = polygon.options.subsites;
 

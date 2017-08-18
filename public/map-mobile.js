@@ -67,7 +67,12 @@ function LayoutPaneToOpen() {
     $("#infoOverlay").height(windowHeight);
 }
 
-function TogglePane(writeHistory = true, fullAnimation = true) {
+function TogglePane(writeHistory, fullAnimation) {
+    if (writeHistory === undefined)
+        writeHistory = true;
+    if (fullAnimation === undefined)
+        fullAnimation = true;
+
     if (paneAnimating) 
         return;
 

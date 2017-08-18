@@ -14,9 +14,9 @@ function IsMobile() {
     }
 }
 
-function AddCSS(fileURL, id = null) {
+function AddCSS(fileURL, id) {
     var cssID = id;
-    if (id === null) {
+    if (id === undefined || id === null) {
         cssID = fileURL;
     }
     if (!document.getElementById(cssID)) {
@@ -31,9 +31,9 @@ function AddCSS(fileURL, id = null) {
     }
 }
 
-function AddScript(fileURL, id = null) {
+function AddScript(fileURL, id) {
     var scriptID = id;
-    if (id === null) {
+    if (id === undefined || id === null) {
         scriptID = fileURL;
     }
     if (!document.getElementById(scriptID)) {
