@@ -25,7 +25,7 @@ function OnPopState(event) {
         if (!paneHasOpened) {
             $("#bottomPaneTip").show();
         }
-        ClearPolygonHover();
+        ClearPolygonFocus();
 
         TogglePane(false);
     }
@@ -61,6 +61,10 @@ function LayoutPaneToClose() {
 
     $("#outer").css("overflow-y", "hidden");
     $("#main").show();
+}
+function LayoutPaneToOpen() {
+    var windowHeight = $(window).height();
+    $("#infoOverlay").height(windowHeight);
 }
 
 function TogglePane(writeHistory = true, fullAnimation = true) {
@@ -107,6 +111,9 @@ function TogglePane(writeHistory = true, fullAnimation = true) {
         $arrow.css("border-color", "#222 transparent transparent transparent");
         $arrow.css("margin-top", "30px");
 
+        if (fullAnimation)
+            LayoutPaneToOpen();
+
         var windowHeight = $(window).height();
         var bldgImgHeight = $("#bldgImg").height();
         var bttmPaneHeight = $("#bottomPane").height();
@@ -139,8 +146,12 @@ function TogglePane(writeHistory = true, fullAnimation = true) {
     paneOpen = !paneOpen;
 }
 
+function OnPaneArrowTouchStart(event) {
+    //console.log("touch arrow start");
+    event.stopPropagation();
+}
 function OnPaneArrowTouchEnd(event) {
-    console.log("touch arrow end");
+    //console.log("touch arrow end");
     event.stopPropagation();
 
     TogglePane();
@@ -168,7 +179,7 @@ function FindTouchByID(touches, id) {
 }
 
 function OnPaneTouchStart(event) {
-    console.log("touch start");
+    //console.log("touch start");
     //event.preventDefault();
     
     if (!drag) {
@@ -177,6 +188,13 @@ function OnPaneTouchStart(event) {
                 return;
 
             LayoutPaneToClose();
+        }
+        else {
+            if (!paneHasOpened) {
+                $("#bottomPaneTip").hide();
+            }
+
+            LayoutPaneToOpen();
         }
 
         var touch = event.changedTouches[0];
@@ -187,7 +205,7 @@ function OnPaneTouchStart(event) {
     }
 }
 function OnPaneTouchEnd(event) {
-    console.log("touch end");
+    //console.log("touch end");
     //event.preventDefault();
     
     var progress = GetPaneProgress();
@@ -221,7 +239,11 @@ function OnPaneTouchEnd(event) {
             }, 200);
             $("#infoOverlay").animate({
                 top: "100%"
-            }, 200);
+            }, 200, function() {
+                if (!paneHasOpened) {
+                    $("#bottomPaneTip").show();
+                }
+            });
         }
     }
     drag = false;
@@ -259,7 +281,7 @@ function OnPaneTouchMove(event) {
     }
 }
 
-function ClearPolygonHover() {
+function ClearPolygonFocus() {
     if (polygonFocused !== null) {
         //polygonHovered.setStyle(styleIdle);
         polygonFocused = null;
@@ -290,10 +312,10 @@ function UpdatePopup() {
     var polygon = polygons[minInd];
     if (minDist < 0.0015) {
         if (polygon === polygonSelected && polygon !== polygonFocused) {
-            ClearPolygonHover();
+            ClearPolygonFocus();
         }
         if (polygon !== polygonSelected && polygonFocused !== polygon) {
-            ClearPolygonHover();
+            ClearPolygonFocus();
 
             popupHover = MakePopupFromPolygon(polygon, true);
             //polygon.setStyle(styleHover);
@@ -301,6 +323,6 @@ function UpdatePopup() {
         }
     }
     else {
-        ClearPolygonHover();
+        ClearPolygonFocus();
     }
 }
