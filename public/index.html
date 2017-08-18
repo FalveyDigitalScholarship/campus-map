@@ -26,19 +26,19 @@
                 var oldLog = console.log;
                 console.log = function(msg) {
                     SendMsgToServer("log   (" + sessionID + "): [" + msgCount + "] " + msg);
-                    oldLog(msg);
+                    //oldLog(msg);
                     msgCount += 1;
                 };
                 var oldWarn = console.warn;
                 console.warn = function(msg) {
                     SendMsgToServer("warn  (" + sessionID + "): [" + msgCount + "] " + msg);
-                    oldWarn(msg);
+                    //oldWarn(msg);
                     msgCount += 1;
                 };
                 var oldError = console.error;
                 console.error = function(msg) {
                     SendMsgToServer("error (" + sessionID + "): [" + msgCount + "] " + msg);
-                    oldError(msg);
+                    //oldError(msg);
                     msgCount += 1;
                 };
 
