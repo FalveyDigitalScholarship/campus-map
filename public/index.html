@@ -9,6 +9,8 @@
 
         <!-- DEBUG LOGGING -->
         <script>
+            var msgCount = 0;
+
             function SendMsgToServer(msg) {
                 $.ajax({
                     type: "POST",
@@ -24,18 +26,21 @@
 
                 var oldLog = console.log;
                 console.log = function(msg) {
-                    SendMsgToServer("log (" + sessionID + "):   " + msg);
+                    SendMsgToServer("log (" + sessionID + "):   [" + msgCount + "] " + msg);
                     oldLog(msg);
+                    msgCount += 1;
                 };
                 var oldWarn = console.warn;
                 console.warn = function(msg) {
-                    SendMsgToServer("warn (" + sessionID + "):  " + msg);
+                    SendMsgToServer("warn (" + sessionID + "):  [" + msgCount + "] " + msg);
                     oldWarn(msg);
+                    msgCount += 1;
                 };
                 var oldError = console.error;
                 console.error = function(msg) {
-                    SendMsgToServer("error (" + sessionID + "): " + msg);
+                    SendMsgToServer("error (" + sessionID + "): [" + msgCount + "] " + msg);
                     oldError(msg);
+                    msgCount += 1;
                 };
 
                 // Catch detailed errors, send to server
