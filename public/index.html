@@ -16,8 +16,7 @@
                     type: "POST",
                     url: "/log",
                     data: msg,
-                    contentType: "text/plain",
-                    dataType: "text/plain"
+                    contentType: "text/plain"
                 });
             }
 
@@ -26,13 +25,13 @@
 
                 var oldLog = console.log;
                 console.log = function(msg) {
-                    SendMsgToServer("log (" + sessionID + "):   [" + msgCount + "] " + msg);
+                    SendMsgToServer("log   (" + sessionID + "): [" + msgCount + "] " + msg);
                     oldLog(msg);
                     msgCount += 1;
                 };
                 var oldWarn = console.warn;
                 console.warn = function(msg) {
-                    SendMsgToServer("warn (" + sessionID + "):  [" + msgCount + "] " + msg);
+                    SendMsgToServer("warn  (" + sessionID + "): [" + msgCount + "] " + msg);
                     oldWarn(msg);
                     msgCount += 1;
                 };
@@ -46,10 +45,8 @@
                 // Catch detailed errors, send to server
                 window.onerror = function(errorMsg, source, line) {
                     console.error(errorMsg);
-                    if (typeof source === "string")
-                        console.error("    source: " + source);
-                    if (typeof line === "string")
-                        console.error("    line:   " + line);
+                    console.error("    source: " + source);
+                    console.error("    line:   " + line);
                 }
 
                 console.log("new visitor - " + navigator.userAgent);
@@ -73,11 +70,11 @@
         <link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans" rel="stylesheet">
         <!-- - - - -->
 
+        <link rel="stylesheet" href="index.css"/>
+        
         <!-- Markdown parser : https://github.com/showdownjs/showdown -->
         <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.2/dist/showdown.min.js"></script>
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
-
-        <link rel="stylesheet" href="index.css"/>
 
         <!-- Loads additional mobile/desktop specific CSS and JS files. -->
         <script src="responsive.js"></script>

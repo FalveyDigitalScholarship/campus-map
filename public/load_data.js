@@ -1,33 +1,6 @@
 function FormatDescription(description) {
-    var formatted = "<p>";
-    var newlines = 0;
-    for (var i = 0; i < description.length; i++) {
-        var char = description.charAt(i);
-        if (char == "\n") {
-            newlines += 1;
-        }
-        else if (char == "\r") {
-            // Ignore these, but don't reset newline count.
-            // This will take care of /r/n line endings.
-        }
-        else {
-            if (newlines > 1) {
-                formatted += "</p><p>"
-            }
-            else if (newlines == 1) {
-                formatted += " ";
-            }
-            newlines = 0;
-            formatted += char;
-        }
-    }
-    formatted += "</p>"
-
     var converter = new showdown.Converter();
     return converter.makeHtml(description);
-    console.log(converter.makeHtml(description));
-
-    return formatted;
 }
 
 function IsDescriptionLoaded(description) {
@@ -52,6 +25,8 @@ function IsPolygonLoaded(polygon) {
 }
 
 function FetchSiteDescription(siteInfo, polygon) {
+    if (!("description" in siteInfo))
+        return;
     if (siteInfo.description === null || siteInfo.description === undefined)
         return;
 
@@ -78,7 +53,7 @@ function FetchSiteDescription(siteInfo, polygon) {
 }
 
 function FetchPolygonDescriptions(polygon) {
-    console.log("fetch descriptions");
+    //console.log("fetch descriptions");
     var siteInfo = polygon.options;
     FetchSiteDescription(siteInfo, polygon);
 
@@ -87,7 +62,7 @@ function FetchPolygonDescriptions(polygon) {
             FetchSiteDescription(siteInfo.subsites[i], polygon);
         }
     }
-    console.log("descriptions DONE");
+    //console.log("descriptions DONE");
 }
 
 function CreatePolygons(locationData, coords) {
@@ -111,7 +86,7 @@ function CreatePolygons(locationData, coords) {
             subsites = locationData[i].subsites;
         }
 
-        console.log("construct polygon object");
+        //console.log("construct polygon object");
         var polygon = L.polygon(coords[locName], {
             name: locName,
             // File name is written into description, then used to fetch it.
@@ -126,7 +101,7 @@ function CreatePolygons(locationData, coords) {
 
         FetchPolygonDescriptions(polygon); // Fetches from file name.
         
-        console.log("polgon event registers");
+        //console.log("polgon event registers");
         polygon.on("click", OnClickBldg);
         if (!IsMobile()) {
             polygon.on("mouseover", OnMouseEnterBldg);

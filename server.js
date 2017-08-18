@@ -9,7 +9,7 @@ const port = process.env.PORT || 8080;
 
 const debugLogFile = "public/debuglog.txt";
 
-//fs.writeFile(debugLogFile, "", "utf8");
+var messages = [];
 
 app.use(bodyParser.text());
 app.use(express.static(path.join(__dirname, "/public")));
@@ -24,8 +24,17 @@ app.post("/log", function(request, response) {
 
     var message = request.body;
     var timestamp = moment().format("MM-DD HH:mm");
-    var fullMsg = timestamp + " - " + message;
-    
-    console.log(fullMsg);
-    fs.appendFile(debugLogFile, fullMsg + "\n", "utf8");
+
+    messages.push(timestamp + " - " + message);
 });
+
+setInterval(function() {
+    var logNew = "";
+    for (var i = 0; i < messages.length; i++) {
+        logNew += messages[i] + "\n";
+    }
+
+    fs.appendFile(debugLogFile, logNew, "utf8");
+    console.log("Saved " + messages.length + " messages to the log.");
+    messages = [];
+}, 10000);
