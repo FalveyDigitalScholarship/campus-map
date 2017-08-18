@@ -1,4 +1,41 @@
 console.log: DEBUG: console functions overwritten
+console.log: click bldg
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: click bldg
+console.log: click bldg
+console.log: click bldg
+console.log: click bldg
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: 400px
+console.log: 400px
+console.log: 400px
+console.log: 383px
+console.log: DEBUG: console functions overwritten
+console.log: 400px
+console.log: 400px
+console.log: 400px
+console.log: 383px
+console.log: 400px
+console.log: 400px
+console.log: 383px
+console.log: 383px
+console.log: 383px
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
 console.log: DEBUG: console functions overwritten
 console.log: DEBUG: console functions overwritten
 console.log: DEBUG: console functions overwritten
