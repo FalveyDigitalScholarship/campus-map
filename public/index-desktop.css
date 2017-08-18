@@ -43,9 +43,6 @@ div.leaflet-control-attribution.leaflet-control {
 }
 
 /* Desktop-only elements */
-#main {
-    transition: margin-left 0.5s;
-}
 
 #sidebar {
     height: 100%;
@@ -57,7 +54,6 @@ div.leaflet-control-attribution.leaflet-control {
     background-color: #FFF;
     box-shadow: 2px 0px 4px 0px #666;
     overflow-x: hidden;
-    transition: 0.5s;
 }
 #sidebar img {
     width: 100%;
@@ -88,12 +84,10 @@ div.leaflet-control-attribution.leaflet-control {
     top: 20px;
     left: 0;
     z-index: 314159;
-    transition: margin-left 0.5s;
 }
 #toggleSidebarButton {
     width: 26px;
     height: 42px;
-    /*opacity: 0.7;*/
     background-color: #82c2f2;
     box-shadow: 2px 1px 4px 0px #666;
     border: 0;

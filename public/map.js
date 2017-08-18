@@ -14,6 +14,7 @@ var polygonRecentClickDuration = 150;
 // Amount of time the map click event waits to confirm no polygon was clicked.
 var polygonRecentClickTime = 50;
 
+var sidebarWidth = 400;
 var sidebarOpen = false;
 
 var startSelection = "Nassau Hall";
@@ -46,14 +47,10 @@ if (!String.prototype.format) {
     };
 }
 
-function SidebarWidth() {
-    return $("#sidebar").width();
-}
-
 function RecenterWithSidebar(latLng) {
     var targetPoint = myMap.project(latLng, myMap.zoom)
     if (!IsMobile()) {
-        targetPoint = targetPoint.subtract([SidebarWidth() / 2, 0]);
+        targetPoint = targetPoint.subtract([sidebarWidth / 2, 0]);
     }
     return myMap.unproject(targetPoint, myMap.zoom);
 }
@@ -78,18 +75,28 @@ function ToggleSidebar() {
     SidebarButtonTooltipVisible(false);
 
     if (sidebarOpen) {
-        $sidebar.css("left", "-" + SidebarWidth() + "px");
-        $toggleSidebar.css("margin-left", "0");
         $toggleSidebarArrow.css("margin-left", "9px");
         $toggleSidebarArrow.css("border-color", "transparent transparent transparent black");
         $toggleSidebarTooltip.html("Show side panel");
+
+        $sidebar.animate({
+            left: "-" + sidebarWidth + "px",
+        }, 500);
+        $toggleSidebar.animate({
+            "margin-left": "0"
+        }, 500);
     }
     else {
-        $sidebar.css("left", "0px");
-        $toggleSidebar.css("margin-left", SidebarWidth() + "px");
         $toggleSidebarArrow.css("margin-left", "1px");
         $toggleSidebarArrow.css("border-color", "transparent black transparent transparent");
         $toggleSidebarTooltip.html("Hide side panel");
+
+        $sidebar.animate({
+            left: "0px"
+        }, 500);
+        $toggleSidebar.animate({
+            "margin-left": sidebarWidth + "px"
+        }, 500);
     }
     sidebarOpen = !sidebarOpen;
 }
@@ -227,8 +234,9 @@ function SelectPolygon(polygon) {
 }
 
 function OnClickBldg(event) {
-    if (paneOpen || paneAnimating)
-        return; // catastrophic failure if this isn't done (mobile)
+    if (IsMobile())
+        if (paneOpen || paneAnimating)
+            return; // catastrophic failure if this isn't done (mobile)
     
     polygonRecentClick = true;
 
@@ -255,11 +263,11 @@ function OnClickBldg(event) {
     }, polygonRecentClickDuration);
 }
 function OnClickMap() {
-    if (paneOpen || paneAnimating)
-        return; // catastrophic failure if this isn't done (mobile)
-
     // "True" map click.
     if (IsMobile()) {
+        if (paneOpen || paneAnimating)
+            return; // catastrophic failure possible if this isn't done
+
         $("#bottomPane").hide();
         if (!paneHasOpened) {
             $("#bottomPaneTip").hide();
