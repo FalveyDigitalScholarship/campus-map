@@ -41,8 +41,10 @@
                 // Catch detailed errors, send to server
                 window.onerror = function(errorMsg, source, line) {
                     console.error(errorMsg);
-                    console.error("    source: " + source);
-                    console.error("    line:   " + line);
+                    if (typeof source === "string")
+                        console.error("    source: " + source);
+                    if (typeof line === "string")
+                        console.error("    line:   " + line);
                 }
 
                 console.log("new visitor - " + navigator.userAgent);

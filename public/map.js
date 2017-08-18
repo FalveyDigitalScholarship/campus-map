@@ -339,6 +339,7 @@ $(function() {
         $(".mobile").remove();
     }
 
+    console.log("creating map");
     // Initialize leaflet.js map controls.
     myMap = L.map("map", {
         center: [40.3440774, -74.6581347],
@@ -354,6 +355,7 @@ $(function() {
     L.control.zoom({position: zoomPos}).addTo(myMap); // zoom control
     myMap.on("click", OnClickMapEvent);
 
+    console.log("creating tile layer");
     // Initialize MapBox tile layer.
     L.tileLayer("https://api.mapbox.com/{style}/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -365,16 +367,21 @@ $(function() {
         accessToken: "***REMOVED***"
     }).addTo(myMap);
 
+    console.log("saving subsite prototype");
     // Save sidebar subsite prototype.
     var $subsitePrototype = $("#subsitePrototype");
     subsitePrototype = $subsitePrototype.html();
     $subsitePrototype.remove();
+    
+    console.log("jquery $() DONE");
 });
 
 $(window).on("load", function() {
     console.log("running window onload");
 
     if (IsMobile()) {
+        console.log("mobile setup");
+
         var $bottomPane = $("#bottomPane");
         $bottomPane.on("touchstart", OnPaneTouchStart);
         $bottomPane.on("touchend", OnPaneTouchEnd);
@@ -387,6 +394,8 @@ $(window).on("load", function() {
         setInterval(UpdatePopup, 500);
     }
     else {
+        console.log("desktop setup");
+
         $("#toggleSidebarButton").click(ToggleSidebar);
         $("#toggleSidebarButton").hover(function() {
             SidebarButtonTooltipVisible(true); // Hover in
@@ -396,5 +405,7 @@ $(window).on("load", function() {
         $("#toggleSidebarButton").hide();
     }
 
+    console.log("loading data");
     LoadData();
+    console.log("window onload DONE");
 });
