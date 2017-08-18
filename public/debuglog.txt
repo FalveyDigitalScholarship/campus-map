@@ -1,2 +1,0 @@
-08-18 03:47 - console.log: console functions overwritten
-08-18 03:47 - console.log: console functions overwritten
