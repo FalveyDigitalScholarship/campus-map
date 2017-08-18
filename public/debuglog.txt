@@ -1,0 +1,10 @@
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten
+console.log: DEBUG: console functions overwritten

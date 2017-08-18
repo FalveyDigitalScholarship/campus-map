@@ -46,16 +46,6 @@ if (!String.prototype.format) {
     };
 }
 
-/*function OnSwipePane(ev) {
-    if (!paneOpen && ev.velocityY < -1.0) {
-        TogglePane();
-    }
-    var scrollTop = document.getElementById("outer").scrollTop;
-    if (paneOpen && scrollTop == 0 && ev.velocityY > 1.0) {
-        TogglePane();
-    }
-}*/
-
 function SidebarWidth() {
     return $("#sidebar").width();
 }
@@ -155,7 +145,7 @@ function DisplayBuildingInfo(info) {
     else {
         $("#bldgImg").show();
         $("#bldgImg").css("height", "auto");
-        $("#bldgImg").attr("src", "images/" + info.image);
+        $("#bldgImg").attr("src", "content/images/" + info.image);
     }
     if (info.description === null) {
         $("#bldgDescription").html("");
@@ -204,7 +194,7 @@ function DisplayBuildingInfo(info) {
             var $subImg = $subDiv.find(".subImg");
             if ("image" in info.subsites[i]) {
                 $subImg.show();
-                $subImg.attr("src", "images/" + info.subsites[i].image);
+                $subImg.attr("src", "content/images/" + info.subsites[i].image);
             }
             else {
                 $subImg.hide();
@@ -252,7 +242,7 @@ function OnClickBldg(event) {
         if (!paneHasOpened) {
             $("#bottomPaneTip").show();
         }
-        ClearPolygonHover();
+        ClearPolygonFocus();
     }
     else {
         if (!sidebarOpen) {

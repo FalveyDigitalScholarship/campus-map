@@ -7,6 +7,42 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+        <!-- DEBUG LOGGING -->
+        <script>
+            function SendMsgToServer(msg) {
+                $.ajax({
+                    type: "POST",
+                    url: "/log",
+                    data: msg,
+                    contentType: "text/plain",
+                    dataType: "text/plain"
+                });
+            }
+
+            function OverwriteConsoleFunctions() {
+                var oldLog = console.log;
+                console.log = function(msg) {
+                    SendMsgToServer("console.log: " + msg);
+                    oldLog(msg);
+                };
+                var oldWarn = console.warn;
+                console.warn = function(msg) {
+                    SendMsgToServer("console.warn: " + msg);
+                    oldWarn(msg);
+                };
+                var oldError = console.error;
+                console.error = function(msg) {
+                    SendMsgToServer("console.error: " + msg);
+                    oldError(msg);
+                };
+
+                console.log("DEBUG: console functions overwritten");
+            }
+
+            OverwriteConsoleFunctions();
+        </script>
+        <!-- - - - - - - - -->
+
         <!-- Leaflet JS -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
             integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
@@ -37,7 +73,7 @@
             <!-- Desktop version: sidebar -->
             <div data-simplebar id="sidebar" class="desktop">
                 <div id="bldgInfo">
-                    <img id="bldgImg" src="images/nassau.jpg">
+                    <img id="bldgImg" src="">
                     <div id="bldgTitle">
                         <h1 id="bldgName">No building selected</h1>
                         <h4 id="bldgSites">No building selected</h4>
@@ -48,7 +84,7 @@
             </div>
 
             <!-- Mobile version: bottom pane -->
-            <img id="bldgImg" src="images/nassau.jpg" class="mobile">
+            <img id="bldgImg" src="" class="mobile">
             <div id="bottomPane" class="mobile">
                 <div id="paneUpButton">
                     <div id="paneUpArrow"></div>
@@ -86,7 +122,7 @@
                 <div id="topleft">
                     <div id="psLogo">
                         <a href="https://staging.graftonstudio.com/princeton/visualizations">
-                            <img src="images/princeton-and-slavery-logo-on-light.png"/>
+                            <img src="content/images/ps-logo-on-light.png"/>
                         </a>
                     </div>
                     <div id="instruction">
@@ -102,7 +138,7 @@
             <!-- map.js will delete this and use it as a prototype for subsite info -->
             <div id="subsitePrototype" class="subsite">
                 <div class="subInfo">
-                    <img style="display:none" class="subImg" src="images/nassau.jpg">
+                    <img style="display:none" class="subImg" src="">
                     <div class="subTitle">
                         <h2 class="subName">Subsite Name</h2>
                     </div>
