@@ -25,11 +25,11 @@
 
                 // Save old functions
                 var oldLog = console.log;
-                console.log(oldLog);
+                SendMsgToServer("old log:   " + oldLog);
                 var oldWarn = console.warn;
-                console.log(oldWarn);
+                SendMsgToServer("old warn:  " + oldWarn);
                 var oldError = console.error;
-                console.log(oldError);
+                SendMsgToServer("old error: " + oldError);
 
                 // Replace functions
                 console.log = function(msg) {
