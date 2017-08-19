@@ -53,7 +53,6 @@ function FetchSiteDescription(siteInfo, polygon) {
 }
 
 function FetchPolygonDescriptions(polygon) {
-    //console.log("fetch descriptions");
     var siteInfo = polygon.options;
     FetchSiteDescription(siteInfo, polygon);
 
@@ -62,11 +61,9 @@ function FetchPolygonDescriptions(polygon) {
             FetchSiteDescription(siteInfo.subsites[i], polygon);
         }
     }
-    //console.log("descriptions DONE");
 }
 
 function CreatePolygons(locationData, coords) {
-    console.log("creating polygons");
     for (var i = 0; i < locationData.length; i++) {
         var locName = locationData[i].name;
         if (!(locName in coords)) {
@@ -86,7 +83,6 @@ function CreatePolygons(locationData, coords) {
             subsites = locationData[i].subsites;
         }
 
-        //console.log("construct polygon object");
         var polygon = L.polygon(coords[locName], {
             name: locName,
             // File name is written into description, then used to fetch it.
@@ -101,7 +97,6 @@ function CreatePolygons(locationData, coords) {
 
         FetchPolygonDescriptions(polygon); // Fetches from file name.
         
-        //console.log("polgon event registers");
         polygon.on("click", OnClickBldg);
         if (!IsMobile()) {
             polygon.on("mouseover", OnMouseEnterBldg);
@@ -109,7 +104,6 @@ function CreatePolygons(locationData, coords) {
         }
         polygons.push(polygon);
     }
-    console.log("polygons DONE");
 }
 
 function LoadData() {
@@ -117,12 +111,10 @@ function LoadData() {
         dataType: "json",
         url: "/content/location_data.json",
         success: function(locationData, textStatus, jqXHR) {
-            console.log("location data received");
             $.ajax({
                 dataType: "json",
                 url: "/location_coords.json",
                 success: function(coords, textStatus, jqXHR) {
-                    console.log("location coords received");
                     CreatePolygons(locationData, coords);
                 }
             });

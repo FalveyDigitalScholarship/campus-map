@@ -331,7 +331,3 @@ function UpdatePopup() {
         ClearPolygonFocus();
     }
 }
-
-(function() {
-    console.log("map-mobile.js loaded");
-})();

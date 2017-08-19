@@ -7,8 +7,7 @@ const app = express();
 
 const port = process.env.PORT || 8080;
 
-const debugLogFile = "public/debuglog.txt";
-
+const debugLogFile = "public/debug-log.txt";
 var messages = [];
 
 app.use(bodyParser.text());
@@ -35,6 +34,6 @@ setInterval(function() {
     }
 
     fs.appendFile(debugLogFile, logNew, "utf8");
-    console.log("Saved " + messages.length + " messages to the log.");
+    //console.log("Saved " + messages.length + " messages to the log.");
     messages = [];
 }, 10000);
