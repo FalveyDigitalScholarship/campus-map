@@ -330,8 +330,9 @@ $(function() {
     if (IsMobile()) {
         $(".desktop").remove();
         zoomPos = "topleft";
-        $("#instruction").html("Tap on a highlighted location to explore<br>"
-            + "sites related to Princeton & Slavery");
+        $("#instructionText").html("Tap on a highlighted location<br>"
+            + "to explore sites related to<br>"
+            + "Princeton & Slavery");
     }
     else {
         $(".mobile").remove();
@@ -341,8 +342,8 @@ $(function() {
     myMap = L.map("map", {
         center: [40.3440774, -74.6581347],
         zoom: 17,
-        zoomSnap: 0.25,
-        zoomDelta: 0.25,
+        zoomSnap: 0.5,
+        zoomDelta: 0.5,
         maxBounds: [
             [40.3062834,-74.6837298],
             [40.3615089,-74.6441935]

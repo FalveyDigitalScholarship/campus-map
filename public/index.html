@@ -21,7 +21,7 @@
         <!-- - - - - - - -->
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro|Muli|Open+Sans" rel="stylesheet">
         <!-- - - - -->
 
         <link rel="stylesheet" href="index.css"/>
@@ -95,7 +95,13 @@
                         </a>
                     </div>
                     <div id="instruction">
-                        Click on a highlighted location to explore<br> sites related to Princeton & Slavery
+                        <div id="instructionClose" onclick="this.parentNode.parentNode.removeChild(this.parentNode); return false;">
+                            X
+                        </div>
+                        <div id="instructionText">
+                            Click on a highlighted location to explore<br>
+                            sites related to Princeton & Slavery
+                        </div>
                     </div>
                 </div>
                 <!-- Map -->

@@ -1,0 +1,21 @@
+DESKTOP
+
+make buildings brick colored?
+
+zoom level fractional makes map text pixelated
+
+change cementery colors
+
+make everything gray background (??)
+
+make building titles serif that sort of looks like Pton & Slavery
+
+color palette: https://color.adobe.com/explore/?filter=newest
+
+close instruction tip thingy
+
+
+
+MOBILE
+
+--
