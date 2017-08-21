@@ -88,7 +88,7 @@ function CreatePolygons(locationData, coords) {
             // File name is written into description, then used to fetch it.
             description: description,
             image: image,
-            color: "#078aed",
+            color: "#c55827",
             subsites: subsites,
             bubblingMouseEvents: false
         }).addTo(myMap);

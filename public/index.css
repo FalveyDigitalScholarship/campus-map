@@ -8,15 +8,16 @@ Color Palette (Pastel)
 */
 
 h1 {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Source Serif Pro', serif;
     margin: 0;
 }
 h2 {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Source Serif Pro', serif;
     margin: 0;
 }
 h4 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Serif Pro', serif;
+    /*font-family: 'Open Sans', sans-serif;*/
     font-weight: normal;
     margin: 0;
 }
@@ -58,6 +59,25 @@ body {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     color: #111;
+}
+/*#instructionClose {
+    font-size: 120%;
+    float: right;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+#instructionClose:hover {
+    font-weight: bold;
+}*/
+
+#instructionClose {
+    float: right;
+    cursor: pointer;
+    background: #FFF;
+    line-height: 0px;    
+}
+#instructionClose:hover {
+    font-weight: bold;
 }
 
 #main {
