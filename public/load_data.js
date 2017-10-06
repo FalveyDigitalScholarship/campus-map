@@ -113,7 +113,7 @@ function LoadData() {
         success: function(locationData, textStatus, jqXHR) {
             $.ajax({
                 dataType: "json",
-                url: "/location_coords.json",
+                url: "/content/location_coords.json",
                 success: function(coords, textStatus, jqXHR) {
                     CreatePolygons(locationData, coords);
                 }

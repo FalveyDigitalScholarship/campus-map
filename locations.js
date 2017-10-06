@@ -7,7 +7,7 @@ var port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/tools/locations"));
-//app.use(express.static(__dirname + "/public/images"));
+app.use(express.static(__dirname + "/public/content"));
 
 app.listen(port, function() {
     console.log("App listening on port " + port);
