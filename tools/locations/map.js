@@ -137,6 +137,9 @@ function SaveAll() {
         data: JSON.stringify(locationCoords),
         contentType: "application/json"
     });
+
+    alert("Uploaded changes to Node.js server. Check for a new \"location_coords.js\" " + 
+        "file in \"tools/locations\".");
 }
 
 $(function() {
