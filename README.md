@@ -42,7 +42,7 @@ To add a new building, follow these steps:
 
 6. Press "Edit Coordinates" to draw the outline of the building. The cursor should change to a crosshair, and you should be able to select the corners of the polygon which will be used as a building outline. I recomment zooming in quite close to the building so that the outline is accurate. At any time, you can Undo the last point you clicked, or Cancel the outline drawing.
 
-7. Press Done when you've drawn the entire outline (note that it's not necessary to close up the last point with itself). The building outline should be saved temporarily in the site. Make sure not to refresh the page, as the original building data will be reloaded and all your changes will be lost.
+7. Press Done when you've drawn the entire outline (note that it's not necessary to close up the last point with the first point). The building outline should be saved temporarily in the site. Make sure not to refresh the page, as the original building data will be reloaded and all your changes will be lost.
 
 8. Press SAVE ALL CHANGES in the bottom left to upload the file back to Node.js.
 
