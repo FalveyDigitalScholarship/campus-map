@@ -4,7 +4,7 @@ This is the GitHub repository for the interactive campus map of the Princeton an
 
 ## Repository Structure
 
-For developing and testing purposes, this repository's main directory has the structure of a Node.js application. However, the site itself doesn't require Node.js or any other server-side technology. It is implemented entirely in HTML + CSS + JavaScript, and should work when uploaded on a simple, static file-sharing server.
+For developing and testing purposes, this repository's main directory has the structure of a Node.js application. However, the site itself doesn't require Node.js or any other server-side technology. It is implemented entirely in HTML, CSS, and JavaScript, and should work when uploaded on a simple, static file-sharing server.
 
 The entire site is contained in the "public" directory. The Node.js app runs a simple static file server on this directory, for testing purposes. For publishing, simply copy the contents of "public" into the appropriate directory in the server.
 
@@ -26,7 +26,7 @@ Editing the information of an existing building is designed to be simple. A buil
 
 *Requires Node.js*
 
-Adding or activating a new building to the map is not as straightforward, but it's still easy. The tricky part is linking new building information in "location_data.json" to a new building outline in "location_coords.json", which we will have to draw. **Always make sure to back up the "public/content" directory,** as it contains the important data of the site.
+Adding or activating a new building to the map is not as straightforward. The tricky part is linking new building information in "location_data.json" to a new building outline in "location_coords.json", which we will have to draw. **Always make sure to back up the "public/content" directory,** as it contains the important data of the site.
 
 To add a new building, follow these steps:
 
