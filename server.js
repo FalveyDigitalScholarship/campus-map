@@ -33,7 +33,7 @@ setInterval(function() {
         logNew += messages[i] + "\n";
     }
 
-    fs.appendFile(debugLogFile, logNew, "utf8");
+    fs.appendFileSync(debugLogFile, logNew, "utf8");
     //console.log("Saved " + messages.length + " messages to the log.");
     messages = [];
 }, 10000);

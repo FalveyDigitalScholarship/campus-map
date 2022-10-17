@@ -1,6 +1,6 @@
 window.onload = function() {
     var startLoc = new mapboxgl.LngLat(-74.6581347, 40.3440774);
-    mapboxgl.accessToken = '***REMOVED***';
+    mapboxgl.accessToken = 'pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw';
     
     var map = new mapboxgl.Map({
         container: 'map',
