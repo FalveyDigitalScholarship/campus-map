@@ -144,15 +144,10 @@ function SaveAll() {
 
 $(function() {
     myMap = L.map("map", {
-        center: [40.3440774, -74.6581347],
-        zoom: 16.5,
-        zoomSnap: 0.25,
+        center: [40.036528, -75.340737],
+        zoom: 17,
+        zoomSnap: 0.5,
         zoomDelta: 0.5,
-        maxBounds: [
-            [40.3062834,-74.6837298],
-            [40.3615089,-74.6441935]
-        ],
-        zoomControl: false // add manually later to top right
     });
 
     L.tileLayer("https://api.mapbox.com/{style}/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
