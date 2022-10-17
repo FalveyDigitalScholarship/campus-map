@@ -154,10 +154,10 @@ $(function() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 20,
         minZoom: 16,
-        style: "styles/v1/jmrico01/cj68serkh1ncm2slt39g55r19", // color (classic)
-        //style: "styles/v1/jmrico01/cj66ydy6a7m3j2snoyxxom7pw", // light
-        //style: "styles/v1/jmrico01/cj64oe3nq5ibq2rr8tprzvy56", // dark
-        accessToken: "pk.eyJ1Ijoiam1yaWNvMDEiLCJhIjoiY2o0MjZvYXZzMDNxeTMzbXphajQ2YmdoayJ9.r5KOkm5E2W9c6o854dXhfw"
+        style: "styles/v1/***REMOVED***", // color (classic)
+        //style: "styles/v1/***REMOVED***", // light
+        //style: "styles/v1/***REMOVED***", // dark
+        accessToken: "***REMOVED***"
     }).addTo(myMap);
 
     L.control.zoom({position: "topright"}).addTo(myMap);
