@@ -73,7 +73,7 @@ function TogglePane(writeHistory, fullAnimation) {
     if (fullAnimation === undefined)
         fullAnimation = true;
 
-    if (paneAnimating) 
+    if (paneAnimating)
         return;
 
     if (!paneHasOpened) {
@@ -89,7 +89,7 @@ function TogglePane(writeHistory, fullAnimation) {
 
     paneAnimating = true;
     if (paneOpen) {
-        $arrow.css("border-color", "transparent transparent #222 transparent");
+        $arrow.css("border-color", "transparent transparent #fff transparent");
         $arrow.css("margin-top", "15px");
 
         if (fullAnimation)
@@ -113,7 +113,7 @@ function TogglePane(writeHistory, fullAnimation) {
         });
     }
     else {
-        $arrow.css("border-color", "#222 transparent transparent transparent");
+        $arrow.css("border-color", "#fff transparent transparent transparent");
         $arrow.css("margin-top", "30px");
 
         if (fullAnimation)
@@ -186,7 +186,7 @@ function FindTouchByID(touches, id) {
 function OnPaneTouchStart(event) {
     //console.log("touch start");
     //event.preventDefault();
-    
+
     if (!drag) {
         if (paneOpen) {
             if (document.getElementById("outer").scrollTop !== 0)
@@ -212,7 +212,7 @@ function OnPaneTouchStart(event) {
 function OnPaneTouchEnd(event) {
     //console.log("touch end");
     //event.preventDefault();
-    
+
     var progress = GetPaneProgress();
     if ((paneOpen && progress > 0.5) || (!paneOpen && progress > 0.25)) {
         TogglePane(true, false);
@@ -255,7 +255,7 @@ function OnPaneTouchEnd(event) {
 }
 function OnPaneTouchMove(event) {
     //event.preventDefault();
-    
+
     if (drag) {
         var touch = FindTouchByID(event.changedTouches, touchID);
         if (touch !== null) {

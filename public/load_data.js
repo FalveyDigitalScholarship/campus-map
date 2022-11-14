@@ -32,7 +32,7 @@ function FetchSiteDescription(siteInfo, polygon) {
 
     $.ajax({
         dataType: "text",
-        url: "/content/descriptions/" + siteInfo.description,
+        url: "content/descriptions/" + siteInfo.description,
         success: function(description, textStatus, jqXHR) {
             siteInfo.description = FormatDescription(description);
 
@@ -88,7 +88,8 @@ function CreatePolygons(locationData, coords) {
             // File name is written into description, then used to fetch it.
             description: description,
             image: image,
-            color: "#c55827",
+            //color: "#c55827",
+            color: "#003366",
             subsites: subsites,
             bubblingMouseEvents: false
         }).addTo(myMap);
@@ -96,7 +97,7 @@ function CreatePolygons(locationData, coords) {
         polygon.setStyle(styleIdle);
 
         FetchPolygonDescriptions(polygon); // Fetches from file name.
-        
+
         polygon.on("click", OnClickBldg);
         if (!IsMobile()) {
             polygon.on("mouseover", OnMouseEnterBldg);

@@ -37,7 +37,7 @@ h4 {
     margin-top: -14px;
     margin-right: -14px;
     border-radius: 20px;
-    padding: 12px 8px;   
+    padding: 12px 8px;
 }
 
 div.leaflet-popup-content {
@@ -76,8 +76,9 @@ div.leaflet-control-attribution.leaflet-control {
     bottom: 0;
     z-index: 314159;
     vertical-align: top; /* The obscurities of web dev */
-
-    background-color: #E1B39D;
+    color: #FFF;
+    /*background-color: #E1B39D;*/
+    background-color: #003366;
 
     /*transition: bottom 0.5s;*/
 }

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Tolentine Hall",
+        "description": "test.txt",
+        "image": "nassau.jpg",
+        
+    },
+    {
+        "name": "White Hall",
+        "description": "test.txt",
+        "image": "burr.jpg"
+
+    }
+]

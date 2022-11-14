@@ -41,7 +41,7 @@ var styleSelected = {
 if (!String.prototype.format) {
     String.prototype.format = function() {
         var args = arguments;
-        return this.replace(/{(\d+)}/g, function(match, number) { 
+        return this.replace(/{(\d+)}/g, function(match, number) {
             return (typeof args[number] != 'undefined') ? args[number] : match;
         });
     };
@@ -76,7 +76,7 @@ function ToggleSidebar() {
 
     if (sidebarOpen) {
         $toggleSidebarArrow.css("margin-left", "9px");
-        $toggleSidebarArrow.css("border-color", "transparent transparent transparent black");
+        $toggleSidebarArrow.css("border-color", "transparent transparent transparent white");
         $toggleSidebarTooltip.html("Show side panel");
 
         $sidebar.animate({
@@ -88,7 +88,7 @@ function ToggleSidebar() {
     }
     else {
         $toggleSidebarArrow.css("margin-left", "1px");
-        $toggleSidebarArrow.css("border-color", "transparent black transparent transparent");
+        $toggleSidebarArrow.css("border-color", "transparent white transparent transparent");
         $toggleSidebarTooltip.html("Hide side panel");
 
         $sidebar.animate({
@@ -104,7 +104,7 @@ function ToggleSidebar() {
 function MakePopupFromPolygon(polygon, small) {
     if (small === undefined)
         small = false;
-    
+
     var name = polygon.options.name;
     var subsites = polygon.options.subsites;
 
@@ -198,7 +198,7 @@ function DisplayBuildingInfo(info) {
             else {
                 $("#sidebar .simplebar-scroll-content .simplebar-content").append($subDiv);
             }
-                
+
             $subDiv.find(".subName").html(subName);
             $subDiv.find(".subDescription").html(info.subsites[i].description);
             var $subImg = $subDiv.find(".subImg");
@@ -240,7 +240,7 @@ function OnClickBldg(event) {
     if (IsMobile())
         if (paneOpen || paneAnimating)
             return; // catastrophic failure if this isn't done (mobile)
-    
+
     polygonRecentClick = true;
 
     var polygon = event.target;
@@ -332,7 +332,7 @@ $(function() {
         zoomPos = "topleft";
         $("#instructionText").html("Tap on a highlighted location<br>"
             + "to explore sites related to<br>"
-            + "Princeton & Slavery");
+            + "Villanova's Rooted Project");
     }
     else {
         $(".mobile").remove();
@@ -340,20 +340,22 @@ $(function() {
 
     // Initialize leaflet.js map controls.
     myMap = L.map("map", {
-        center: [40.3440774, -74.6581347],
-        zoom: 17,
-        zoomSnap: 0.5,
-        zoomDelta: 0.5,
-        maxBounds: [
-            [40.3062834,-74.6837298],
-            [40.3615089,-74.6441935]
-        ],
+      center: [40.036528, -75.340737],
+      zoom: 17,
+      zoomSnap: 0.5,
+      zoomDelta: 0.5,
+      //maxBounds: [
+        //[40.032749, -75.335366],
+        //[40.035640, -75.351297]
+
+
+    //],
         zoomControl: false // add manually to top right
-    });
+    }).setView([40.036462,-75.342321], 17);;
     L.control.zoom({position: zoomPos}).addTo(myMap); // zoom control
     myMap.on("click", OnClickMapEvent);
 
-    // Initialize MapBox tile layer.
+    // Initialize MapBox tile layer.https://api.mapbox.com/styles/v1/***REMOVED***/tiles/256/{z}/{x}/{y}@2x?access_token=***REMOVED***
     L.tileLayer("https://api.mapbox.com/{style}/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 20,

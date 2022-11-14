@@ -1,7 +1,3 @@
-> This project is in development. Use with care.
->
-> [Roadmap](TODO.md)
-
 # Campus Map - Princeton and Slavery Project
 
 This is the GitHub repository for the interactive campus map of the Princeton and Slavery Project. This README contains information about how the site is implemented, how it's intended to be published, and how content is to be added.

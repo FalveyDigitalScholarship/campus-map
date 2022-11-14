@@ -1,0 +1,32 @@
+[
+
+    {
+        "name": "Moulden Hall",
+        "description": "moulden.txt",
+        "image": "moulden.png"
+
+    },
+    {
+        "name": "John Barry Hall",
+        "description": "barry.txt",
+        "image": "barry.jpg"
+
+    },
+    {
+      "name": "Jane Rudolph Hall",
+      "description": "rudolph.txt",
+      "image": "rudolph.jpg"
+    },
+  
+    {
+        "name": "St. Mary's Hall",
+        "description": "stmary.txt",
+        "image": "stmary.jpg"
+
+    },
+    {
+      "name": "Middleton Hall",
+      "description": "middleton.txt",
+      "image": "middleton.jpg"
+    }
+]
