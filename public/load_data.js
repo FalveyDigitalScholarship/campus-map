@@ -1,3 +1,5 @@
+import { myMap } from "./map.js";
+
 function FormatDescription(description) {
     var converter = new showdown.Converter();
     return converter.makeHtml(description);
@@ -107,7 +109,7 @@ function CreatePolygons(locationData, coords) {
     }
 }
 
-function LoadData() {
+export function LoadData() {
     $.ajax({
         dataType: "json",
         url: "/content/location_data.json",

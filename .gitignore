@@ -1,3 +1,9 @@
+# Configurations
+
+public/config.js
+
+# Dependencies
+
 node_modules/
 npm-debug.log
 .DS_Store

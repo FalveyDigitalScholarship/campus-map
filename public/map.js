@@ -1,4 +1,9 @@
-var myMap = null;
+import { mapbox } from "./config.js";
+import { LoadData } from "./load_data.js";
+
+console.log(mapbox);
+
+export let myMap = null;
 var subsitePrototype = null;
 
 var polygons = [];
@@ -339,31 +344,17 @@ $(function() {
     }
 
     // Initialize leaflet.js map controls.
-    myMap = L.map("map", {
-      center: [40.036528, -75.340737],
-      zoom: 17,
-      zoomSnap: 0.5,
-      zoomDelta: 0.5,
-      //maxBounds: [
-        //[40.032749, -75.335366],
-        //[40.035640, -75.351297]
-
-
-    //],
-        zoomControl: false // add manually to top right
-    }).setView([40.036462,-75.342321], 17);;
+    myMap = L.map("map", mapbox.options).setView(mapbox.options.center, mapbox.options.zoom);
     L.control.zoom({position: zoomPos}).addTo(myMap); // zoom control
     myMap.on("click", OnClickMapEvent);
 
-    // Initialize MapBox tile layer.https://api.mapbox.com/styles/v1/***REMOVED***/tiles/256/{z}/{x}/{y}@2x?access_token=***REMOVED***
-    L.tileLayer("https://api.mapbox.com/{style}/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
+    // Initialize MapBox tile layer.
+    L.tileLayer("https://api.mapbox.com/{style}/tiles/256/{z}/{x}/{y}@2x?access_token={accessToken}", {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 20,
         minZoom: 16,
-        style: "styles/v1/***REMOVED***", // color (classic)
-        //style: "styles/v1/***REMOVED***", // light
-        //style: "styles/v1/***REMOVED***", // dark
-        accessToken: "***REMOVED***"
+        style: mapbox.style,
+        accessToken: mapbox.accessToken
     }).addTo(myMap);
 
     // Save sidebar subsite prototype.
